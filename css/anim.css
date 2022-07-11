@@ -1,0 +1,235 @@
+.animLeft {
+  animation: leftTransition 0.5s ease none;
+  animation-delay: 500ms;
+}
+.animLeft2 {
+  animation: leftTransition 0.8s ease none;
+  animation-delay: 500ms;
+}
+
+.animLeft3 {
+  animation: leftTransition 1s ease none;
+  animation-delay: 500ms;
+}
+
+.animRight {
+  animation: rightTransition 1.2s ease none;
+  animation-delay: 500ms;
+}
+
+.fade {
+  animation: fade 0.5s ease none;
+}
+
+.slowFade {
+  animation: fade 1.5s ease none;
+}
+
+.scale:hover {
+  animation: scale 0.7s ease none;
+}
+
+.blop:hover {
+  animation: blop 0.5s ease none;
+}
+
+.big:hover {
+  animation: big 0.5s ease-in-out none;
+}
+
+.biger:hover {
+  animation: biger 0.5s ease-in-out none;
+}
+
+.moveR:hover {
+  animation: moverR 1s ease-in-out none;
+}
+
+.bigBlop:hover {
+  animation: bigBlop 1s ease-in-out none;
+}
+
+.moverDiag:hover {
+  animation: moverDiag 1s ease none;
+}
+
+.moverDiagBrut:hover {
+  animation: moverDiagBrut 1s ease-in-out none;
+}
+
+@keyframes leftTransition {
+  from {
+    transform: translateX(-2000px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes rightTransition {
+  from {
+    transform: translateX(5000px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: none;
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+
+  75% {
+    transform: rotate(-10deg);
+  }
+
+  95% {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes blop {
+  from {
+    transform: none;
+  }
+  25% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+
+  60% {
+    transform: rotate(-35deg);
+  }
+
+  95% {
+    transform: scale(0.9);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes bigBlop {
+  from {
+    transform: none;
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: scale(3);
+    border-radius: 50%;
+    font-size: 20rem;
+  }
+
+  60% {
+    transform: rotate(-45deg);
+  }
+
+  95% {
+    transform: scale(0.9);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes big {
+  from {
+    transform: none;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes biger {
+  from {
+    transform: none;
+  }
+  50% {
+    transform: scale(3);
+    border-radius: 50%;
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes moverR {
+  from {
+    transform: none;
+  }
+  50% {
+    transform: translateX(10rem);
+    border-radius: 70%;
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moverDiag {
+  from {
+    transform: scale(1.1);
+  }
+  25% {
+    transform: translate(-12rem, -6rem);
+  }
+  50% {
+    transform: scale(3);
+    border-radius: 35%;
+  }
+  90% {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes moverDiagBrut {
+  from {
+    transform: scale(1);
+  }
+  25% {
+    transform: translateX(15rem);
+  }
+  50% {
+    transform: translate(8rem, -10rem);
+    border-radius: 5%;
+  }
+  90% {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: scale(1);
+    transform: translate3d();
+  }
+}
