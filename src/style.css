@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .proyect__item {
+    background: url("./src/assets/svg/Nexus5.svg");
+  }
+}
