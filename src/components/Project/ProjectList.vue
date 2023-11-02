@@ -1,7 +1,7 @@
 <template>
   <ul class="flex flex-row flex-wrap justify-evenly p-4">
     <li
-      class="proyect__item pt-4 px-2 pb-10 w-56 object-contain bg-no-repeat leading-6 flex flex-col justify-center duration-500 mb-10 mr-12"
+      class="proyect__item pt-4 px-2 pb-10 w-56 h-fit bg-no-repeat leading-6 flex flex-col justify-center duration-500 mb-10 mr-12"
       v-for="project in projects"
       :key="project"
     >
@@ -32,9 +32,9 @@
       demo: "https://craze-test.web.app/",
       about: "Red social de memes. Inspirada en twitter, con creador de memes.",
       techs: [
-        { icon: "fa-vuejs", text: "Vue", class: "" },
-        { icon: "fa-node", text: "Express", class: "" },
-        { icon: "fa-database", text: "MongoDB", class: "" },
+        { icon: "fa-brands fa-vuejs", text: "Vue", class: "vue-icon" },
+        { icon: "fa-brands fa-node", text: "Express", class: "node-icon" },
+        { icon: "fa-database", text: "MongoDB", class: "database-icon" },
       ],
     },
     {

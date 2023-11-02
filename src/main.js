@@ -8,9 +8,10 @@ import {
   faVuejs,
   faNode,
   faJava,
-  faSquareJs,
+  faJs,
   faHtml5,
   faCss3Alt,
+  faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 
 import { faLeaf, faDatabase } from "@fortawesome/free-solid-svg-icons";
@@ -20,11 +21,12 @@ library.add(
   faVuejs,
   faNode,
   faJava,
-  faSquareJs,
+  faJs,
   faHtml5,
   faCss3Alt,
   faLeaf,
-  faDatabase
+  faDatabase,
+  faGithub
 );
 
 const app = createApp(App);
