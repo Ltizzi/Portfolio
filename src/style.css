@@ -7,3 +7,198 @@
     background: url("./src/assets/svg/Nexus5.svg");
   }
 }
+
+.angular-icon {
+  background: #a6120d;
+  padding: 0.6rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+.spring-icon {
+  background: #83c77b;
+  padding: 0.6rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+.java-icon {
+  background: #5382a1;
+  padding: 0.6rem 0.8rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.database-icon {
+  background: #00758f;
+  padding: 0.6rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+.html-icon {
+  background: #e34c26;
+  padding: 0.6rem 0.8rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+.css-icon {
+  background: #264de4;
+  padding: 0.6rem 0.8rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+.js-icon {
+  background: #f0db4f;
+  color: #323330;
+  padding: 0.6rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.node-icon {
+  background: #68a063;
+  object-position: center;
+  color: #fff;
+  padding: 0.6rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.vue-icon {
+  background: #42b883;
+  color: #fff;
+  padding: 0.6rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.express-icon {
+  background: url("./assets/svg/express-js.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: black;
+  padding: 0.6rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.express-icon-lil {
+  background: url("./assets/svg/express-js.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: black;
+  padding: 0.6rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.ts-icon {
+  background: url("./assets/svg/ts.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #007acc;
+  color: white;
+  padding: 0.6rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.tailwind-icon {
+  background: url("./assets/svg/tailwind.svg");
+  background-color: #06b6d4;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  color: white;
+  padding: 0.6rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.bootstrap-icon {
+  background: url("./assets/svg/bootstrap.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding: 0.6rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 30px;
+}
+
+.mysql-icon {
+  background: url("./assets/svg/mysql.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: white;
+  padding: 0.6rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.mysql-icon-lil {
+  background: url("./assets/svg/mysql.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: white;
+  padding: 0.6rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.mongo-icon {
+  background: url("./assets/svg/mongodb.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #4db33d;
+  color: white;
+  padding: 0.6rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.mongo-icon-lil {
+  background: url("./assets/svg/mongodb.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #4db33d;
+  color: white;
+  padding: 0.6rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.postgresql-icon {
+  background: url("./assets/svg/postgresql.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #008bb9;
+  color: white;
+  padding: 1rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}

@@ -1,15 +1,15 @@
 <template>
   <div
-    class="flex flex-row justify-around bg-stone-900 text-gray-50 fixed w-full py-4"
+    class="flex flex-row justify-between bg-stone-900 text-gray-50 fixed w-full py-4"
   >
-    <div class="w-1/2">
+    <div class="w-3/4">
       <h1 class="font-bold ml-10 text-xl">Portfolio</h1>
     </div>
-    <div class="w-1/2 text-lg font-semibold">
+    <div class="w-1/4 text-lg font-semibold">
       <ul class="flex flex-row gap-10">
         <li>Skills</li>
-        <li>Educación</li>
-        <li>Projectos</li>
+        <li>Certifications</li>
+        <li>Projects</li>
       </ul>
     </div>
   </div>

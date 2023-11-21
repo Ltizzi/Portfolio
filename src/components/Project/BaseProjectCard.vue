@@ -28,7 +28,12 @@
           :key="tech"
           :title="tech.text"
         >
-          <font-awesome-icon :icon="`${tech.icon}`" :class="`${tech.class}`" />
+          <font-awesome-icon
+            :icon="`${tech.icon}`"
+            :class="`${tech.class}`"
+            v-if="tech.icon != false"
+          />
+          <p v-else :class="`${tech.class}`"></p>
         </li>
       </ul>
       <ul class="flex flex-row justify-center ml-1">
@@ -69,71 +74,3 @@
     techs: Array,
   });
 </script>
-<style>
-  .angular-icon {
-    background: #a6120d;
-    padding: 0.6rem;
-    border-radius: 30px;
-    box-shadow: 5px 5px 10px #474844;
-  }
-  .spring-icon {
-    background: #83c77b;
-    padding: 0.6rem;
-    border-radius: 30px;
-    box-shadow: 5px 5px 10px #474844;
-  }
-  .java-icon {
-    background: #5382a1;
-    padding: 0.6rem 0.8rem;
-    border-radius: 30px;
-    box-shadow: 5px 5px 10px #474844;
-  }
-  .mysql-icon {
-    background: #00758f;
-    padding: 0.6rem;
-    border-radius: 30px;
-    box-shadow: 5px 5px 10px #474844;
-  }
-
-  .database-icon {
-    background: #00758f;
-    padding: 0.6rem;
-    border-radius: 30px;
-    box-shadow: 5px 5px 10px #474844;
-  }
-  .html-icon {
-    background: #e34c26;
-    padding: 0.6rem 0.8rem;
-    border-radius: 30px;
-    box-shadow: 5px 5px 10px #474844;
-  }
-  .css-icon {
-    background: #264de4;
-    padding: 0.6rem 0.8rem;
-    border-radius: 30px;
-    box-shadow: 5px 5px 10px #474844;
-  }
-  .js-icon {
-    background: #f0db4f;
-    color: #323330;
-    padding: 0.6rem;
-    border-radius: 30px;
-    box-shadow: 5px 5px 10px #474844;
-  }
-
-  .node-icon {
-    background: #68a063;
-    color: #fff;
-    padding: 0.6rem;
-    border-radius: 30px;
-    box-shadow: 5px 5px 10px #474844;
-  }
-
-  .vue-icon {
-    background: #42b883;
-    color: #fff;
-    padding: 0.6rem;
-    border-radius: 30px;
-    box-shadow: 5px 5px 10px #474844;
-  }
-</style>

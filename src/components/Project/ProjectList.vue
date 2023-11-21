@@ -30,11 +30,13 @@
       fotoTxt: "Ver Imagen",
       github: "https://github.com/Ltizzi/Craze",
       demo: "https://craze-test.web.app/",
-      about: "Red social de memes. Inspirada en twitter, con creador de memes.",
+      about:
+        "Meme-based social network inspired by Twitter, featuring a meme creator.",
       techs: [
         { icon: "fa-brands fa-vuejs", text: "Vue", class: "vue-icon" },
-        { icon: "fa-brands fa-node", text: "Express", class: "node-icon" },
-        { icon: "fa-database", text: "MongoDB", class: "database-icon" },
+        { icon: "fa-brands fa-node", text: "Node", class: "node-icon" },
+        { icon: false, text: "Express", class: "express-icon-lil" },
+        { icon: false, text: "MongoDB", class: "mongo-icon-lil" },
       ],
     },
     {
@@ -44,7 +46,7 @@
       github: "https://github.com/Ltizzi/Portfolio-frontend",
       demo: "https://ltizzi-portfolio.web.app/",
       about:
-        "Fullstack web application. Proyecto integrador de Argentina Programa. CRUD, auntenticación con JWT. ",
+        "Full-stack web application. Integrative project for the Argentina Program. CRUD operations, authentication with JWT.",
       techs: [
         {
           icon: "fa-brands fa-angular ",
@@ -62,9 +64,9 @@
           class: "java-icon",
         },
         {
-          icon: "fa-solid fa-database",
+          icon: false,
           text: "MySQL",
-          class: "mysql-icon",
+          class: "mysql-icon-lil",
         },
       ],
     },
@@ -75,7 +77,7 @@
       github: "https://github.com/Ltizzi/e-shop-front",
       demo: "https://e-shop-ltizzi.web.app/",
       about:
-        "E-commerce con registro, autenticación, carrito, filtro de productos, registro de compras y manejo de stocks. ",
+        "E-commerce with user registration, authentication, shopping cart, product filtering, purchase history, and inventory management.",
       techs: [
         {
           icon: "fa-brands fa-angular",
@@ -93,9 +95,9 @@
           class: "java-icon",
         },
         {
-          icon: "fa-solid fa-database ",
+          icon: false,
           text: "MySQL",
-          class: "mysql-icon",
+          class: "mysql-icon-lil",
         },
       ],
     },
@@ -106,7 +108,7 @@
       github: "https://github.com/Ltizzi/Alura-Challenge-N-1",
       demo: "https://ltizzi.github.io/Alura-Challenge-N-1/",
       about:
-        "Encriptador realizado para el primer Challenge de Alura Latam. Hecho con HTML, CSS y JavaScript plano",
+        "Encryptor created for the first Alura Latam Challenge. Developed using HTML, CSS, and plain JavaScript.",
       techs: [
         {
           icon: "fa-brands fa-html5 ",
@@ -132,7 +134,7 @@
       github: "https://github.com/Ltizzi/Alura-Challenge-N-2",
       demo: "https://ltizzi.github.io/Alura-Challenge-N-2/",
       about:
-        "Simple juego de ahorcado realizado para el segundo desafío de Alura Latam. Uso de canvas y manipulación de dom dinámica",
+        "Simple hangman game created for the second Alura Latam Challenge. Utilizes canvas and dynamic DOM manipulation.",
       techs: [
         {
           icon: "fa-brands fa-html5 ",
@@ -157,8 +159,7 @@
       fotoTxt: "Ver imagen",
       github: "https://github.com/Ltizzi/Alura-Challenge-E-commerce",
       demo: "https://ltizzi.github.io/Alura-Challenge-E-commerce/",
-      about:
-        "Página de e-commerce realizada para el tercer desafío de Alura Latam.",
+      about: "E-commerce website created for the third Alura Latam Challenge.",
       techs: [
         {
           icon: "fa-brands fa-html5 ",
@@ -186,9 +187,9 @@
           class: "java-icon",
         },
         {
-          icon: "fa-solid fa-database ",
+          icon: false,
           text: "MySQL",
-          class: "mysql-icon",
+          class: "mysql-icon-lil",
         },
       ],
     },
