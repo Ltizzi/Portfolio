@@ -4,8 +4,9 @@
       <Motion
         :initial="{ opacity: 0 }"
         :animate="{ opacity: 100 }"
-        :transition="{ duration: 3, easing: 'ease-in-out' }"
+        :transition="{ duration: 4, easing: 'ease-in-out' }"
         @motioncomplete="animFinished(1)"
+        v-show="startAnim"
       >
         <div
           class="h-screen w-full bg-gradient-to-br from-purple-500 to-purple-300 py-20 flex items-center justify-center"
@@ -62,7 +63,9 @@
 </template>
 <script setup>
   import { Motion, Presence } from "motion/vue";
-  import { reactive } from "vue";
+  import { reactive, onMounted, ref } from "vue";
+
+  const startAnim = ref(false);
 
   let anims = reactive({
     first: false,
@@ -79,6 +82,12 @@
     if (num == 4) anims.four = true;
     if (num == 5) anims.five = true;
   }
+
+  onMounted(() => {
+    setTimeout(() => {
+      startAnim.value = true;
+    }, 1000);
+  });
 </script>
 
 <style></style>
