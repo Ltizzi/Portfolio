@@ -202,3 +202,8 @@
   border-radius: 30px;
   box-shadow: 5px 5px 10px #474844;
 }
+
+.backCode {
+  background: url("./assets/back.jpeg");
+  background-size: cover;
+}
