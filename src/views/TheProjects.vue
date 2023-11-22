@@ -1,8 +1,14 @@
 <template lang="">
   <div
-    class="p-12 bg-gradient-to-br from-neutral-50 to-violet-300 h-screen flex flex-col justify-center"
+    class="2xl:p-12 p-5 bg-gradient-to-br h-full from-neutral-50 to-violet-300 2xl:h-screen flex flex-col justify-center"
   >
-    <h3 class="font-extrabold text-6xl text-center pb-20 text-purple-950">
+    <h3
+      class="font-extrabold 2xl:text-6xl text-4xl text-center pb-20 text-purple-950"
+      v-motion
+      :initial="{ scale: 0, y: -100, rotate: 45, opacity: 0 }"
+      :visible="{ scale: 1, y: 0, rotate: 0, opacity: 1 }"
+      :delay="500"
+    >
       Projects
     </h3>
     <ProjectList />

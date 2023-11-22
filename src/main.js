@@ -15,6 +15,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import { faLeaf, faDatabase } from "@fortawesome/free-solid-svg-icons";
+import { MotionPlugin } from "@vueuse/motion";
 
 library.add(
   faAngular,
@@ -31,4 +32,5 @@ library.add(
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
+app.use(MotionPlugin);
 app.mount("#app");

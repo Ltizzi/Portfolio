@@ -7,6 +7,13 @@
       <li
         v-for="tech in techs"
         class="text-3xl text-white hover:cursor-pointer py-2"
+        v-motion
+        :initial="{ scale: 1 }"
+        :visible="{ scale: 1 }"
+        :hovered="{
+          scale: 3,
+        }"
+        :delay="700"
       >
         <font-awesome-icon
           :icon="`${tech.icon}`"

@@ -27,6 +27,13 @@
           v-for="tech in techs"
           :key="tech"
           :title="tech.text"
+          v-motion
+          :initial="{ scale: 0, opacity: 0 }"
+          :visible="{ scale: 1, opacity: 1 }"
+          :hovered="{
+            scale: 1.5,
+          }"
+          :delay="200"
         >
           <font-awesome-icon
             :icon="`${tech.icon}`"
@@ -38,7 +45,7 @@
       </ul>
       <ul class="flex flex-row justify-center ml-1">
         <button
-          class="w-24 from-orange-300 bg-gradient-to-br via-pink-400 to-purple-400 p-1 rounded-xl border-0 mt-1 mr-1"
+          class="w-24 from-orange-300 bg-gradient-to-br via-pink-400 to-purple-400 p-1 rounded-xl border-0 mt-1 mr-1 hover:animate-bounce"
         >
           <font-awesome-icon
             icon="fa-brands fa-github"
@@ -47,7 +54,7 @@
           <!-- <a :href="github" target="_blank" rel="noopener noreferrer"> </a> -->
         </button>
         <button
-          class="w-24 from-orange-300 bg-gradient-to-br via-pink-400 to-purple-400 p-1 rounded-lg border-0 mt-1 mr-1"
+          class="w-24 from-orange-300 bg-gradient-to-br via-pink-400 to-purple-400 p-1 rounded-lg border-0 mt-1 mr-1 hover:animate-bounce"
         >
           <a
             :href="`${demo}`"

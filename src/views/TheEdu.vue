@@ -4,8 +4,12 @@
       Certifications
     </h1>
     <div
-      class="flex flex-col justify-between py-8 px-12 mb-10 mx-auto w-4/5 h-auto bg-gray-50 shadow-xl shadow-gray-700"
+      class="flex flex-col justify-between py-8 px-12 mb-10 mx-auto 2xl:w-4/5 w-11/12 h-auto bg-gray-50 shadow-xl shadow-gray-700 rounded-3xl"
       v-for="edu in edus"
+      v-motion
+      :initial="{ scale: 0.5, x: -500, opacity: 0 }"
+      :visibleOnce="{ scale: 1, x: 0, opacity: 1 }"
+      :delay="1000"
     >
       <EduCard
         :title="edu.title"

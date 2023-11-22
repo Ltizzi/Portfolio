@@ -4,7 +4,7 @@
       <Motion
         :initial="{ opacity: 0 }"
         :animate="{ opacity: 100 }"
-        :transition="{ duration: 4, easing: 'ease-in-out' }"
+        :transition="{ duration: 2, easing: 'ease-in-out' }"
         @motioncomplete="animFinished(1)"
         v-show="startAnim"
       >
@@ -12,10 +12,10 @@
           class="h-screen w-full bg-gradient-to-br from-purple-500 to-purple-300 py-20 flex items-center justify-center"
         >
           <div
-            class="mx-auto w-2/3 px-16 py-14 bg-opacity-75 bg-slate-50 align-middle shadow-2xl shadow-gray-950 flex flex-row justify-around rounded-3xl"
+            class="mx-auto 2xl:w-2/3 2xl:px-16 2xl:py-14 py-5 w-full bg-opacity-75 bg-slate-50 align-middle shadow-2xl shadow-gray-950 flex flex-row justify-around rounded-3xl"
             v-show="anims.first"
           >
-            <div class="mx-10 w-2/3 text-start">
+            <div class="2xl:mx-10 mx-5 2xl:w-2/3 w-2/4 text-start">
               <Motion
                 :initial="{ x: -2000 }"
                 :animate="{ x: 0 }"
@@ -23,7 +23,9 @@
                 @motioncomplete="animFinished(3)"
                 v-if="anims.second"
               >
-                <h1 class="font-extrabold text-violet-950 text-5xl">
+                <h1
+                  class="font-extrabold text-violet-950 2xl:text-5xl 2xl:w-full w-80 text-4xl"
+                >
                   Hello, my name is Leonardo Terlizzi, and I am a Web Developer.
                 </h1>
               </Motion>
@@ -35,7 +37,7 @@
                 @motioncomplete="animFinished(4)"
                 v-if="anims.third"
               >
-                <p class="text-2xl my-10">
+                <p class="2xl:text-2xl 2xl:w-full w-72 2xl:my-10 my-5">
                   I learned to code primarily through self-teaching and various
                   courses (Argentina Programa, Oracle Next Education, Free Code
                   Camp, etc.). Currently, I'm working as a freelance programmer.
@@ -51,7 +53,7 @@
             >
               <img
                 src="../assets/img/fotoperfil.jpg"
-                class="w-80 rounded-full h-80 object-cover"
+                class="2xl:w-80 2xl:mt-0 rounded-full 2xl:h-80 object-cover w-40 h-80 mt-1 2xl:ml-0 ml-9"
                 alt=""
               />
             </Motion>

@@ -1,9 +1,18 @@
 <template>
-  <ul class="flex flex-row flex-wrap justify-evenly p-4">
+  <ul
+    class="flex flex-row 2xl:ml-0 ml-12 flex-wrap 2xl:justify-evenly justify-center 2xl:p-4"
+  >
     <li
       class="proyect__item pt-4 px-2 pb-10 w-56 h-fit bg-no-repeat leading-6 flex flex-col justify-center duration-500 mb-10 mr-12"
       v-for="project in projects"
       :key="project"
+      v-motion
+      :initial="{ scale: 0, opacity: 0 }"
+      :visible="{ scale: 1, opacity: 1 }"
+      :hovered="{
+        scale: 1.5,
+      }"
+      :delay="1000"
     >
       <!--  :data="project" -->
       <base-project-card
