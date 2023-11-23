@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient-to-br from-sky-500 to-teal-200 h-full py-10">
+  <div class="bg-gradient-to-br from-sky-500 to-teal-200 h-full pb-10 pt-16">
     <h1 class="text-6xl font-extrabold text-center pb-10 text-teal-50">
       Certifications
     </h1>
@@ -85,27 +85,15 @@
       */
   const edus = ref([
     {
-      title: "Fullstack Developer Jr",
-      institucion: "Argentina Programa",
+      title: "Oracle ONE Next Education",
+      institucion: "Alura Latam",
       link1: "",
-      link2: "https://argentinaprograma.inti.gob.ar/",
-      imagen: "argprog.jpg",
-      imgAlt: "logo argentina programa",
+      link2: "https://www.aluracursos.com/",
+      imagen: "oracleonealura.jpg",
+      imgAlt: "Logos de Oracle y Alura",
       about:
-        "Government program in Argentina focused on the education of junior full-stack programmers. HTML, CSS, Typescript, Angular, MYSQL, Java, Spring Boot, Object-Oriented Programming (OOP), design patterns, use of Github, SCRUM. Principles of computer security and DevOps.",
-      rangeTime: "2021-2022",
-    },
-    {
-      title: "Introduction to Web Development Course: HTML and CSS.",
-      institucion: "Google Activate",
-      link1: "",
-      link2:
-        "https://learndigital.withgoogle.com/activate/course/web-development-I",
-      imagen: "googleActivate.jpg",
-      imgAlt: "Carátula del curso",
-      about:
-        "Introductory course to the technologies behind the web and the markup language HTML.",
-      rangeTime: "2021",
+        "Path of programming logic principles, Frontend Developer (HTML, CSS, JS), Backend Developer (Java). Also introduces GIT and agile methodologies.",
+      rangeTime: "2022 - 2023",
     },
     {
       title: "Responsive Web Design",
@@ -129,15 +117,27 @@
       rangeTime: "2022",
     },
     {
-      title: "Oracle ONE Next Education",
-      institucion: "Alura Latam",
+      title: "Fullstack Developer Jr",
+      institucion: "Argentina Programa",
       link1: "",
-      link2: "https://www.aluracursos.com/",
-      imagen: "oracleonealura.jpg",
-      imgAlt: "Logos de Oracle y Alura",
+      link2: "https://argentinaprograma.inti.gob.ar/",
+      imagen: "argprog.jpg",
+      imgAlt: "logo argentina programa",
       about:
-        "Path of programming logic principles, Frontend Developer (HTML, CSS, JS), Backend Developer (Java). Also introduces GIT and agile methodologies.",
-      rangeTime: "2022 - en curso",
+        "Government program in Argentina focused on the education of junior full-stack programmers. HTML, CSS, Typescript, Angular, MYSQL, Java, Spring Boot, Object-Oriented Programming (OOP), design patterns, use of Github, SCRUM. Principles of computer security and DevOps.",
+      rangeTime: "2021-2022",
+    },
+    {
+      title: "Introduction to Web Development Course: HTML and CSS.",
+      institucion: "Google Activate",
+      link1: "",
+      link2:
+        "https://learndigital.withgoogle.com/activate/course/web-development-I",
+      imagen: "googleActivate.jpg",
+      imgAlt: "Carátula del curso",
+      about:
+        "Introductory course to the technologies behind the web and the markup language HTML.",
+      rangeTime: "2021",
     },
   ]);
 </script>

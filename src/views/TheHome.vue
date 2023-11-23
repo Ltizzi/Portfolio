@@ -1,9 +1,9 @@
 <template>
   <NavBar />
-  <Landing />
-  <TheSkills />
-  <TheProjects />
-  <TheEdu />
+  <Landing id="landing" />
+  <TheSkills id="skills" />
+  <TheProjects id="projects" />
+  <TheEdu id="edu" />
 </template>
 <script setup>
   import Landing from "../components/Landing.vue";

@@ -17,7 +17,7 @@
         class="w-full text-center 2xl:ml-0 ml-9 flex flex-row justify-start list-none p-0"
       >
         <li class="cursor-pointer"></li>
-        <li
+        <!-- <li
           class="p-4 bg-gradient-to-r from-violet-400 to-sky-300 w-80 my-2 mx-4 text-center rounded-2xl"
         >
           <a
@@ -27,7 +27,7 @@
             rel="noopener noreferrer"
             >Temario
           </a>
-        </li>
+        </li> -->
         <li
           class="p-4 bg-gradient-to-r from-violet-400 to-sky-300 w-80 my-2 mx-4 text-center rounded-2xl"
         >

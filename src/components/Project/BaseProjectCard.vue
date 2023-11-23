@@ -47,10 +47,17 @@
         <button
           class="w-24 from-orange-300 bg-gradient-to-br via-pink-400 to-purple-400 p-1 rounded-xl border-0 mt-1 mr-1 hover:animate-bounce"
         >
-          <font-awesome-icon
-            icon="fa-brands fa-github"
-            class="text-3xl font-bold text-white text-center"
-          />
+          <a
+            :href="`${github}`"
+            class="text-lg font-bold text-white text-center no-underline"
+            target="_blank"
+          >
+            <font-awesome-icon
+              icon="fa-brands fa-github"
+              class="text-3xl font-bold text-white text-center"
+            />
+          </a>
+
           <!-- <a :href="github" target="_blank" rel="noopener noreferrer"> </a> -->
         </button>
         <button
@@ -79,5 +86,7 @@
     title: String,
     about: String,
     techs: Array,
+    demo: String,
+    github: String,
   });
 </script>
