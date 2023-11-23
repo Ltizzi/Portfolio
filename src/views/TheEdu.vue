@@ -6,10 +6,27 @@
     <div
       class="flex flex-col justify-between py-8 px-12 mb-10 mx-auto 2xl:w-4/5 w-11/12 h-auto bg-gray-50 shadow-xl shadow-gray-700 rounded-3xl"
       v-for="edu in edus"
+      v-show="!isMobile"
       v-motion
       :initial="{ scale: 0.5, x: -500, opacity: 0 }"
       :visibleOnce="{ scale: 1, x: 0, opacity: 1 }"
       :delay="1000"
+    >
+      <EduCard
+        :title="edu.title"
+        :institucion="edu.institucion"
+        :link1="edu.link1"
+        :link2="edu.link2"
+        :imagen="edu.imagen"
+        :imgAlt="edu.imgAlt"
+        :about="edu.about"
+        :rangeTime="edu.rangeTime"
+      />
+    </div>
+    <div
+      class="flex flex-col justify-between py-8 px-12 mb-10 mx-auto 2xl:w-4/5 w-11/12 h-auto bg-gray-50 shadow-xl shadow-gray-700 rounded-3xl"
+      v-for="edu in edus"
+      v-show="isMobile"
     >
       <EduCard
         :title="edu.title"
@@ -27,6 +44,10 @@
 <script setup>
   import { ref } from "vue";
   import EduCard from "../components/Edu/EduCard.vue";
+  import EventBus from "../common/EventBus";
+
+  const isMobile = ref(false);
+
   /*  {
             title: "Programador Fullstack Jr",
             institucion: "Argentina Programa",
@@ -140,5 +161,13 @@
       rangeTime: "2021",
     },
   ]);
+
+  EventBus.on("mobile", () => {
+    isMobile.value = true;
+  });
+
+  EventBus.on("notMobile", () => {
+    isMobile.value = false;
+  });
 </script>
 <style lang=""></style>

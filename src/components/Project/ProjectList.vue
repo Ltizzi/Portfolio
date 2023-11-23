@@ -6,6 +6,7 @@
       class="proyect__item pt-4 px-2 pb-10 w-56 h-fit bg-no-repeat leading-6 flex flex-col justify-center duration-500 mb-10 mr-12"
       v-for="project in projects"
       :key="project"
+      v-show="!isMobile"
       v-motion
       :initial="{ scale: 0, opacity: 0 }"
       :visible="{ scale: 1, opacity: 1 }"
@@ -26,11 +27,32 @@
       >
       </base-project-card>
     </li>
+    <li
+      class="proyect__item pt-4 px-2 pb-10 w-56 h-fit bg-no-repeat leading-6 flex flex-col justify-center duration-500 mb-10 mr-12"
+      v-for="project in projects"
+      :key="project"
+      v-show="isMobile"
+    >
+      <!--  :data="project" -->
+      <base-project-card
+        :foto="project.foto"
+        :fotoTxt="project.fotoTxt"
+        :title="project.title"
+        :github="project.github"
+        :demo="project.demo"
+        :about="project.about"
+        :techs="project.techs"
+      >
+      </base-project-card>
+    </li>
   </ul>
 </template>
 <script setup>
-  import { reactive } from "vue";
+  import { reactive, ref } from "vue";
   import BaseProjectCard from "./BaseProjectCard.vue";
+  import EventBus from "../../common/EventBus";
+
+  const isMobile = ref(false);
 
   const projects = reactive([
     {
@@ -203,4 +225,12 @@
       ],
     },
   ]);
+
+  EventBus.on("mobile", () => {
+    isMobile.value = true;
+  });
+
+  EventBus.on("notMobile", () => {
+    isMobile.value = false;
+  });
 </script>

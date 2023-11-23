@@ -7,11 +7,12 @@
       <li
         v-for="tech in techs"
         class="text-3xl text-white hover:cursor-pointer py-2"
+        :title="tech.text"
         v-motion
         :initial="{ scale: 1 }"
         :visible="{ scale: 1 }"
         :hovered="{
-          scale: 3,
+          scale: 1.5,
         }"
         :delay="700"
       >

@@ -109,7 +109,7 @@
                   >
                     <font-awesome-icon icon="fa-solid fa-envelope" /> </a
                   ><a
-                    href=""
+                    href="./assets/Terlizzi Leonardo CV.pdf"
                     target="_blank"
                     v-motion
                     :initial="{ scale: 1 }"
@@ -133,6 +133,7 @@
 <script setup>
   import { Motion, Presence } from "motion/vue";
   import { reactive, onMounted, ref } from "vue";
+  import EventBus from "../common/EventBus";
 
   const startAnim = ref(false);
 
@@ -149,13 +150,16 @@
     if (num == 2) anims.second = true;
     if (num == 3) anims.third = true;
     if (num == 4) anims.four = true;
-    if (num == 5) anims.five = true;
+    if (num == 5) {
+      anims.five = true;
+      EventBus.emit("loadingFinished");
+    }
   }
 
   onMounted(() => {
     setTimeout(() => {
       startAnim.value = true;
-    }, 1000);
+    }, 1500);
   });
 </script>
 

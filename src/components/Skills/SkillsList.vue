@@ -26,6 +26,7 @@
           <SkillsSubList
             :title="skill.title"
             :techs="skill.techs"
+            v-show="!isMobile"
             v-motion
             :initial="{ opacity: 0, x: -500, scale: 0.2 }"
             :visible="{
@@ -36,14 +37,22 @@
             }"
             :delay="1000"
           />
+          <SkillsSubList
+            :title="skill.title"
+            :techs="skill.techs"
+            v-show="isMobile"
+          />
         </div>
       </div>
     </div>
   </div>
 </template>
 <script setup>
-  import { reactive } from "vue";
+  import { reactive, ref } from "vue";
   import SkillsSubList from "./SkillsSubList.vue";
+  import EventBus from "../../common/EventBus";
+
+  const isMobile = ref(false);
 
   const list = reactive([
     {
@@ -131,4 +140,12 @@
       skills: [],
     },
   ]);
+
+  EventBus.on("mobile", () => {
+    isMobile.value = true;
+  });
+
+  EventBus.on("notMobile", () => {
+    isMobile.value = false;
+  });
 </script>

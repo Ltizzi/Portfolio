@@ -1,6 +1,6 @@
 <template lang="">
   <div
-    class="bg-gradient-to-br from-cyan-50 to-sky-600 flex flex-col justify-center 2xl:h-screen"
+    class="bg-gradient-to-br from-cyan-50 to-sky-600 flex flex-col justify-center 2xl:h-screen 2xl:pt-0 pt-20"
   >
     <div class="mx-auto text-center">
       <h1
