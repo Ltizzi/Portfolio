@@ -11,7 +11,7 @@ import { Presence } from 'motion/vue';
       >
         <div class="2xl:w-3/4 w-1/4">
           <h1
-            class="font-bold 2xl:ml-10 ml-0 2xl:text-xl hover:bg-neutral-500 w-32 text-center rounded-2xl px-5 py-0.5 hover:cursor-pointer"
+            class="font-bold 2xl:ml-10 ml-0 2xl:text-xl hover:bg-neutral-600 w-32 text-center rounded-2xl px-5 py-0.5 hover:cursor-pointer"
             @click="scrollTo('landing')"
           >
             Portfolio
@@ -21,19 +21,19 @@ import { Presence } from 'motion/vue';
           <ul class="flex flex-row gap-10 2xl:mr-28 justify-end">
             <li
               @click="scrollTo('skills')"
-              class="hover:bg-neutral-500 w-32 text-center rounded-2xl px-5 py-0.5 hover:cursor-pointer"
+              class="hover:bg-neutral-600 w-32 text-center rounded-2xl px-5 py-0.5 hover:cursor-pointer"
             >
               Skills
             </li>
             <li
               @click="scrollTo('projects')"
-              class="hover:bg-neutral-500 w-32 text-center rounded-2xl px-5 py-0.5 hover:cursor-pointer"
+              class="hover:bg-neutral-600 w-32 text-center rounded-2xl px-5 py-0.5 hover:cursor-pointer"
             >
               Projects
             </li>
             <li
               @click="scrollTo('edu')"
-              class="hover:bg-neutral-500 w-36 text-center rounded-2xl px-5 py-0.5 hover:cursor-pointer"
+              class="hover:bg-neutral-600 w-36 text-center rounded-2xl px-5 py-0.5 hover:cursor-pointer"
             >
               Certifications
             </li>

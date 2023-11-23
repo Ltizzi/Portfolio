@@ -12,9 +12,15 @@ import {
   faHtml5,
   faCss3Alt,
   faGithub,
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { faLeaf, faDatabase } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLeaf,
+  faDatabase,
+  faFilePdf,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 import { MotionPlugin } from "@vueuse/motion";
 
 library.add(
@@ -27,7 +33,10 @@ library.add(
   faCss3Alt,
   faLeaf,
   faDatabase,
-  faGithub
+  faGithub,
+  faLinkedin,
+  faFilePdf,
+  faEnvelope
 );
 
 const app = createApp(App);
