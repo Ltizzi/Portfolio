@@ -5,15 +5,21 @@
     <li
       class="proyect__item pt-4 px-2 pb-10 w-56 h-fit bg-no-repeat leading-6 flex flex-col justify-center duration-500 mb-10 mr-12"
       v-for="project in projects"
-      :key="project"
       v-show="!isMobile"
       v-motion
       :initial="{ scale: 0, opacity: 0 }"
       :visible="{ scale: 1, opacity: 1 }"
       :hovered="{
-        scale: 1.5,
+        scale: 1.2,
+        transition: {
+          repeat: 1,
+          repeatType: 'mirror',
+        },
       }"
-      :delay="1000"
+      :delay="delayTime"
+      :transition="{
+        onComplete: moarTime(),
+      }"
     >
       <!--  :data="project" -->
       <base-project-card
@@ -27,13 +33,18 @@
       >
       </base-project-card>
     </li>
+    <!-- <li v-for="project in projects" v-show="isMobile">
+
+    </li> -->
+  </ul>
+  <ul
+    class="flex flex-row 2xl:ml-0 ml-12 flex-wrap 2xl:justify-evenly justify-center 2xl:p-4"
+    v-show="isMobile"
+  >
     <li
       class="proyect__item pt-4 px-2 pb-10 w-56 h-fit bg-no-repeat leading-6 flex flex-col justify-center duration-500 mb-10 mr-12"
       v-for="project in projects"
-      :key="project"
-      v-show="isMobile"
     >
-      <!--  :data="project" -->
       <base-project-card
         :foto="project.foto"
         :fotoTxt="project.fotoTxt"
@@ -53,10 +64,16 @@
   import EventBus from "../../common/EventBus";
 
   const isMobile = ref(false);
+  const delayTime = ref(1000);
+
+  function moarTime() {
+    if (!isMobile.value) delayTime.value += 200;
+  }
 
   const projects = reactive([
     {
       title: "Craze",
+
       foto: "craze.png",
       fotoTxt: "Ver Imagen",
       github: "https://github.com/Ltizzi/Craze",
@@ -71,38 +88,55 @@
       ],
     },
     {
-      title: "Portfolio",
-      foto: "portfolio.png",
-      fotoTxt: "Ver Imagen",
-      github: "https://github.com/Ltizzi/Portfolio-frontend",
-      demo: "https://ltizzi-portfolio.web.app/",
-      about:
-        "Full-stack web application. Integrative project for the Argentina Program. CRUD operations, authentication with JWT.",
+      title: "AngularCalc",
+
+      foto: "calc.png",
+      fotoTxt: "Ver imagen",
+      github: "https://github.com/Ltizzi/AngularCalc",
+      demo: "",
+      about: "Simple calculator made in Angular and TailwindCss",
       techs: [
         {
-          icon: "fa-brands fa-angular ",
+          icon: "fa-brands fa-angular",
           text: "Angular",
           class: "angular-icon",
         },
-        {
-          icon: "fa-solid fa-leaf  ",
-          text: "Spring",
-          class: "spring-icon",
-        },
-        {
-          icon: "fa-brands fa-java",
-          text: "Java",
-          class: "java-icon",
-        },
-        {
-          icon: false,
-          text: "MySQL",
-          class: "mysql-icon-lil",
-        },
       ],
     },
+    // {
+    //   title: "Portfolio",
+    //   foto: "portfolio.png",
+    //   fotoTxt: "Ver Imagen",
+    //   github: "https://github.com/Ltizzi/Portfolio-frontend",
+    //   demo: "https://ltizzi-portfolio.web.app/",
+    //   about:
+    //     "Full-stack web application. Integrative project for the Argentina Program. CRUD operations, authentication with JWT.",
+    //   techs: [
+    //     {
+    //       icon: "fa-brands fa-angular ",
+    //       text: "Angular",
+    //       class: "angular-icon",
+    //     },
+    //     {
+    //       icon: "fa-solid fa-leaf  ",
+    //       text: "Spring",
+    //       class: "spring-icon",
+    //     },
+    //     {
+    //       icon: "fa-brands fa-java",
+    //       text: "Java",
+    //       class: "java-icon",
+    //     },
+    //     {
+    //       icon: false,
+    //       text: "MySQL",
+    //       class: "mysql-icon-lil",
+    //     },
+    //   ],
+    // },
     {
       title: "E-Shop",
+
       foto: "2.png",
       fotoTxt: "Ver imagen",
       github: "https://github.com/Ltizzi/e-shop-front",
@@ -134,6 +168,7 @@
     },
     {
       title: "Encriptador",
+
       foto: "encriptador.png",
       fotoTxt: "Ver imagen",
       github: "https://github.com/Ltizzi/Alura-Challenge-N-1",
@@ -160,6 +195,7 @@
     },
     {
       title: "Ahorcado",
+
       foto: "ahorcado.png",
       fotoTxt: "Ver imagen",
       github: "https://github.com/Ltizzi/Alura-Challenge-N-2",
@@ -186,6 +222,7 @@
     },
     {
       title: "Alura Geek",
+
       foto: "alurageek.png",
       fotoTxt: "Ver imagen",
       github: "https://github.com/Ltizzi/Alura-Challenge-E-commerce",

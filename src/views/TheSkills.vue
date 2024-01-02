@@ -4,9 +4,9 @@
   >
     <div class="mx-auto text-center">
       <h1
-        class="text-6xl bold py-5 font-extrabold text-white"
+        class="text-6xl bold py-4 font-extrabold text-white"
         v-motion
-        :initial="{ opacity: 0, y: -200, x: -50, scale: 0.1 }"
+        :initial="{ opacity: 0, y: -75, x: -50, scale: 0.1 }"
         :visible="{
           opacity: 1,
           x: 0,

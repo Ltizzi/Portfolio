@@ -20,6 +20,11 @@ import {
   faDatabase,
   faFilePdf,
   faEnvelope,
+  faImagePortrait,
+  faPalette,
+  faComment,
+  faHandHoldingHand,
+  faLightbulb,
 } from "@fortawesome/free-solid-svg-icons";
 import { MotionPlugin } from "@vueuse/motion";
 
@@ -36,7 +41,12 @@ library.add(
   faGithub,
   faLinkedin,
   faFilePdf,
-  faEnvelope
+  faEnvelope,
+  faImagePortrait,
+  faPalette,
+  faComment,
+  faHandHoldingHand,
+  faLightbulb
 );
 
 const app = createApp(App);

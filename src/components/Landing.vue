@@ -76,11 +76,14 @@
                     target="_blank"
                     v-motion
                     :initial="{ scale: 1 }"
-                    :visible="{ scale: 1 }"
                     :hovered="{
                       scale: 1.5,
+                      transition: {
+                        repeat: 1,
+                        repeatType: 'mirror',
+                      },
                     }"
-                    :delay="1000"
+                    :delay="2000"
                   >
                     <font-awesome-icon icon="fa-brands fa-github" />
                   </a>
@@ -89,11 +92,14 @@
                     target="_blank"
                     v-motion
                     :initial="{ scale: 1 }"
-                    :visible="{ scale: 1 }"
                     :hovered="{
                       scale: 1.5,
+                      transition: {
+                        repeat: 1,
+                        repeatType: 'mirror',
+                      },
                     }"
-                    :delay="1000"
+                    :delay="2000"
                   >
                     <font-awesome-icon icon="fa-brands fa-linkedin" /> </a
                   ><a
@@ -101,11 +107,14 @@
                     target="_blank"
                     v-motion
                     :initial="{ scale: 1 }"
-                    :visible="{ scale: 1 }"
                     :hovered="{
                       scale: 1.5,
+                      transition: {
+                        repeat: 1,
+                        repeatType: 'mirror',
+                      },
                     }"
-                    :delay="1000"
+                    :delay="2000"
                   >
                     <font-awesome-icon icon="fa-solid fa-envelope" /> </a
                   ><a
@@ -113,11 +122,14 @@
                     target="_blank"
                     v-motion
                     :initial="{ scale: 1 }"
-                    :visible="{ scale: 1 }"
                     :hovered="{
                       scale: 1.5,
+                      transition: {
+                        repeat: 1,
+                        repeatType: 'mirror',
+                      },
                     }"
-                    :delay="1000"
+                    :delay="2000"
                   >
                     <font-awesome-icon icon="fa-solid fa-file-pdf" />
                   </a>

@@ -6,7 +6,7 @@
       <img
         :src="`./assets/img/${foto}`"
         :title="fotoTxt"
-        class="w-11/12 h-40 my-0 mx-auto object-fill pb-4"
+        class="w-11/12 h-28 my-2 mx-auto object-contain pb-4"
       />
       <div>
         <h4 class="text-3xl font-bold text-indigo-400 text-center pb-2">
@@ -31,9 +31,9 @@
           :initial="{ scale: 0, opacity: 0 }"
           :visible="{ scale: 1, opacity: 1 }"
           :hovered="{
-            scale: 1.5,
+            scale: 1.2,
           }"
-          :delay="200"
+          :delay="500"
         >
           <font-awesome-icon
             :icon="`${tech.icon}`"
