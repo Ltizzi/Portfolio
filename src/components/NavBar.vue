@@ -1,7 +1,6 @@
-import { Presence } from 'motion/vue';
 <template>
   <div
-    class="flex flex-row 2xl:justify-between justify-around bg-opacity-80 bg-stone-900 text-gray-50 fixed w-full py-4 z-50"
+    class="flex flex-row 2xl:justify-between justify-around bg-opacity-80 bg-stone-900 text-gray-50 fixed w-full py-4 z-50 lg:py-3"
     v-motion
     :initial="{ opacity: 0.2, y: -100 }"
     :enter="{ opacity: 1, y: 0 }"

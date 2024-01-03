@@ -1,10 +1,10 @@
 <template lang="">
   <div
-    class="bg-gradient-to-br from-cyan-50 to-sky-600 flex flex-col justify-center 2xl:h-screen 2xl:pt-0 pt-20"
+    class="bg-gradient-to-br from-cyan-50 to-sky-600 flex flex-col justify-center 2xl:h-screen 2xl:pt-0 pt-20 lg:h-screen"
   >
     <div class="mx-auto text-center">
       <h1
-        class="text-6xl bold py-4 font-extrabold text-white"
+        class="text-6xl lg:text-5xl lg:-mt-10 bold py-4 font-extrabold text-white"
         v-motion
         :initial="{ opacity: 0, y: -75, x: -50, scale: 0.1 }"
         :visible="{

@@ -1,11 +1,13 @@
 <template lang="">
-  <div class="my-1 bg-white py-5 px-10 rounded-3xl w-full flex flex-col gap-3">
+  <div
+    class="my-1 bg-white py-5 lg:py-3 px-10 rounded-3xl w-full flex flex-col gap-3"
+  >
     <ul
       class="flex 2xl:flex-row flex-wrap text-white text-2xl gap-10 justify-center text-center"
     >
       <li
         v-for="tech in techs"
-        class="text-3xl text-white hover:cursor-pointer py-2"
+        class="text-3xl lg:text-2xl text-white hover:cursor-pointer py-2"
         :title="tech.text"
         v-motion
         :initial="{ scale: 1 }"
@@ -23,7 +25,7 @@
         />
         <p
           v-show="tech.isSoft"
-          class="text-lg text-gray-950 font-semibold pt-2"
+          class="text-lg lg:text-base text-gray-950 font-semibold pt-2"
         >
           {{ tech.text }}
         </p>
