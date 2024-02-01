@@ -9,7 +9,7 @@
         v-show="startAnim"
       >
         <div
-          class="h-screen w-full bg-gradient-to-br from-purple-500 to-purple-300 py-20 flex items-center justify-center"
+          class="h-screen w-full bg-gradient-to-br from-slate-900 to-purple-400 py-20 flex items-center justify-center"
         >
           <div
             class="mx-auto 2xl:w-2/3 2xl:px-16 2xl:py-14 py-5 w-full bg-opacity-75 bg-slate-50 align-middle shadow-2xl shadow-gray-950 flex flex-col justify-around rounded-3xl"
