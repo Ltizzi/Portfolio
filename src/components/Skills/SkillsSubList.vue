@@ -1,8 +1,10 @@
 <template lang="">
-  <div class="my-1 bg-white py-5 px-10 rounded-3xl w-full flex flex-col gap-3">
-    <h1 class="text-2xl text-cyan-800 font-bold">{{ title }}</h1>
+  <div
+    class="my-1 bg-white lg:py-2 lg:px-5 py-5 px-10 rounded-3xl w-full flex flex-col gap-3"
+  >
+    <h1 class="text-2xl lg:text-xl text-cyan-800 font-bold">{{ title }}</h1>
     <ul
-      class="flex flex-row text-white text-2xl gap-5 justify-center text-center"
+      class="flex lg:-mt-3 flex-row text-white text-2xl gap-5 justify-center text-center"
     >
       <li
         v-for="tech in techs"

@@ -12,11 +12,13 @@
           class="h-screen w-full bg-gradient-to-br from-slate-900 to-purple-400 py-20 flex items-center justify-center"
         >
           <div
-            class="mx-auto 2xl:w-2/3 2xl:px-16 2xl:py-14 py-5 w-full bg-opacity-75 bg-slate-50 align-middle shadow-2xl shadow-gray-950 flex flex-col justify-around rounded-3xl"
+            class="mx-auto 2xl:w-2/3 2xl:px-16 2xl:py-14 lg:w-3/4 py-5 w-full bg-opacity-75 bg-slate-50 align-middle shadow-2xl shadow-gray-950 flex flex-col justify-around rounded-3xl"
             v-show="anims.first"
           >
-            <div class="flex flex-row gap-5">
-              <div class="2xl:mx-10 mx-5 2xl:w-2/3 w-2/4 text-start">
+            <div class="flex flex-row gap-5 lg:gap-4">
+              <div
+                class="2xl:mx-10 mx-5 2xl:w-2/3 lg:w-2/3 lg:ml-10 lg:mt-5 w-2/4 text-start"
+              >
                 <Motion
                   :initial="{ x: -2000 }"
                   :animate="{ x: 0 }"
@@ -25,7 +27,7 @@
                   v-if="anims.second"
                 >
                   <h1
-                    class="font-extrabold text-violet-950 2xl:text-5xl 2xl:w-full w-80 text-4xl"
+                    class="font-extrabold text-violet-950 2xl:text-5xl 2xl:w-full lg:w-full lg:text-4xl lg:mt-5 w-80 text-4xl"
                   >
                     Hello, my name is Leonardo Terlizzi, and I am a Web
                     Developer.
@@ -39,7 +41,9 @@
                   @motioncomplete="animFinished(4)"
                   v-if="anims.third"
                 >
-                  <p class="2xl:text-2xl 2xl:w-full w-72 2xl:my-10 my-5">
+                  <p
+                    class="2xl:text-2xl 2xl:w-full lg:w-full lg:text-xl w-72 2xl:my-10 my-5"
+                  >
                     I learned to code primarily through self-teaching and
                     various courses (Argentina Programa, Oracle Next Education,
                     Free Code Camp, etc.). Currently, I'm working as a freelance
@@ -56,7 +60,7 @@
               >
                 <img
                   src="../assets/img/fotoperfil.jpg"
-                  class="2xl:w-80 2xl:mt-0 rounded-full 2xl:h-80 object-cover w-40 h-80 mt-1 2xl:ml-0 ml-9"
+                  class="2xl:w-80 2xl:mt-0 lg:w-72 lg:h-64 lg:mt-10 lg:-ml-5 rounded-full 2xl:h-80 object-cover w-40 h-80 mt-1 2xl:ml-0 ml-9"
                   alt=""
                 />
               </Motion>
@@ -69,7 +73,9 @@
                 @motioncomplete="animFinished(5)"
                 v-if="anims.four"
               >
-                <div class="flex flex-row justify-around gap-5 text-4xl w-3/5">
+                <div
+                  class="flex flex-row justify-around gap-5 text-4xl w-3/5 lg:-mt-5"
+                >
                   <a
                     class="w-10 h-10"
                     href="https://github.com/Ltizzi"

@@ -1,9 +1,9 @@
 <template>
   <ul
-    class="flex flex-row 2xl:ml-0 ml-12 flex-wrap 2xl:justify-evenly justify-center 2xl:p-4"
+    class="flex flex-row 2xl:ml-0 ml-12 lg:ml-0 lg:justify-evenly lg:-mt-10 lg:gap-0 flex-wrap 2xl:justify-evenly justify-center 2xl:p-4"
   >
     <li
-      class="proyect__item pt-4 px-2 pb-10 w-56 h-fit bg-no-repeat leading-6 flex flex-col justify-center duration-500 mb-10 mr-12"
+      class="proyect__item pt-4 px-2 pb-10 w-56 h-fit bg-no-repeat leading-6 flex flex-col justify-center duration-500 mb-10 mr-12 lg:mr-0"
       v-for="project in projects"
       v-show="!isMobile"
       v-motion

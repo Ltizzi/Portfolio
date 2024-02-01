@@ -6,7 +6,7 @@
       class="flex flex-col justify-center items-center text-center gap-2 w-full"
     >
       <h1
-        class="text-4xl font-bold text-yellow-50"
+        class="text-4xl font-bold text-yellow-50 lg:text-3xl lg:-mt-2"
         v-motion
         :initial="{ opacity: 0, x: 200, scale: 0.2 }"
         :visible="{
@@ -20,14 +20,18 @@
         {{ item.mainTitle }}
       </h1>
       <div
-        class="flex 2xl:flex-row 2xl:flex-wrap flex-col gap-5 justify-center my-5"
+        class="flex 2xl:flex-row 2xl:flex-wrap lg:flex-row lg:flex-wrap lg:-mt-2 flex-col gap-5 justify-center my-5z"
       >
-        <div v-for="skill in item.skills" class="2xl:w-2/5" v-show="!isMobile">
+        <div
+          v-for="skill in item.skills"
+          class="2xl:w-2/5 lg:w-2/5"
+          v-show="!isMobile"
+        >
           <SkillsSubList
             :title="skill.title"
             :techs="skill.techs"
             v-motion
-            :initial="{ opacity: 0, x: -500, scale: 0.2 }"
+            :initial="{ opacity: 0, x: -300, scale: 0.2 }"
             :visible="{
               opacity: 1,
               x: 0,
@@ -51,7 +55,7 @@
       class="flex flex-col justify-center items-center text-center gap-2 w-full"
     >
       <h1
-        class="text-4xl font-bold text-yellow-50"
+        class="text-4xl font-bold text-yellow-50 lg:text-3xl lg:-mb-5"
         v-motion
         :initial="{ opacity: 0, x: 200, scale: 0.2 }"
         :visible="{
