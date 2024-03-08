@@ -110,6 +110,20 @@
   box-shadow: 5px 5px 10px #474844;
 }
 
+.ts-icon-lil {
+  background: url("./assets/svg/ts.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #007acc;
+  color: white;
+  padding: 0.6rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
 .tailwind-icon {
   background: url("./assets/svg/tailwind.svg");
   background-color: #06b6d4;
@@ -120,6 +134,20 @@
   padding: 0.6rem;
   width: 3.2rem;
   height: 3.2rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.tailwind-icon-lil {
+  background: url("./assets/svg/tailwind.svg");
+  background-color: #06b6d4;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  color: white;
+  padding: 0.6rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 30px;
   box-shadow: 5px 5px 10px #474844;
 }
@@ -199,6 +227,20 @@
   padding: 1rem;
   width: 3.2rem;
   height: 3.2rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #474844;
+}
+
+.postgresql-icon-lil {
+  background: url("./assets/svg/postgresql.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #008bb9;
+  color: white;
+  padding: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 30px;
   box-shadow: 5px 5px 10px #474844;
 }

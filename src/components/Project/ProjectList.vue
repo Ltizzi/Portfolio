@@ -135,6 +135,44 @@
     //   ],
     // },
     {
+      title: "E-Commerce",
+
+      foto: "e-commerce.png",
+      fotoTxt: "Ver imagen",
+      github: "https://github.com/Ltizzi/e-shop-front",
+      demo: "https://e-shop-ltizzi.web.app/",
+      about:
+        "Modern e-commerce with oauth2 with google, api, client, admin dashboard",
+      techs: [
+        {
+          icon: false,
+          text: "TypeScript",
+          class: "ts-icon-lil",
+        },
+        {
+          icon: "fa-brands fa-angular",
+          text: "Angular",
+          class: "angular-icon",
+        },
+        {
+          icon: false,
+          text: "TailwindCSS",
+          class: "tailwind-icon-lil",
+        },
+        {
+          icon: false,
+          text: "ExpressJS",
+          class: "express-icon-lil",
+        },
+
+        {
+          icon: false,
+          text: "PostgreSQL",
+          class: "postgresql-icon-lil",
+        },
+      ],
+    },
+    {
       title: "E-Shop",
 
       foto: "2.png",
