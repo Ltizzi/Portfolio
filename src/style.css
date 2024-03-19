@@ -4,7 +4,7 @@
 
 @layer components {
   .proyect__item {
-    background: url("./src/assets/svg/Nexus5.svg");
+    background: url("./svg/Nexus5.svg");
   }
 }
 
@@ -71,7 +71,7 @@
 }
 
 .express-icon {
-  background: url("./assets/svg/express-js.svg");
+  background: url("./svg/express-js.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -84,7 +84,7 @@
 }
 
 .express-icon-lil {
-  background: url("./assets/svg/express-js.svg");
+  background: url("./svg/express-js.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -97,7 +97,7 @@
 }
 
 .ts-icon {
-  background: url("./assets/svg/ts.svg");
+  background: url("./svg/ts.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -111,7 +111,7 @@
 }
 
 .ts-icon-lil {
-  background: url("./assets/svg/ts.svg");
+  background: url("./svg/ts.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -125,7 +125,7 @@
 }
 
 .tailwind-icon {
-  background: url("./assets/svg/tailwind.svg");
+  background: url("./svg/tailwind.svg");
   background-color: #06b6d4;
   background-repeat: no-repeat;
   background-size: contain;
@@ -139,7 +139,7 @@
 }
 
 .tailwind-icon-lil {
-  background: url("./assets/svg/tailwind.svg");
+  background: url("./svg/tailwind.svg");
   background-color: #06b6d4;
   background-repeat: no-repeat;
   background-size: contain;
@@ -153,7 +153,7 @@
 }
 
 .bootstrap-icon {
-  background: url("./assets/svg/bootstrap.svg");
+  background: url("./svg/bootstrap.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -164,7 +164,7 @@
 }
 
 .mysql-icon {
-  background: url("./assets/svg/mysql.svg");
+  background: url("./svg/mysql.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -177,7 +177,7 @@
 }
 
 .mysql-icon-lil {
-  background: url("./assets/svg/mysql.svg");
+  background: url("./svg/mysql.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -190,7 +190,7 @@
 }
 
 .mongo-icon {
-  background: url("./assets/svg/mongodb.svg");
+  background: url("./svg/mongodb.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -204,7 +204,7 @@
 }
 
 .mongo-icon-lil {
-  background: url("./assets/svg/mongodb.svg");
+  background: url("./svg/mongodb.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -218,7 +218,7 @@
 }
 
 .postgresql-icon {
-  background: url("./assets/svg/postgresql.svg");
+  background: url("./svg/postgresql.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -232,7 +232,7 @@
 }
 
 .postgresql-icon-lil {
-  background: url("./assets/svg/postgresql.svg");
+  background: url("./svg/postgresql.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -246,7 +246,7 @@
 }
 
 .backCode {
-  background: url("./assets/back.jpeg");
+  background: url("./assets/img/back.jpeg");
   background-size: cover;
 }
 

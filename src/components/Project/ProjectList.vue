@@ -16,10 +16,7 @@
           repeatType: 'mirror',
         },
       }"
-      :delay="delayTime"
-      :transition="{
-        onComplete: moarTime(),
-      }"
+      :delay="project.delay"
     >
       <!--  :data="project" -->
       <base-project-card
@@ -73,6 +70,7 @@
   const projects = reactive([
     {
       title: "Craze",
+      delay: 1000,
 
       foto: "craze.png",
       fotoTxt: "Ver Imagen",
@@ -89,7 +87,7 @@
     },
     {
       title: "AngularCalc",
-
+      delay: 1200,
       foto: "calc.png",
       fotoTxt: "Ver imagen",
       github: "https://github.com/Ltizzi/AngularCalc",
@@ -136,7 +134,7 @@
     // },
     {
       title: "E-Commerce",
-
+      delay: 1400,
       foto: "e-commerce.png",
       fotoTxt: "Ver imagen",
       github: "https://github.com/Ltizzi/e-shop-front",
@@ -174,7 +172,7 @@
     },
     {
       title: "E-Shop",
-
+      delay: 1600,
       foto: "2.png",
       fotoTxt: "Ver imagen",
       github: "https://github.com/Ltizzi/e-shop-front",
@@ -206,7 +204,7 @@
     },
     {
       title: "Encriptador",
-
+      delay: 1800,
       foto: "encriptador.png",
       fotoTxt: "Ver imagen",
       github: "https://github.com/Ltizzi/Alura-Challenge-N-1",
@@ -233,7 +231,7 @@
     },
     {
       title: "Ahorcado",
-
+      delay: 2000,
       foto: "ahorcado.png",
       fotoTxt: "Ver imagen",
       github: "https://github.com/Ltizzi/Alura-Challenge-N-2",
@@ -260,7 +258,7 @@
     },
     {
       title: "Alura Geek",
-
+      delay: 2200,
       foto: "alurageek.png",
       fotoTxt: "Ver imagen",
       github: "https://github.com/Ltizzi/Alura-Challenge-E-commerce",

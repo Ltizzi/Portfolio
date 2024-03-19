@@ -43,7 +43,7 @@
     </div>
 
     <img
-      :src="`/assets/img/${imagen}`"
+      :src="`./assets/img/${imagen}`"
       :alt="imgAlt"
       class="2xl:w-72 2xl:h-72 2xl:mt-0 2xl:mr-0 lg:h-56 lg:w-56 mt-3 mr-3 h-24 w-24 object-fill"
     />
