@@ -1,184 +1,175 @@
 <template lang="">
-  <div class="h-screen backCode">
-    <Presence>
-      <Motion
-        :initial="{ opacity: 0 }"
-        :animate="{ opacity: 100 }"
-        :transition="{ duration: 2, easing: 'ease-in-out' }"
-        @motioncomplete="animFinished(1)"
-        v-show="startAnim"
+  <div
+    class="h-screen w-screen overflow-hidden relative flex justify-center items-center"
+  >
+    <BackgroundCarousel class="absolute top-0" @carousel_init="init()" />
+    <div
+      class="mask-bg-linear w-full flex flex-col justify-center items-center 2xl:items-end"
+      v-if="state.start"
+    >
+      <div
+        :class="[
+          ' py-5 2xl:py-14 2xl:px-8 2xl:pr-20 items-center w-4/5 2xl:w-1/3  z-10 relative 2xl:h-screen motion-duration-700 motion-scale-y-in-105 motion-scale-x-in-0  motion-ease-spring-bouncy -motion-translate-x-in-[250%] motion-opacity-in-0 motion-bg-in-transparent motion-duration-[1.1s]/bg   motion-duration-[1.5s]/opacity  motion-opacity-loop-60 bg-opacity-70',
+          `bg-gradient-to-br from-pink-300/10 from-15% via-pink-300/40 via-50% to-85% to-pink-300/10 
+          motion-bg-loop-indigo-950`,
+        ]"
       >
         <div
-          class="h-screen w-full bg-gradient-to-br from-slate-900 to-purple-400 py-20 flex items-center justify-center"
+          :class="[
+            'flex flex-col gap-10 justify-center items-center  text-landing opacity-95 motion-duration-500 motion-ease-spring-snappy motion-duration-150/scale motion-duration-150/blur ',
+            state.animateText && !state.hoverText1 && !state.hoverText2
+              ? 'motion-preset-shake  motion-blur-loop-sm  motion-scale-loop-95'
+              : '',
+            !state.hoverText1 && !state.hoverText2 ? ' ' : '',
+          ]"
+          v-if="state.firstAnimationEnded"
         >
-          <div
-            class="mx-auto 2xl:w-2/3 2xl:px-16 2xl:py-14 lg:w-3/4 py-5 w-full bg-opacity-75 bg-slate-50 align-middle shadow-2xl shadow-gray-950 flex flex-col justify-around rounded-3xl"
-            v-show="anims.first"
+          <h1
+            :class="[
+              'landing-text 2xl:text-end font-bold font-roboto leading-3 mx-auto -tracking-wider motion-ease-in-out-quad  ',
+              state.showText1
+                ? 'motion-duration-200  motion-translate-x-in-[150%] motion-preset-fade'
+                : 'opacity-0',
+              !state.hoverText1
+                ? 'motion-duration-1000  motion-scale-loop-[99.5%] motion-blur-loop-sm motion-duration-2000/blur -motion-translate-x-loop-[1.2%] motion-duration-2000/translate motion-translate-y-loop-[1.5%] motion-text-loop-accent motion-duration-/text motion-translate-x-out-0 motion-translate-out-in-0'
+                : 'neon-title',
+            ]"
+            @mouseenter="handleHover(1, true)"
+            @mouseleave="handleHover(1, false)"
           >
-            <div class="flex flex-row gap-5 lg:gap-4">
-              <div
-                class="2xl:mx-10 mx-5 2xl:w-2/3 lg:w-2/3 lg:ml-10 lg:mt-5 w-2/4 text-start"
-              >
-                <Motion
-                  :initial="{ x: -2000 }"
-                  :animate="{ x: 0 }"
-                  :transition="{ duration: 1, easing: 'ease-in-out' }"
-                  @motioncomplete="animFinished(3)"
-                  v-if="anims.second"
-                >
-                  <h1
-                    class="font-extrabold text-violet-950 2xl:text-5xl 2xl:w-full lg:w-full lg:text-4xl lg:mt-5 w-80 text-4xl"
-                  >
-                    Hello, my name is Leonardo Terlizzi, and I am a Web
-                    Developer.
-                  </h1>
-                </Motion>
-
-                <Motion
-                  :initial="{ y: 2000 }"
-                  :animate="{ y: 0 }"
-                  :transition="{ duration: 1, easing: 'ease-in-out' }"
-                  @motioncomplete="animFinished(4)"
-                  v-if="anims.third"
-                >
-                  <p
-                    class="2xl:text-2xl 2xl:w-full lg:w-full lg:text-xl w-72 2xl:my-10 my-5"
-                  >
-                    I learned to code primarily through self-teaching and
-                    various courses (Argentina Programa, Oracle Next Education,
-                    Free Code Camp, etc.). Currently, I'm working as a freelance
-                    programmer.
-                  </p>
-                </Motion>
-              </div>
-              <Motion
-                :initial="{ x: 200, y: 50, scale: 0 }"
-                :animate="{ x: 0, y: 0, scale: 1 }"
-                :transition="{ duration: 1, easing: 'ease-in-out' }"
-                @motioncomplete="animFinished(2)"
-                v-if="anims.first"
-              >
-                <img
-                  src="../assets/img/fotoperfil.jpg"
-                  class="2xl:w-80 2xl:mt-0 lg:w-72 lg:h-64 lg:mt-10 lg:-ml-5 rounded-full 2xl:h-80 object-cover w-40 h-80 mt-1 2xl:ml-0 ml-9"
-                  alt=""
-                />
-              </Motion>
-            </div>
-            <div class="h-14">
-              <Motion
-                :initial="{ y: 100, opacity: 0, scale: 0 }"
-                :animate="{ opacity: 1, y: 0, scale: 1 }"
-                :transition="{ duration: 1, easing: 'ease-in-out' }"
-                @motioncomplete="animFinished(5)"
-                v-if="anims.four"
-              >
-                <div
-                  class="flex flex-row justify-around gap-5 text-4xl w-3/5 lg:-mt-5"
-                >
-                  <a
-                    class="w-10 h-10"
-                    href="https://github.com/Ltizzi"
-                    target="_blank"
-                    v-motion
-                    :initial="{ scale: 1 }"
-                    :hovered="{
-                      scale: 1.5,
-                      transition: {
-                        repeat: 1,
-                        repeatType: 'mirror',
-                      },
-                    }"
-                    :delay="2000"
-                  >
-                    <font-awesome-icon icon="fa-brands fa-github" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/lterlizzi/"
-                    target="_blank"
-                    v-motion
-                    :initial="{ scale: 1 }"
-                    :hovered="{
-                      scale: 1.5,
-                      transition: {
-                        repeat: 1,
-                        repeatType: 'mirror',
-                      },
-                    }"
-                    :delay="2000"
-                  >
-                    <font-awesome-icon icon="fa-brands fa-linkedin" /> </a
-                  ><a
-                    href="mailto:terlizzileonardo@gmail.com"
-                    target="_blank"
-                    v-motion
-                    :initial="{ scale: 1 }"
-                    :hovered="{
-                      scale: 1.5,
-                      transition: {
-                        repeat: 1,
-                        repeatType: 'mirror',
-                      },
-                    }"
-                    :delay="2000"
-                  >
-                    <font-awesome-icon icon="fa-solid fa-envelope" /> </a
-                  ><a
-                    href="./assets/Terlizzi Leonardo CV.pdf"
-                    target="_blank"
-                    v-motion
-                    :initial="{ scale: 1 }"
-                    :hovered="{
-                      scale: 1.5,
-                      transition: {
-                        repeat: 1,
-                        repeatType: 'mirror',
-                      },
-                    }"
-                    :delay="2000"
-                  >
-                    <font-awesome-icon icon="fa-solid fa-file-pdf" />
-                  </a>
-                </div>
-              </Motion>
-            </div>
-          </div>
+            Hey! <br />
+            I'm Leonardo <br />
+            Terlizzi
+          </h1>
+          <h1
+            :class="[
+              'landing-text 2xl:text-end font-bold font-roboto -tracking-wider w-full  motion-ease-in-out-quad  ',
+              state.showText2
+                ? 'motion-duration-200  motion-translate-y-in-[150%]  motion-preset-fade'
+                : 'opacity-0',
+              !state.hoverText2
+                ? 'motion-duration-1000 motion-scale-loop-[100.5%] motion-blur-loop-sm motion-duration-1500/blur -motion-translate-x-loop-[1.2%] motion-duration-2000/translate motion-translate-y-loop-[1.5%] motion-text-loop-accent motion-duration-/text motion-translate-x-out-0 motion-translate-out-in-0'
+                : 'neon-title',
+            ]"
+            @mouseenter="handleHover(2, true)"
+            @mouseleave="handleHover(2, false)"
+          >
+            & I'm<br />
+            a web <br />developer.
+          </h1>
         </div>
-      </Motion>
-    </Presence>
+      </div>
+    </div>
   </div>
 </template>
 <script setup>
-  import { Motion, Presence } from "motion/vue";
-  import { reactive, onMounted, ref } from "vue";
-  import EventBus from "../common/EventBus";
+  import BackgroundCarousel from "./BackgroundCarousel.vue";
+  import { onMounted, reactive } from "vue";
 
-  const startAnim = ref(false);
-
-  let anims = reactive({
-    first: false,
-    second: false,
-    third: false,
-    four: false,
-    five: false,
+  const state = reactive({
+    start: false,
+    firstAnimationEnded: false,
+    showText1: false,
+    showText2: false,
+    animateText: false,
+    hoverText1: false,
+    hoverText2: false,
+    bgColor: "indigo",
+    colors: [
+      "indigo",
+      "fuchsia",
+      "teal",
+      "red",
+      "pink",
+      "amber",
+      "blue",
+      "violet",
+    ],
   });
 
-  function animFinished(num) {
-    if (num == 1) anims.first = true;
-    if (num == 2) anims.second = true;
-    if (num == 3) anims.third = true;
-    if (num == 4) anims.four = true;
-    if (num == 5) {
-      anims.five = true;
-      EventBus.emit("loadingFinished");
-    }
+  function handleHover(num, condition) {
+    if (num === 1) {
+      state.hoverText1 = condition;
+    } else state.hoverText2 = condition;
   }
 
-  onMounted(() => {
-    setTimeout(() => {
-      startAnim.value = true;
-    }, 1500);
-  });
-</script>
+  function getRandomColor() {
+    let rng = Math.floor(Math.random() * 7);
+    return state.colors[rng];
+  }
 
-<style></style>
+  // setInterval(() => {
+  //   state.bgColor = getRandomColor();
+  // }, 3000);
+
+  function init() {
+    state.start = true;
+    setTimeout(() => {
+      state.firstAnimationEnded = true;
+      state.showText1 = true;
+      setTimeout(() => {
+        state.showText2 = true;
+      }, 300);
+    }, 1000);
+    setInterval(() => {
+      state.animateText = true;
+      setTimeout(() => {
+        state.animateText = false;
+      }, 1000);
+    }, 4000 + Math.random() * 2000);
+  }
+
+  onMounted(() => {});
+</script>
+<style scoped>
+  .neon-title {
+    color: #fff;
+    text-shadow: 0 0 5px #efdf96, 0 0 10px #efdf96, 0 0 20px #efdf96,
+      0 0 30px #efdf96;
+  }
+
+  /* Efecto neon en el texto */
+  .neon-text {
+    text-shadow: 0 0 2px #8a2be2, 0 0 4px #8a2be2, 0 0 8px #8a2be2;
+  }
+  .hover-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hover-effect {
+    color: white; /* Texto inicial */
+    background-color: black; /* Fondo inicial */
+    position: relative;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .hover-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px; /* Tamaño del efecto */
+    height: 150px;
+    background: white;
+    border-radius: 50%; /* Forma circular */
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Ignora clics */
+    z-index: 1;
+    mix-blend-mode: difference; /* Efecto de mezcla */
+    transition: background 0.2s ease-in-out;
+    opacity: 0; /* Oculto inicialmente */
+  }
+
+  .hover-container:hover::before {
+    opacity: 1; /* Mostrar al hacer hover */
+  }
+
+  .hover-container:hover .hover-effect {
+    color: black; /* Cambiar color del texto */
+    transition: color 0.2s ease-in-out;
+  }
+</style>

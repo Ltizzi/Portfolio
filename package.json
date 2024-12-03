@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "portfolio-2-0",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,21 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/free-regular-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@fortawesome/vue-fontawesome": "^3.0.3",
-    "@vueuse/motion": "^2.0.0",
-    "mitt": "^3.0.1",
-    "motion": "^10.16.4",
-    "vue": "^3.3.4"
+    "tailwindcss-motion": "^0.4.3-beta",
+    "vue": "^3.5.12"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.4.0",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.30",
-    "tailwindcss": "^3.3.3",
-    "vite": "^4.4.5"
+    "@vitejs/plugin-vue": "^5.1.4",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.14",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "vite": "^5.4.10"
   }
 }

@@ -2,10 +2,17 @@
 export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    fontFamily: {
-      lato: ["Lato", "sans-serif"],
+    extend: {
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+        tangerine: ["Tangerine", "sans-serif"],
+        parisienne: ["Parisienne", "sans-serif"],
+        zendots: ["Zen Dots", "sans-serif"],
+      },
     },
-    extend: {},
   },
-  plugins: [],
+  plugins: [require("tailwindcss-motion"), require("daisyui")],
+  daisyui: {
+    themes: ["business"],
+  },
 };
