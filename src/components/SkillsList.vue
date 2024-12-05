@@ -159,11 +159,12 @@
     50% {
       background-color: rgb(54, 242, 129);
       transform: translateX(-3px) translateY(3px) scale(101%);
-      filter: blur(20rem) hue-rotate(255deg) saturate(2) invert(0);
+
       opacity: 0.5;
     }
     100% {
       background-color: rgb(20 83 45);
+      filter: blur(20rem) hue-rotate(300deg) saturate(10) invert(0);
     }
   }
 

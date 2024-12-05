@@ -8,15 +8,15 @@
       <AboutMe></AboutMe>
       <SkillsList></SkillsList>
       <Projects></Projects>
-      <Example2 id="example2" />
-      <Example id="example" />
+      <!-- <Example2 id="example2" />
+      <Example id="example" /> -->
     </div>
   </div>
 </template>
 <script setup>
   import Landing from "./components/Landing.vue";
-  import Example from "./components/Example.vue";
-  import Example2 from "./components/Example2.vue";
+  // import Example from "./components/Example.vue";
+  // import Example2 from "./components/Example2.vue";
   import Projects from "./components/Projects.vue";
   import AboutMe from "./components/AboutMe.vue";
   import SkillsList from "./components/SkillsList.vue";
