@@ -44,16 +44,15 @@
           class="flex flex-col gap-7 text-4xl text-start h-full animated-scroll"
           ref="scrollList"
         >
+          <!-- visible_items.includes(index) 
+           @animationend="removeFromList(index)"-->
           <li
             v-for="(tech, index) in wordsToScroll"
             :class="[
               'text-opacity-95 text-success z-30',
-              visible_items.includes(index)
-                ? `animTech  text-opacity-100`
-                : 'crt',
+              tech_index == index ? `animTech  text-opacity-100` : 'crt',
             ]"
             ref="techItem"
-            @animationend="removeFromList(index)"
           >
             {{ tech }}
           </li>
@@ -74,7 +73,6 @@
 <script setup>
   import { ref, onMounted, useTemplateRef, onUnmounted } from "vue";
 
-  const visible_items = ref([]);
   const tech_item = useTemplateRef("techItem");
   const secondList = ref(false);
 
@@ -104,13 +102,14 @@
   const scrollList = useTemplateRef("scrollList");
   const wordsToScroll = ref([...techs.value, ...techs.value]);
   const listHeight = ref();
+  const tech_index = ref(0);
 
-  function removeFromList(index) {
-    setTimeout(() => {
-      //      tech_item.value[index].className += "crt  text-opacity-95";
-      visible_items.value = visible_items.value.filter((i) => i !== index);
-    }, 3100);
-  }
+  // function removeFromList(index) {
+  //   setTimeout(() => {
+  //     //      tech_item.value[index].className += "crt  text-opacity-95";
+  //     visible_items.value = visible_items.value.filter((i) => i !== index);
+  //   }, 3100);
+  // }
 
   onMounted(() => {
     const list = scrollList.value;
@@ -123,16 +122,18 @@
         entries.forEach((entry) => {
           const index = tech_item.value.indexOf(entry.target);
           if (entry.isIntersecting) {
-            if (!visible_items.value.includes(index)) {
-              visible_items.value.push(index);
+            // if (!visible_items.value.includes(index)) {
+            tech_index.value = index;
+            //  visible_items.value.push(index);
 
-              //TODO: pushear la id a otro arr y con un watcher cuando ese arr tenga 4 elementos se borran esos 4 de la lista de "vistos" o buscas una forma q no se cague
-              //FIXME: tratar de q quede flawless la marquesina web 1.0
-            } else {
-              visible_items.value = visible_items.value.filter(
-                (i) => i !== index
-              );
-            }
+            //TODO: pushear la id a otro arr y con un watcher cuando ese arr tenga 4 elementos se borran esos 4 de la lista de "vistos" o buscas una forma q no se cague
+            //FIXME: tratar de q quede flawless la marquesina web 1.0
+            //  }
+            // else {
+            //   visible_items.value = visible_items.value.filter(
+            //     (i) => i !== index
+            //   );
+            // }
           }
         });
       },
