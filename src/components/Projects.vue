@@ -10,17 +10,15 @@
           class="btn btn-ghost btn-sm text-base-content flex flex-col items-center"
           :class="{ 'btn-active': selectedProject === index }"
         >
-          <img :src="project.icon" alt="" class="w-8 h-8 mb-1" />
+          <img :src="getUrlAddress(project.icon)" alt="" class="w-8 h-8 mb-1" />
           <span class="text-sm">{{ project.title }}</span>
         </button>
       </div>
     </div>
 
-    <!-- Área de Proyectos -->
-    <div class="flex-1 grid grid-cols-4 gap-4 p-6">
-      <!-- Información del Proyecto -->
+    <div class="flex-1 grid grid-cols-4 gap-4 p-6 bg-control">
       <div
-        class="col-span-1 bg-base-100 p-4 rounded-lg shadow-md flex flex-col justify-between"
+        class="col-span-1 bg-base-300 p-4 rounded-lg shadow-md flex flex-col justify-between bg-opacity-80"
       >
         <h2 class="text-2xl font-bold mb-4">
           {{ projects[selectedProject].title }}
@@ -37,26 +35,37 @@
         </a>
       </div>
 
-      <!-- Visualización Estilo Monitores -->
-      <div class="col-span-3 grid grid-cols-3 gap-4">
+      <div class="col-span-3 grid grid-cols-3 gap-4 row-auto">
         <div
           v-for="(media, index) in projects[selectedProject].media"
           :key="index"
-          class="bg-black rounded-lg overflow-hidden shadow-lg aspect-video"
+          :class="[
+            'bg-black rounded-lg overflow-hidden shadow-lg aspect-video   smpte',
+            media.video
+              ? 'col-span-2 row-span-2 crt mask-bg-radial '
+              : getClass(),
+          ]"
         >
           <img
             v-if="!media.video"
-            :src="media.url"
+            :src="getUrlAddress(media.url)"
             alt=""
-            class="w-full h-full object-cover"
+            :class="[
+              'w-full h-full object-cover ',
+              `motion-opacity-loop-0
+          motion-ease-in-out`,
+            ]"
+            :style="{ animationDuration: getDuration() }"
           />
           <video
             v-else
-            :src="media.url"
+            :src="getUrlAddress(media.url)"
             autoplay
             loop
             muted
-            class="w-full h-full object-cover"
+            class="h-full object-cover mask-bg-radial crt"
+            ref="video"
+            @loadedmetadata="setPlaybackRate(index, selectedProject)"
           ></video>
         </div>
       </div>
@@ -64,21 +73,25 @@
   </div>
 </template>
 <script setup>
-  import { ref } from "vue";
+  import { ref, useTemplateRef } from "vue";
+
+  const videosTemplate = useTemplateRef("video");
 
   const projects = ref([
     {
-      title: "Proyecto 1",
-      description: "Descripción del proyecto 1.",
-      icon: "https://via.placeholder.com/50", // Icono para la barra
-      link: "#",
+      title: "Yo quiero saber, ¿Y vos?",
+      description:
+        "Web para el canal infantil argentino estatal Paka-Paka sobre ESI",
+      icon: "@assets/pakapaka/home_logo.png", // Icono para la barra
+      link: "https://esi.pakapaka.gob.ar/",
       media: [
-        { url: "https://via.placeholder.com/400x300", video: false },
-        { url: "https://via.placeholder.com/400x300", video: false },
-        { url: "https://via.placeholder.com/400x300", video: false },
-        { url: "https://via.placeholder.com/400x300", video: false },
-        { url: "https://via.placeholder.com/400x300", video: false },
-        { url: "https://via.placeholder.com/400x300", video: false },
+        { url: "@assets/videos/pakapaka.mp4", video: true },
+        { url: "@assets/pakapaka/1.png", video: false },
+        { url: "@assets/pakapaka/2.png", video: false },
+        { url: "@assets/pakapaka/3.png", video: false },
+        { url: "@assets/pakapaka/4.png", video: false },
+        { url: "@assets/pakapaka/5.png", video: false },
+        // { url: "@assets/pakapaka/6.png", video: false },
       ],
     },
     {
@@ -96,7 +109,46 @@
 
   const selectedProject = ref(0);
 
-  const selectProject = (index) => {
+  function selectProject(index) {
     selectedProject.value = index;
-  };
+  }
+
+  function getUrlAddress(url) {
+    return new URL(url.replace("@assets", "/src/assets"), import.meta.url).href;
+  }
+
+  function setPlaybackRate(index, selectedProj) {
+    const video = videosTemplate.value[index];
+    if (video) {
+      video.playbackRate = 3.2;
+    }
+  }
+
+  function getDuration() {
+    const duration = 10 * Math.random() + 2;
+    return duration + "s";
+  }
+
+  function getClass() {
+    const chances = Math.random();
+    return chances < 0.35 ? "smpte" : "whitenoise";
+  }
 </script>
+
+<style>
+  .smpte {
+    background-image: url("@assets/smpte.gif");
+  }
+
+  .whitenoise {
+    background-image: url("@assets/whitenoise.gif");
+  }
+
+  .bg-control {
+    background-image: url("@assets/bg-control.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(24, 24, 24, 0.596);
+    background-blend-mode: darken;
+  }
+</style>

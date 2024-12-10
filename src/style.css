@@ -188,7 +188,7 @@
 }
 .crt {
   animation: textShadow 1.6s infinite;
-  perspective: 1000px;
+
   clip-path: ellipse(110% 90% at center);
 }
 
