@@ -77,8 +77,8 @@
       rgb(235, 235, 235)
     )
     transparent;
-  font-size: 12px;
-  font-family: sans-serif;
+  /* font-size: 12px;
+  font-family: sans-serif; */
   --token-d47092a9-9a47-4652-ac9a-ad62db14e073: rgb(245, 245, 245);
   --token-01fb3aa2-2c92-4faf-a52d-177fe6668529: rgb(15, 17, 21);
   --token-643f73f3-d358-4a15-aea7-11502e57f3fe: rgb(255, 0, 136);
@@ -124,8 +124,8 @@
 .mask-bg-radial {
   scrollbar-color: var(rgba(235, 235, 235, 0), rgba(235, 235, 235, 0))
     transparent;
-  font-size: 12px;
-  font-family: sans-serif;
+  /* font-size: 12px;
+  font-family: sans-serif; */
 
   --token-6665bf47-c092-461e-b1a2-a1332f6b6ec5: oklch(var(--p));
   --token-personal: oklch(var(--su));
@@ -188,7 +188,7 @@
 }
 .crt {
   animation: textShadow 1.6s infinite;
-
+  perspective: 1000px;
   clip-path: ellipse(110% 90% at center);
 }
 

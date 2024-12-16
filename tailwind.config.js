@@ -8,6 +8,7 @@ export default {
         tangerine: ["Tangerine", "sans-serif"],
         parisienne: ["Parisienne", "sans-serif"],
         zendots: ["Zen Dots", "sans-serif"],
+        orbitron: ["Orbitron", "sans-serif"],
       },
     },
   },

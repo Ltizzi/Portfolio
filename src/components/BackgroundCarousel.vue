@@ -21,6 +21,7 @@
           ]"
           muted
           playsinline
+          poster="@assets/whitenoise.gif"
           @ended="handleVideoEnd(0)"
         >
           <source src="@/assets/videos/console.mp4" type="video/mp4" />
@@ -43,6 +44,7 @@
           ]"
           muted
           playsinline
+          poster="@assets/whitenoise.gif"
           @ended="handleVideoEnd(1)"
         >
           <source src="@/assets/videos/api.mp4" type="video/mp4" />
@@ -65,6 +67,7 @@
           ]"
           muted
           playsinline
+          poster="@assets/whitenoise.gif"
           @ended="handleVideoEnd(2)"
         >
           <source src="@/assets/videos/client.mp4" type="video/mp4" />
