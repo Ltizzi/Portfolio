@@ -1,6 +1,6 @@
 <template lang="">
   <footer
-    class="footer footer-center bg-gradient-to-b from-neutral to-base-300 text-base-content rounded p-10"
+    class="footer footer-center bg-gradient-to-b from-neutral to-base-300 text-base-content rounded p-10 mask-bg-radial"
   >
     <nav class="grid grid-flow-col gap-4">
       <a class="link link-hover">About me</a>

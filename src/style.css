@@ -198,8 +198,24 @@
 }
 
 .neon-shadow-lil {
-  box-shadow: 0px 0px 5px 2px #ff46d1f9, 0px 0px 10px #f937c9fa,
-    0px 0px 12px #fc64d6e3, 0px 0px 15px #ff6ddbbe;
+  box-shadow: 0px 0px 5px 2px #ff46d1f9, 0px 0px 5px #f937c9fa,
+    0px 0px 5px #fc64d6e3, 0px 0px 5px #ff6ddbbe;
+}
+
+.neon-title {
+  color: #f8e5f3;
+  text-shadow: 0 0 5px #ff48c5, 0 0 10px #ff48c5, 0 0 15px #ff48c5,
+    0 0 20px #ff48c5;
+}
+
+.container-shadow {
+  box-shadow: 0 0 250px 15px #bd66ff, 0 0 15px 5px #ff32ff91,
+    0 0 100px 30px #32ff4adc, 0 0 50px 10px #33dffaee;
+}
+
+.container-shadow-lil {
+  box-shadow: 0 0 250px 30px #b350fe, 0 0 25px 7px #ff32ffe2,
+    0 0 270px 30px #32ff4adc, 0 0 35px 15px #33dffaee;
 }
 
 @keyframes flicker {

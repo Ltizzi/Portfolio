@@ -7,7 +7,7 @@
       <Landing id="landing" />
       <AboutMe></AboutMe>
       <SkillsList></SkillsList>
-      <Projects></Projects>
+      <Projects class="pt-64 bg-opacity-40 pb-64"></Projects>
       <Footer></Footer>
     </div>
   </div>

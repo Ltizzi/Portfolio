@@ -1,117 +1,123 @@
 <template lang="">
   <div
-    class="h-screen flex flex-col bg-gradient-to-br from-base-300 to-primary"
+    class="h-auto flex flex-col bg-gradient-to-r from-indigo-900 from-10% mask-bg-radial via-90% via-indigo-950 to-100%% to-black"
   >
     <!-- Barra de Navegación -->
-    <div class="navbar shadow-lg">
-      <div class="flex gap-4 mx-auto">
-        <button
-          v-for="(project, index) in projects"
-          :key="index"
-          @click="selectProject(index)"
-          class="btn btn-info bg-opacity-80 btn-outline btn-sm text-base-content flex flex-col items-center py-1 align-middle justify-center rounded-lg hover:bg-sky-400"
-          :class="[
-            selectedProject === index ? 'btn-active neon-shadow-lil' : '',
-          ]"
-        >
-          <img :src="getUrlAddress(project.icon)" alt="" class="size-8" />
-          <span
+    <div class="h-screen min-h-screen">
+      <div class="navbar shadow-lg h-fit">
+        <div class="flex gap-4 mx-auto">
+          <button
+            v-for="(project, index) in projects"
+            :key="index"
+            @click="selectProject(index)"
+            class="btn border-x-indigo-400 bg-opacity-80 btn-outline btn-sm text-base-content flex flex-col items-center py-1 align-middle justify-center rounded-lg hover:bg-indigo-400 transition-all duration-100 ease-in-out z-50"
             :class="[
-              'text-lg font-orbitron  motion-duration-500 motion-ease-in-cubic motion-translate-x-loop-[0.5px] hover:motion-translate-y-in-0 hover:text-yellow-50 transition-all duration-150',
-              selectedProject == index
-                ? 'text-yellow-50 text-opacity-85'
-                : 'text-sky-700',
+              selectedProject === index
+                ? 'bg-indigo-700 border-indigo-700 neon-shadow-lil'
+                : '',
             ]"
-            >{{ project.title }}</span
           >
-        </button>
-      </div>
-    </div>
-
-    <div class="flex-1 grid grid-cols-4 gap-4 p-6 bg-control font-orbitron">
-      <div
-        :class="[
-          'col-span-1 bg-base-300 p-4 rounded-lg shadow-md flex flex-col justify-between bg-opacity-80 text-lime-200 text-opacity-95 mask-bg-radial ',
-          showMedia
-            ? 'translate-x-0  transition-all duration-500'
-            : 'opacity-0 bg-opacity-0 text-opacity-0 -ml-20 -translate-x-full overflow-clip transition-all duration-500',
-        ]"
-      >
-        <div class="flex flex-col justify-between crt">
-          <h2 class="text-3xl font-bold mb-4">
-            {{ projects[selectedProject].title }}
-          </h2>
-          <!-- -->
-          <p
-            class="flex-1 text-lg mt-5 text-start leading-9"
-            v-html="projects[selectedProject].renderedDescription"
-          ></p>
-        </div>
-
-        <div class="flex flex-col gap-5">
-          <a
-            :href="projects[selectedProject].link"
-            target="_blank"
-            class="btn btn-outline btn-accent text-white font-orbitron text-xl mt-4 rounded-xl"
-          >
-            Ver Proyecto
-          </a>
-          <a
-            :href="projects[selectedProject].repoLink"
-            target="_blank"
-            class="btn btn-outline btn-accent font-orbitron text-xl mt-4 rounded-xl"
-          >
-            <font-awesome-icon :icon="['fab', 'github']" class="size-7" />
-          </a>
+            <img :src="getUrlAddress(project.icon)" alt="" class="size-8" />
+            <span
+              :class="[
+                'text-base font-orbitron  motion-duration-500 motion-ease-in-cubic motion-translate-x-loop-[0.5px] hover:motion-translate-y-in-0 hover:text-yellow-50 transition-all duration-150',
+                selectedProject == index
+                  ? 'text-yellow-50 text-opacity-85'
+                  : 'text-indigo-300',
+              ]"
+              >{{ project.title }}</span
+            >
+          </button>
         </div>
       </div>
 
       <div
-        :class="[
-          'col-span-3 grid grid-cols-3 gap-4 row-auto ',
-          showMedia
-            ? 'motion-scale-in-0 motion-opacity-in-0 motion-duration-500 '
-            : 'motion-scale-out-0 motion-opacity-out-0 motion-duration-500 ',
-        ]"
+        class="flex-1 grid grid-cols-4 gap-4 p-6 bg-control h-fit font-orbitron container-shadow-lil rounded-lg"
       >
         <div
-          v-for="(media, index) in projects[selectedProject].media"
-          :key="index"
           :class="[
-            'bg-black rounded-lg overflow-hidden shadow-lg aspect-video',
-            media.video
-              ? 'col-span-2 row-span-2 crt mask-bg-radial '
-              : `${media.classes + ' crt mark-bg-linear'}`,
+            'col-span-1 bg-opacity-85 bg-indigo-950 p-4 rounded-xl  shadow-md flex flex-col justify-between   text-sky-300  ',
+            showMedia
+              ? 'translate-x-0  transition-all duration-500'
+              : 'opacity-0 bg-opacity-0 text-opacity-0 -ml-20 -translate-x-full overflow-clip transition-all duration-500',
           ]"
         >
-          <img
-            :src="getUrlAddress(media.url)"
-            v-if="!media.video"
-            alt=""
-            :class="[
-              'w-full h-full object-cover',
-              media.hovering
-                ? 'motion-opacity-in-100'
-                : 'motion-opacity-loop-0',
-            ]"
-            :style="{
-              animationDuration: media.duration,
-            }"
-            @mouseenter="hoverImg(index, true)"
-            @mouseleave="hoverImg(index, false)"
-          />
+          <div class="flex flex-col justify-between py-1">
+            <h2 class="text-3xl font-bold mb-4 neon-title">
+              {{ projects[selectedProject].title }}
+            </h2>
+            <!-- -->
+            <p
+              class="flex-1 text-lg mt-5 text-start leading-9"
+              v-html="projects[selectedProject].renderedDescription"
+            ></p>
+          </div>
 
-          <video
-            v-else
-            :src="getUrlAddress(media.url)"
-            autoplay
-            loop
-            muted
-            class="h-full object-cover mask-bg-radial crt"
-            ref="video"
-            poster="@assets/whitenoise.gif"
-            @loadedmetadata="setPlaybackRate(index, selectedProject)"
-          ></video>
+          <div class="flex flex-col gap-5">
+            <a
+              :href="projects[selectedProject].link"
+              target="_blank"
+              class="btn btn-outline btn-accent text-white font-orbitron text-xl mt-4 rounded-xl"
+            >
+              Ver Proyecto
+            </a>
+            <a
+              :href="projects[selectedProject].repoLink"
+              target="_blank"
+              class="btn btn-outline btn-accent font-orbitron text-xl mt-4 rounded-xl"
+            >
+              <font-awesome-icon :icon="['fab', 'github']" class="size-7" />
+            </a>
+          </div>
+        </div>
+
+        <div
+          :class="[
+            'col-span-3 grid grid-cols-3 gap-4 row-auto ',
+            showMedia
+              ? 'motion-scale-in-0 motion-opacity-in-0 motion-duration-500 '
+              : 'motion-scale-out-0 motion-opacity-out-0 motion-duration-500 ',
+          ]"
+        >
+          <div
+            v-for="(media, index) in projects[selectedProject].media"
+            :key="index"
+            :class="[
+              'bg-black rounded-lg overflow-hidden shadow-lg aspect-video',
+              media.video
+                ? 'col-span-2 row-span-2 crt mask-bg-radial '
+                : `${media.classes + ' crt mark-bg-linear'}`,
+            ]"
+          >
+            <img
+              :src="getUrlAddress(media.url)"
+              v-if="!media.video"
+              alt=""
+              :class="[
+                'w-full h-full object-cover',
+                media.hovering
+                  ? 'motion-opacity-in-100'
+                  : 'motion-opacity-loop-0',
+              ]"
+              :style="{
+                animationDuration: media.duration,
+              }"
+              @mouseenter="hoverImg(index, true)"
+              @mouseleave="hoverImg(index, false)"
+            />
+
+            <video
+              v-else
+              :src="getUrlAddress(media.url)"
+              autoplay
+              loop
+              muted
+              class="h-full object-cover mask-bg-radial crt"
+              ref="video"
+              poster="@assets/whitenoise.gif"
+              @loadedmetadata="setPlaybackRate(index, selectedProject)"
+            ></video>
+          </div>
         </div>
       </div>
     </div>
@@ -194,6 +200,55 @@
           duration: "",
           classes: "",
         },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
       ],
     },
     // Más proyectos...
@@ -208,7 +263,7 @@
     setTimeout(() => {
       selectedProject.value = index;
       showMedia.value = true;
-    }, 100);
+    }, 500);
   }
 
   function getUrlAddress(url) {

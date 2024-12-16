@@ -193,16 +193,6 @@
       5px 3px 45px #32ff4a, 7px 3px 55px #32ff4a;
   }
 
-  .container-shadow {
-    box-shadow: 0 0 250px 15px #bd66ff, 0 0 15px 5px #ff32ff91,
-      0 0 100px 30px #32ff4adc, 0 0 50px 10px #33dffaee;
-  }
-
-  .neon-shadow {
-    box-shadow: 0px 0px 20px 10px #ff0bc2af, 0px 0px 20px #ff0bc2b3,
-      0px 0px 25px #ff0bc2dd, 0px 0px 30px #ff0bc2be;
-  }
-
   .animate-floating {
     z-index: 0;
     opacity: 0.2;
@@ -219,11 +209,5 @@
     z-index: 20;
     opacity: 1;
     filter: blur(0px);
-  }
-
-  .neon-title {
-    color: #f8e5f3;
-    text-shadow: 0 0 5px #ff48c5, 0 0 10px #ff48c5, 0 0 15px #ff48c5,
-      0 0 20px #ff48c5;
   }
 </style>
