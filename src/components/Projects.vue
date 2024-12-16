@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="h-screen flex flex-col bg-base-200">
+  <div class="h-screen flex flex-col bg-base-200 font-roboto">
     <!-- Barra de Navegación -->
     <div class="navbar bg-base-300 shadow-lg">
       <div class="flex gap-4 mx-auto">

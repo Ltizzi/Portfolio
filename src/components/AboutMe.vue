@@ -65,6 +65,32 @@
             porttitor? Commodo curabitur ad lectus id molestie eget eget. Elit
             nulla pellentesque lobortis suscipit laoreet taciti dictumst.
           </p>
+          <div
+            class="flex flex-row size-7 text-yellow-50 gap-5 mx-auto w-full justify-center mt-5"
+          >
+            <a href="https://github.com/Ltizzi" target="_blank">
+              <font-awesome-icon
+                :icon="['fab', 'github']"
+                class="size-10 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-150"
+            /></a>
+            <a href="https://www.linkedin.com/in/lterlizzi/" target="_blank">
+              <font-awesome-icon
+                :icon="['fab', 'linkedin']"
+                class="size-10 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-150"
+            /></a>
+
+            <a href="https://x.com/ltizzi83" target="_blank">
+              <font-awesome-icon
+                :icon="['fab', 'square-x-twitter']"
+                class="size-10 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-150"
+            /></a>
+
+            <a href="mailto:terlizzileonardo@gmail.com" target="_blank">
+              <font-awesome-icon
+                :icon="['fas', 'square-envelope']"
+                class="size-10 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-150"
+            /></a>
+          </div>
         </div>
       </div>
     </div>
