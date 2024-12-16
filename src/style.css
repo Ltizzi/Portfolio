@@ -188,8 +188,18 @@
 }
 .crt {
   animation: textShadow 1.6s infinite;
-  perspective: 1000px;
+  perspective: 2000px;
   clip-path: ellipse(110% 90% at center);
+}
+
+.neon-shadow {
+  box-shadow: 0px 0px 20px 10px #ff0bc2af, 0px 0px 20px #ff0bc2b3,
+    0px 0px 25px #ff0bc2dd, 0px 0px 30px #ff0bc2be;
+}
+
+.neon-shadow-lil {
+  box-shadow: 0px 0px 5px 2px #ff46d1f9, 0px 0px 10px #f937c9fa,
+    0px 0px 12px #fc64d6e3, 0px 0px 15px #ff6ddbbe;
 }
 
 @keyframes flicker {

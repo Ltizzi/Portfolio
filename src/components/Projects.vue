@@ -9,11 +9,21 @@
           v-for="(project, index) in projects"
           :key="index"
           @click="selectProject(index)"
-          class="btn btn-ghost btn-sm text-base-content flex flex-col items-center"
-          :class="{ 'btn-active': selectedProject === index }"
+          class="btn btn-info bg-opacity-80 btn-outline btn-sm text-base-content flex flex-col items-center py-1 align-middle justify-center rounded-lg hover:bg-sky-400"
+          :class="[
+            selectedProject === index ? 'btn-active neon-shadow-lil' : '',
+          ]"
         >
-          <img :src="getUrlAddress(project.icon)" alt="" class="w-8 h-8 mb-1" />
-          <span class="text-sm">{{ project.title }}</span>
+          <img :src="getUrlAddress(project.icon)" alt="" class="size-8" />
+          <span
+            :class="[
+              'text-lg font-orbitron  motion-duration-500 motion-ease-in-cubic motion-translate-x-loop-[0.5px] hover:motion-translate-y-in-0 hover:text-yellow-50 transition-all duration-150',
+              selectedProject == index
+                ? 'text-yellow-50 text-opacity-85'
+                : 'text-sky-700',
+            ]"
+            >{{ project.title }}</span
+          >
         </button>
       </div>
     </div>
@@ -21,34 +31,39 @@
     <div class="flex-1 grid grid-cols-4 gap-4 p-6 bg-control font-orbitron">
       <div
         :class="[
-          'col-span-1 bg-base-300 p-4 rounded-lg shadow-md flex flex-col justify-between bg-opacity-80 text-lime-200 text-opacity-95 crt mask-bg-radial ',
+          'col-span-1 bg-base-300 p-4 rounded-lg shadow-md flex flex-col justify-between bg-opacity-80 text-lime-200 text-opacity-95 mask-bg-radial ',
           showMedia
             ? 'translate-x-0  transition-all duration-500'
             : 'opacity-0 bg-opacity-0 text-opacity-0 -ml-20 -translate-x-full overflow-clip transition-all duration-500',
         ]"
       >
-        <h2 class="text-3xl font-bold mb-4">
-          {{ projects[selectedProject].title }}
-        </h2>
-        <!-- -->
-        <p
-          class="flex-1 text-lg mt-5 text-start leading-9"
-          v-html="projects[selectedProject].renderedDescription"
-        ></p>
-        <a
-          :href="projects[selectedProject].link"
-          target="_blank"
-          class="btn btn-outline btn-accent text-white font-orbitron text-xl mt-4 rounded-xl"
-        >
-          Ver Proyecto
-        </a>
-        <a
-          :href="projects[selectedProject].repoLink"
-          target="_blank"
-          class="btn btn-outline btn-accent font-orbitron text-xl mt-4 rounded-xl"
-        >
-          <font-awesome-icon :icon="['fab', 'github']" class="size-7" />
-        </a>
+        <div class="flex flex-col justify-between crt">
+          <h2 class="text-3xl font-bold mb-4">
+            {{ projects[selectedProject].title }}
+          </h2>
+          <!-- -->
+          <p
+            class="flex-1 text-lg mt-5 text-start leading-9"
+            v-html="projects[selectedProject].renderedDescription"
+          ></p>
+        </div>
+
+        <div class="flex flex-col gap-5">
+          <a
+            :href="projects[selectedProject].link"
+            target="_blank"
+            class="btn btn-outline btn-accent text-white font-orbitron text-xl mt-4 rounded-xl"
+          >
+            Ver Proyecto
+          </a>
+          <a
+            :href="projects[selectedProject].repoLink"
+            target="_blank"
+            class="btn btn-outline btn-accent font-orbitron text-xl mt-4 rounded-xl"
+          >
+            <font-awesome-icon :icon="['fab', 'github']" class="size-7" />
+          </a>
+        </div>
       </div>
 
       <div
@@ -103,25 +118,16 @@
   </div>
 </template>
 <script setup>
-  import {
-    ref,
-    useTemplateRef,
-    onMounted,
-    watch,
-    reactive,
-    onBeforeMount,
-  } from "vue";
+  import { ref, useTemplateRef, onMounted, watch, onBeforeMount } from "vue";
 
   const videosTemplate = useTemplateRef("video");
-
-  const mediaClasses = reactive([]);
 
   const projects = ref([
     {
       title: "Yo quiero saber, ¿Y vos?",
       renderedDescription: "",
       description:
-        "&emsp;&emsp;Web para el canal infantil argentino estatal Paka-Paka sobre ESI. <br><br>&emsp;&emsp;Lorem ipsum odor amet, consectetuer adipiscing elit. Laoreet eget integer rhoncus lacinia consequat urna amet risus malesuada.<br><br>&emsp;&emsp; Dapibus porttitor velit etiam vel, tortor porttitor penatibus etiam. Convallis justo magnis platea consectetur torquent, ex efficitur. ",
+        "&emsp;&emsp;Web para el canal infantil argentino estatal Paka-Paka sobre ESI (Educación Sexual Integral). <br><br>&emsp;&emsp;Con el arte y el diseño provisto, la web fue realizada con puro Javascript, HTML y CSS y PixieJs para las animaciones.<br><br>&emsp;&emsp;",
       icon: "@assets/pakapaka/home_logo.png", // Icono para la barra
       link: "https://esi.pakapaka.gob.ar/",
       repoLink: "https://github.com/anavaira/pakapaka_esi",
@@ -131,36 +137,36 @@
           url: "@assets/pakapaka/1.png",
           video: false,
           hovering: false,
-          duration: getDuration(),
-          classes: getClass(),
+          duration: "",
+          classes: "",
         },
         {
           url: "@assets/pakapaka/2.png",
           video: false,
           hovering: false,
-          duration: getDuration(),
-          classes: getClass(),
+          duration: "",
+          classes: "",
         },
         {
           url: "@assets/pakapaka/3.png",
           video: false,
           hovering: false,
-          duration: getDuration(),
-          classes: getClass(),
+          duration: "",
+          classes: "",
         },
         {
           url: "@assets/pakapaka/4.png",
           video: false,
           hovering: false,
-          duration: getDuration(),
-          classes: getClass(),
+          duration: "",
+          classes: "",
         },
         {
           url: "@assets/pakapaka/5.png",
           video: false,
           hovering: false,
-          duration: getDuration(),
-          classes: getClass(),
+          duration: "",
+          classes: "",
         },
         // { url: "@assets/pakapaka/6.png", video: false },
       ],
@@ -178,15 +184,15 @@
           url: "https://via.placeholder.com/400x300",
           video: false,
           hovering: false,
-          duration: getDuration(),
-          classes: getClass(),
+          duration: "",
+          classes: "",
         },
         {
           url: "https://via.placeholder.com/400x300",
           video: false,
           hovering: false,
-          duration: getDuration(),
-          classes: getClass(),
+          duration: "",
+          classes: "",
         },
       ],
     },
@@ -218,7 +224,11 @@
 
   function hoverImg(index, condition) {
     projects.value[selectedProject.value].media[index].hovering = condition;
-    console.log(condition);
+    if (!condition) {
+      projects.value[selectedProject.value].media[index].duration =
+        getDuration();
+      projects.value[selectedProject.value].media[index].classes = getClass();
+    }
   }
 
   function getDuration() {
@@ -228,11 +238,24 @@
 
   function getClass() {
     const chances = Math.random();
-    return chances < 0.45 ? "smpte" : "whitenoise";
+    return chances < 0.51 ? "smpte" : "whitenoise";
   }
 
   function delay(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  function recalcClassAndDurations() {
+    const medias = projects.value[selectedProject.value].media;
+    console.log(medias);
+    for (const media of medias) {
+      if (!media.video) {
+        console.log(media);
+        media.duration = getDuration();
+        media.classes = getClass();
+      }
+    }
+    projects.value[selectedProject.value].media = medias;
   }
 
   async function showLetters(index) {
@@ -280,9 +303,18 @@
     async (newValue, oldValue) => {
       if (newValue != oldValue) {
         await showLetters(newValue);
+        recalcClassAndDurations();
       }
     }
   );
+
+  setInterval(() => {
+    recalcClassAndDurations();
+  }, 12000);
+
+  onBeforeMount(() => {
+    recalcClassAndDurations();
+  });
 
   onMounted(async () => {
     setTimeout(async () => {
