@@ -9,14 +9,14 @@
     >
       <div
         :class="[
-          ' py-5 2xl:py-14 2xl:px-8 2xl:pr-20 items-center w-4/5 2xl:w-1/3  z-10 relative 2xl:h-screen motion-duration-700 motion-scale-y-in-105 motion-scale-x-in-0  motion-ease-spring-bouncy -motion-translate-x-in-[250%] motion-opacity-in-0 motion-bg-in-transparent motion-duration-[1.1s]/bg   motion-duration-[1.5s]/opacity  motion-opacity-loop-60 bg-opacity-70',
+          ' py-5 2xl:py-14 2xl:px-8 2xl:pr-20 items-center w-4/5 2xl:w-1/3   z-10 relative 2xl:h-screen motion-duration-700 motion-scale-y-in-105 motion-scale-x-in-0  motion-ease-spring-bouncy -motion-translate-x-in-[250%] motion-opacity-in-0 motion-bg-in-transparent motion-duration-[1.1s]/bg   motion-duration-[1.5s]/opacity  motion-opacity-loop-60 bg-opacity-70',
           `bg-gradient-to-br from-pink-300/10 from-15% via-pink-300/40 via-50% to-85% to-pink-300/10 
           motion-bg-loop-indigo-950`,
         ]"
       >
         <div
           :class="[
-            'flex flex-col gap-10 justify-center items-center  text-landing opacity-95 motion-duration-500 motion-ease-spring-snappy motion-duration-150/scale motion-duration-150/blur ',
+            'flex flex-col gap-10 justify-center items-center h-full  text-landing opacity-95 motion-duration-500 motion-ease-spring-snappy motion-duration-150/scale motion-duration-150/blur ',
             state.animateText && !state.hoverText1 && !state.hoverText2
               ? 'motion-preset-shake  motion-blur-loop-sm  motion-scale-loop-95'
               : '',

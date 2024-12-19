@@ -71,24 +71,24 @@
             <a href="https://github.com/Ltizzi" target="_blank">
               <font-awesome-icon
                 :icon="['fab', 'github']"
-                class="size-10 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-150"
+                class="size-10 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-500 hover:text-yellow-100"
             /></a>
             <a href="https://www.linkedin.com/in/lterlizzi/" target="_blank">
               <font-awesome-icon
                 :icon="['fab', 'linkedin']"
-                class="size-10 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-150"
+                class="size-10 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-500 hover:text-yellow-100"
             /></a>
 
             <a href="https://x.com/ltizzi83" target="_blank">
               <font-awesome-icon
                 :icon="['fab', 'square-x-twitter']"
-                class="size-10 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-150"
+                class="size-10 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-500 hover:text-yellow-100"
             /></a>
 
             <a href="mailto:terlizzileonardo@gmail.com" target="_blank">
               <font-awesome-icon
                 :icon="['fas', 'square-envelope']"
-                class="size-10 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-150"
+                class="size-10 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-500 hover:text-yellow-100"
             /></a>
           </div>
         </div>
