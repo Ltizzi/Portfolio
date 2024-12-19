@@ -5,22 +5,26 @@
     <!-- Barra de Navegación -->
     <div class="h-screen min-h-screen">
       <div class="navbar shadow-lg h-fit">
-        <div class="flex gap-4 mx-auto">
+        <div class="flex gap-4 mx-auto justify-center">
           <button
             v-for="(project, index) in projects"
             :key="index"
             @click="selectProject(index)"
-            class="btn border-x-indigo-400 bg-opacity-80 btn-outline btn-sm text-base-content flex flex-col items-center py-1 align-middle justify-center rounded-lg hover:bg-indigo-400 transition-all duration-100 ease-in-out z-50"
+            class="btn border-x-indigo-400 bg-opacity-80 btn-outline btn-sm text-base-content flex flex-col items-center py-1 gap-2 align-middle justify-evenly rounded-lg hover:bg-indigo-400 transition-all duration-100 ease-in-out z-50 w-auto px-10"
             :class="[
               selectedProject === index
                 ? 'bg-indigo-700 border-indigo-700 neon-shadow-lil'
                 : '',
             ]"
           >
-            <img :src="getUrlAddress(project.icon)" alt="" class="size-8" />
+            <img
+              :src="getUrlAddress(project.icon)"
+              alt=""
+              class="size-6 -ml-4"
+            />
             <span
               :class="[
-                'text-base font-orbitron  motion-duration-500 motion-ease-in-cubic motion-translate-x-loop-[0.5px] hover:motion-translate-y-in-0 hover:text-yellow-50 transition-all duration-150',
+                'text-xs font-orbitron  motion-duration-500 motion-ease-in-cubic motion-translate-x-loop-[0.5px] hover:motion-translate-y-in-0  hover:text-yellow-50 transition-all duration-150',
                 selectedProject == index
                   ? 'text-yellow-50 text-opacity-85'
                   : 'text-indigo-300',
@@ -48,7 +52,7 @@
             </h2>
             <!-- -->
             <p
-              class="flex-1 text-lg mt-5 text-start leading-9"
+              class="flex-1 text-lg mt-5 text-start leading-10 tracking-widest mx-3"
               v-html="projects[selectedProject].renderedDescription"
             ></p>
           </div>
@@ -340,7 +344,7 @@
         }
 
         projects.value[index].renderedDescription += char;
-        await delay(1);
+        await delay(0);
       }
     }, 500);
 
