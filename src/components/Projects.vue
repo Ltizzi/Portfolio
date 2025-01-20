@@ -3,9 +3,11 @@
     class="h-auto flex flex-col bg-gradient-to-r from-indigo-900 from-10% mask-bg-radial via-90% via-indigo-950 to-100%% to-black"
   >
     <!-- Barra de Navegación -->
-    <div class="h-screen min-h-screen">
-      <div class="navbar shadow-lg h-fit">
-        <div class="flex gap-4 mx-auto justify-center">
+    <div class="lg:h-screen lg:min-h-screen">
+      <div class="navbar shadow-lg h-fit pb-12 lg:pb-0">
+        <div
+          class="flex gap-3 lg:flex-nowrap flex-wrap lg:gap-4 mx-auto justify-center"
+        >
           <button
             v-for="(project, index) in projects"
             :key="index"
@@ -36,91 +38,93 @@
       </div>
 
       <div
-        class="flex-1 grid grid-cols-4 gap-4 p-6 bg-control h-fit font-orbitron container-shadow-lil rounded-lg"
+        class="flex-1 h-auto min-h-screen lg:h-fit bg-control font-orbitron container-shadow-lil rounded-lg"
       >
-        <div
-          :class="[
-            'col-span-1 bg-opacity-85 bg-indigo-950 p-4 rounded-xl  shadow-md flex flex-col justify-between   text-sky-300  ',
-            showMedia
-              ? 'translate-x-0  transition-all duration-500'
-              : 'opacity-0 bg-opacity-0 text-opacity-0 -ml-20 -translate-x-full overflow-clip transition-all duration-500',
-          ]"
-        >
-          <div class="flex flex-col justify-between py-1">
-            <h2 class="text-3xl font-bold mb-4 neon-title text-center">
-              {{ projects[selectedProject].title }}
-            </h2>
-            <!-- -->
-            <p
-              class="flex-1 text-lg mt-8 text-start leading-10 tracking-widest mx-8"
-              v-html="projects[selectedProject].renderedDescription"
-            ></p>
-          </div>
-
-          <div class="flex flex-col gap-5">
-            <a
-              :href="projects[selectedProject].link"
-              target="_blank"
-              class="btn btn-outline btn-accent text-white font-orbitron text-xl mt-4 rounded-xl"
-            >
-              Ver Proyecto
-            </a>
-            <a
-              :href="projects[selectedProject].repoLink"
-              target="_blank"
-              class="btn btn-outline btn-accent font-orbitron text-xl mt-4 rounded-xl"
-            >
-              <font-awesome-icon :icon="['fab', 'github']" class="size-7" />
-            </a>
-          </div>
-        </div>
-
-        <div
-          :class="[
-            'col-span-3 grid grid-cols-3 gap-4 row-auto ',
-            showMedia
-              ? 'motion-scale-in-0 motion-opacity-in-0 motion-duration-500 '
-              : 'motion-scale-out-0 motion-opacity-out-0 motion-duration-500 ',
-          ]"
-        >
+        <div class="h-svh lg:grid lg:grid-cols-4 gap-4 p-6 mb-40 lg:mb-0">
           <div
-            v-for="(media, index) in projects[selectedProject].media"
-            :key="index"
             :class="[
-              'bg-black rounded-lg overflow-hidden shadow-lg aspect-video',
-              media.video
-                ? 'col-span-2 row-span-2 crt mask-bg-radial '
-                : `${media.classes + ' crt mark-bg-linear'}`,
+              'col-span-1 h-4/6 lg:h-auto bg-opacity-85 bg-indigo-950 p-4 rounded-xl  shadow-md flex flex-col lg:justify-between   text-sky-300  ',
+              showMedia
+                ? 'translate-x-0  transition-all duration-500'
+                : 'opacity-0 bg-opacity-0 text-opacity-0 -ml-20 -translate-x-full overflow-clip transition-all duration-500',
             ]"
           >
-            <img
-              :src="getUrlAddress(media.url)"
-              v-if="!media.video"
-              alt=""
-              :class="[
-                'w-full h-full object-cover',
-                media.hovering
-                  ? 'motion-opacity-in-100'
-                  : 'motion-opacity-loop-0',
-              ]"
-              :style="{
-                animationDuration: media.duration,
-              }"
-              @mouseenter="hoverImg(index, true)"
-              @mouseleave="hoverImg(index, false)"
-            />
+            <div class="flex flex-col justify-between py-1 h-full">
+              <h2 class="text-3xl font-bold mb-4 neon-title text-center">
+                {{ projects[selectedProject].title }}
+              </h2>
+              <!-- -->
+              <p
+                class="flex-1 text-sm lg:text-lg lg:mt-8 text-start leading-6 lg:leading-10 tracking-widest mx-8"
+                v-html="projects[selectedProject].renderedDescription"
+              ></p>
+            </div>
 
-            <video
-              v-else
-              :src="getUrlAddress(media.url)"
-              autoplay
-              loop
-              muted
-              class="h-full object-cover mask-bg-radial crt"
-              ref="video"
-              poster="@assets/whitenoise.gif"
-              @loadedmetadata="setPlaybackRate(index, selectedProject)"
-            ></video>
+            <div class="flex flex-col lg:gap-5">
+              <a
+                :href="projects[selectedProject].link"
+                target="_blank"
+                class="btn btn-outline btn-accent text-white font-orbitron lg:text-xl mt-4 rounded-xl"
+              >
+                Ver Proyecto
+              </a>
+              <a
+                :href="projects[selectedProject].repoLink"
+                target="_blank"
+                class="btn btn-outline btn-accent font-orbitron lg:text-xl mt-4 rounded-xl"
+              >
+                <font-awesome-icon :icon="['fab', 'github']" class="size-7" />
+              </a>
+            </div>
+          </div>
+
+          <div
+            :class="[
+              'col-span-3 grid grid-cols-3 gap-4 row-auto ',
+              showMedia
+                ? 'motion-scale-in-0 motion-opacity-in-0 motion-duration-500 '
+                : 'motion-scale-out-0 motion-opacity-out-0 motion-duration-500 ',
+            ]"
+          >
+            <div
+              v-for="(media, index) in projects[selectedProject].media"
+              :key="index"
+              :class="[
+                'bg-black rounded-lg overflow-hidden shadow-lg aspect-video',
+                media.video
+                  ? 'col-span-2 row-span-2 crt mask-bg-radial '
+                  : `${media.classes + ' crt mark-bg-linear'}`,
+              ]"
+            >
+              <img
+                :src="getUrlAddress(media.url)"
+                v-if="!media.video"
+                alt=""
+                :class="[
+                  'w-full h-full object-cover',
+                  media.hovering
+                    ? 'motion-opacity-in-100'
+                    : 'motion-opacity-loop-0',
+                ]"
+                :style="{
+                  animationDuration: media.duration,
+                }"
+                @mouseenter="hoverImg(index, true)"
+                @mouseleave="hoverImg(index, false)"
+              />
+
+              <video
+                v-else
+                :src="getUrlAddress(media.url)"
+                autoplay
+                loop
+                muted
+                class="h-full object-cover mask-bg-radial crt"
+                ref="video"
+                poster="@assets/whitenoise.gif"
+                @loadedmetadata="setPlaybackRate(index, selectedProject)"
+              ></video>
+            </div>
           </div>
         </div>
       </div>

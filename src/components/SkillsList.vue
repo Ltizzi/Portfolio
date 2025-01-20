@@ -7,10 +7,10 @@
     />
 
     <div
-      class="absolute inset-0 top-20 justify-center items-center -ml-40 hidden lg:flex"
+      class="absolute inset-0 lg:top-20 top-2 justify-center items-center lg:-ml-40 ml-14 lg:flex"
     >
       <div
-        class="bg-gradient-to-r from-base-300 to-success/30 bg-opacity-100 w-[60%] h-[70%] rounded-lg shadow-xl border-4 border-gray-500 flex justify-center items-center mask-blur-radial crt relative"
+        class="bg-gradient-to-r from-base-300 to-success/30 bg-opacity-100 w-[82%] h-48 lg:w-[60%] lg:h-[70%] rounded-lg shadow-xl border-4 border-gray-500 flex justify-center items-center mask-blur-radial crt relative"
       >
         <img
           src="@assets/server_racks.jpeg"
@@ -18,7 +18,7 @@
           alt=""
         />
         <h1
-          class="text-7xl 2xl:text-7xl font-extrabold tracking-widest absolute top-64 left-96 -ml-10 leading-relax text-opacity-5 font-zendots text-success bg-blue-100 bg-opacity-35 rounded-md px-1.5 py-0.5"
+          class="text-5xl text-center lg:text-7xl 2xl:text-7xl font-extrabold tracking-widest absolute lg:top-64 lg:left-96 lg:-ml-10 leading-relax text-opacity-5 font-zendots text-success bg-blue-100 bg-opacity-35 rounded-md px-1.5 py-0.5"
         >
           Tech Skills
         </h1>
@@ -26,7 +26,7 @@
     </div>
 
     <div
-      class="absolute top-28 right-8 w-[19%] h-[75%] rounded-lg shadow-lg border-4 border-gray-500 flex justify-center items-center bg-gradient-to-r from-base-300 to-success/30 bg-opacity-100 crt"
+      class="absolute lg:top-28 top-52 lg:right-8 right-20 w-96 lg:w-[19%] h-[75%] rounded-lg shadow-lg border-4 border-gray-500 flex justify-center items-center bg-gradient-to-r from-base-300 to-success/30 bg-opacity-100 crt"
     >
       <img
         src="@assets/server_racks.jpeg"
@@ -49,7 +49,7 @@
           <li
             v-for="(tech, index) in wordsToScroll"
             :class="[
-              'text-opacity-95 text-success z-30',
+              'text-opacity-95 text-success z-30 ml-6 lg:ml-0',
               tech_index == index ? `animTech  text-opacity-100` : 'crt',
             ]"
             ref="techItem"
