@@ -47,12 +47,12 @@
           ]"
         >
           <div class="flex flex-col justify-between py-1">
-            <h2 class="text-3xl font-bold mb-4 neon-title">
+            <h2 class="text-3xl font-bold mb-4 neon-title text-center">
               {{ projects[selectedProject].title }}
             </h2>
             <!-- -->
             <p
-              class="flex-1 text-lg mt-5 text-start leading-10 tracking-widest mx-3"
+              class="flex-1 text-lg mt-8 text-start leading-10 tracking-widest mx-8"
               v-html="projects[selectedProject].renderedDescription"
             ></p>
           </div>
@@ -183,6 +183,81 @@
       hovering: false,
     },
     {
+      title: "DevCards",
+      renderedDescription: "",
+      description:
+        "&emsp;&emsp;Dev tool para manejo de proyectos, tareas, sprint y usuarios. Pensado principalmente como herramineta para SCRUM.<br><br>&emsp;&emsp;Realizada en Vue, Tailwind, Java/Spring(API) y PostgreSQL.<br><br>&emsp;&emsp; ",
+      icon: "@assets/DevCards/card.png",
+      link: "#",
+      repoLink: "https://github.com/Ltizzi/dev-cards",
+      media: [
+        {
+          url: "@assets/DevCards/devcards1.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "@assets/DevCards/devcards2.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "@assets/DevCards/devcards3.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "@assets/DevCards/devcards4.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "@assets/DevCards/devcards5.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "@assets/DevCards/devcards6.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+
+        {
+          url: "@assets/DevCards/devcards7.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "@assets/DevCards/devcards8.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "@assets/DevCards/devcards9.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+      ],
+    },
+    {
       title: "Proyecto 2",
       renderedDescription: "",
       description: "Descripción del proyecto 2.",
@@ -255,6 +330,80 @@
         },
       ],
     },
+    {
+      title: "Proyecto 2",
+      renderedDescription: "",
+      description: "Descripción del proyecto 2.",
+      icon: "https://via.placeholder.com/50",
+      link: "#",
+      repoLink: "",
+      media: [
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "https://via.placeholder.com/400x300",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+      ],
+    },
+
     // Más proyectos...
   ]);
 
