@@ -55,7 +55,7 @@
               </h2>
               <!-- -->
               <p
-                class="flex-1 text-sm lg:text-lg lg:mt-8 text-start leading-6 lg:leading-10 tracking-widest mx-8"
+                class="flex-1 text-sm lg:text-lg lg:mt-8 text-start leading-6 lg:leading-8 tracking-widest mx-8"
                 v-html="projects[selectedProject].renderedDescription"
               ></p>
             </div>
@@ -187,6 +187,59 @@
       hovering: false,
     },
     {
+      title: "VCM",
+      renderedDescription: "",
+      description:
+        "&emsp;&emsp;Página personal para ofrecer servicios de personal de salud mental. Es una página principalmente estática pero con un formulario de contacto para enviar mensajes al mail.<br><br>&emsp;&emsp;Hecha en Vue con Tailwind y Node/ExpressJS para el envío de mensajes a un e-mail.",
+      icon: "@assets/vcm/vcmlogo.png",
+      link: "https://licvanesacarlottomiranda.com.ar/",
+      repoLink: "",
+      media: [
+        {
+          url: "@assets/vcm/vcm.mp4",
+          video: true,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "@assets/vcm/vcm1.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "@assets/vcm/vcm2.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "@assets/vcm/vcm3.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "@assets/vcm/vcm4.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+        {
+          url: "@assets/vcm/vcm5.png",
+          video: false,
+          hovering: false,
+          duration: "",
+          classes: "",
+        },
+      ],
+    },
+    {
       title: "DevCards",
       renderedDescription: "",
       description:
@@ -262,71 +315,72 @@
       ],
     },
     {
-      title: "Proyecto 2",
+      title: "E-commerce",
       renderedDescription: "",
-      description: "Descripción del proyecto 2.",
-      icon: "https://via.placeholder.com/50",
+      description:
+        "&emsp;&emsp;Template de E-commerce con autenticación (Google Oauth2), administración de stocks (entradas, salidas, ventas, etc), perfil de usuarios, reviews de usuarios, wishlists, catálogo, buscador de productos, edición de productos, sistema de ofertas por tiempo, etc.<br><br>&emsp;&emsp;Hecho en Angular con Tailwind, Node/ExpressJS (con Typescript) y una base de datos PostgreSQL ",
+      icon: "@assets/Eshop/ecommerce.ico",
       link: "#",
-      repoLink: "",
+      repoLink: "https://github.com/Ltizzi/E-Commerce",
       media: [
         {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/Eshop/eshop1.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/Eshop/eshop2.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/Eshop/eshop3.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/Eshop/eshop4.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/Eshop/eshop5.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/Eshop/eshop6.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/Eshop/eshop7.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/Eshop/eshop8.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/Eshop/eshop9.png",
           video: false,
           hovering: false,
           duration: "",
@@ -335,71 +389,48 @@
       ],
     },
     {
-      title: "Proyecto 2",
+      title: "Craze",
       renderedDescription: "",
-      description: "Descripción del proyecto 2.",
-      icon: "https://via.placeholder.com/50",
-      link: "#",
-      repoLink: "",
+      description:
+        "&emsp;&emsp;Craze es una red social de memes en la que los usuarios sólo pueden interactuar a través de memes, incluso en las respuestas. Con generador de memes incorporado y tags(base o personalizados) a modo de hashtags de twitter.<br><br>&emsp;&emsp;Realizada en Vue con Tailwind, Node/ExpressJS con MongoDB.",
+      icon: "@assets/craze/logo.png",
+      link: "https://craze-test.web.app/",
+      repoLink: "https://github.com/Ltizzi/Craze",
       media: [
         {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/craze/craze.mp4",
+          video: true,
+        },
+        {
+          url: "@assets/craze/craze1.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/craze/craze2.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/craze/craze3.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/craze/craze4.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "https://via.placeholder.com/400x300",
-          video: false,
-          hovering: false,
-          duration: "",
-          classes: "",
-        },
-        {
-          url: "https://via.placeholder.com/400x300",
-          video: false,
-          hovering: false,
-          duration: "",
-          classes: "",
-        },
-        {
-          url: "https://via.placeholder.com/400x300",
-          video: false,
-          hovering: false,
-          duration: "",
-          classes: "",
-        },
-        {
-          url: "https://via.placeholder.com/400x300",
-          video: false,
-          hovering: false,
-          duration: "",
-          classes: "",
-        },
-        {
-          url: "https://via.placeholder.com/400x300",
+          url: "@assets/craze/craze5.png",
           video: false,
           hovering: false,
           duration: "",

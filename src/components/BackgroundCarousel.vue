@@ -14,7 +14,7 @@
         <video
           id="video1"
           :class="[
-            'w-screen object-cover object-left  lg:object-center h-screen motion-ease-in-out  motion-duration-300 ',
+            'w-screen  object-cover object-left  lg:object-center h-screen motion-ease-in-out  motion-duration-300 ',
             currentIndex == 0 && !changing
               ? 'motion-translate-x-in-150'
               : '-motion-translate-x-out-150',
