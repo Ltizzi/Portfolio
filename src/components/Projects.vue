@@ -19,11 +19,7 @@
                 : '',
             ]"
           >
-            <img
-              :src="getUrlAddress(project.icon)"
-              alt=""
-              class="size-6 -ml-4"
-            />
+            <img :src="project.icon" alt="" class="size-6 -ml-4" />
             <span
               :class="[
                 'text-xs font-orbitron  motion-duration-500 motion-ease-in-cubic motion-translate-x-loop-[0.5px] hover:motion-translate-y-in-0  hover:text-yellow-50 transition-all duration-150',
@@ -97,7 +93,7 @@
               ]"
             >
               <img
-                :src="getUrlAddress(media.url)"
+                :src="media.url"
                 v-if="!media.video"
                 alt=""
                 :class="[
@@ -115,13 +111,13 @@
 
               <video
                 v-else
-                :src="getUrlAddress(media.url)"
+                :src="media.url"
                 autoplay
                 loop
                 muted
                 class="h-full object-cover mask-bg-radial crt"
                 ref="video"
-                poster="@assets/whitenoise.gif"
+                poster="/whitenoise.gif"
                 @loadedmetadata="setPlaybackRate(index, selectedProject)"
               ></video>
             </div>
@@ -142,47 +138,47 @@
       renderedDescription: "",
       description:
         "&emsp;&emsp;Web para el canal infantil argentino estatal Paka-Paka sobre ESI (Educación Sexual Integral). <br><br>&emsp;&emsp;Con el arte y el diseño provisto, la web fue realizada con puro Javascript, HTML y CSS y PixieJs para las animaciones.<br><br>&emsp;&emsp;",
-      icon: "@assets/pakapaka/home_logo.png", // Icono para la barra
+      icon: "/pakapaka/home_logo.png", // Icono para la barra
       link: "https://esi.pakapaka.gob.ar/",
       repoLink: "https://github.com/anavaira/pakapaka_esi",
       media: [
-        { url: "@assets/videos/pakapaka.mp4", video: true },
+        { url: "/pakapaka/pakapaka.mp4", video: true },
         {
-          url: "@assets/pakapaka/1.png",
+          url: "/pakapaka/1.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/pakapaka/2.png",
+          url: "/pakapaka/2.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/pakapaka/3.png",
+          url: "/pakapaka/3.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/pakapaka/4.png",
+          url: "/pakapaka/4.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/pakapaka/5.png",
+          url: "/pakapaka/5.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
-        // { url: "@assets/pakapaka/6.png", video: false },
+        // { url: "/pakapaka/6.png", video: false },
       ],
       hovering: false,
     },
@@ -191,47 +187,47 @@
       renderedDescription: "",
       description:
         "&emsp;&emsp;Página personal para ofrecer servicios de personal de salud mental. Es una página principalmente estática pero con un formulario de contacto para enviar mensajes al mail.<br><br>&emsp;&emsp;Hecha en Vue con Tailwind y Node/ExpressJS para el envío de mensajes a un e-mail.",
-      icon: "@assets/vcm/vcmlogo.png",
+      icon: "/vcm/vcmlogo.png",
       link: "https://licvanesacarlottomiranda.com.ar/",
       repoLink: "",
       media: [
         {
-          url: "@assets/vcm/vcm.mp4",
+          url: "/vcm/vcm.mp4",
           video: true,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/vcm/vcm1.png",
+          url: "/vcm/vcm1.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/vcm/vcm2.png",
+          url: "/vcm/vcm2.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/vcm/vcm3.png",
+          url: "/vcm/vcm3.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/vcm/vcm4.png",
+          url: "/vcm/vcm4.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/vcm/vcm5.png",
+          url: "/vcm/vcm5.png",
           video: false,
           hovering: false,
           duration: "",
@@ -244,47 +240,47 @@
       renderedDescription: "",
       description:
         "&emsp;&emsp;Dev tool para manejo de proyectos, tareas, sprint y usuarios. Pensado principalmente como herramineta para SCRUM.<br><br>&emsp;&emsp;Realizada en Vue, Tailwind, Java/Spring(API) y PostgreSQL.<br><br>&emsp;&emsp; ",
-      icon: "@assets/DevCards/card.png",
+      icon: "/DevCards/card.png",
       link: "#",
       repoLink: "https://github.com/Ltizzi/dev-cards",
       media: [
         {
-          url: "@assets/DevCards/devcards1.png",
+          url: "/DevCards/devcards1.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/DevCards/devcards2.png",
+          url: "/DevCards/devcards2.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/DevCards/devcards3.png",
+          url: "/DevCards/devcards3.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/DevCards/devcards4.png",
+          url: "/DevCards/devcards4.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/DevCards/devcards5.png",
+          url: "/DevCards/devcards5.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/DevCards/devcards6.png",
+          url: "/DevCards/devcards6.png",
           video: false,
           hovering: false,
           duration: "",
@@ -292,21 +288,21 @@
         },
 
         {
-          url: "@assets/DevCards/devcards7.png",
+          url: "/DevCards/devcards7.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/DevCards/devcards8.png",
+          url: "/DevCards/devcards8.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/DevCards/devcards9.png",
+          url: "/DevCards/devcards9.png",
           video: false,
           hovering: false,
           duration: "",
@@ -319,68 +315,68 @@
       renderedDescription: "",
       description:
         "&emsp;&emsp;Template de E-commerce con autenticación (Google Oauth2), administración de stocks (entradas, salidas, ventas, etc), perfil de usuarios, reviews de usuarios, wishlists, catálogo, buscador de productos, edición de productos, sistema de ofertas por tiempo, etc.<br><br>&emsp;&emsp;Hecho en Angular con Tailwind, Node/ExpressJS (con Typescript) y una base de datos PostgreSQL ",
-      icon: "@assets/Eshop/ecommerce.ico",
+      icon: "/Eshop/ecommerce.ico",
       link: "#",
       repoLink: "https://github.com/Ltizzi/E-Commerce",
       media: [
         {
-          url: "@assets/Eshop/eshop1.png",
+          url: "/Eshop/eshop1.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/Eshop/eshop2.png",
+          url: "/Eshop/eshop2.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/Eshop/eshop3.png",
+          url: "/Eshop/eshop3.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/Eshop/eshop4.png",
+          url: "/Eshop/eshop4.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/Eshop/eshop5.png",
+          url: "/Eshop/eshop5.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/Eshop/eshop6.png",
+          url: "/Eshop/eshop6.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/Eshop/eshop7.png",
+          url: "/Eshop/eshop7.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/Eshop/eshop8.png",
+          url: "/Eshop/eshop8.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/Eshop/eshop9.png",
+          url: "/Eshop/eshop9.png",
           video: false,
           hovering: false,
           duration: "",
@@ -393,44 +389,44 @@
       renderedDescription: "",
       description:
         "&emsp;&emsp;Craze es una red social de memes en la que los usuarios sólo pueden interactuar a través de memes, incluso en las respuestas. Con generador de memes incorporado y tags(base o personalizados) a modo de hashtags de twitter.<br><br>&emsp;&emsp;Realizada en Vue con Tailwind, Node/ExpressJS con MongoDB.",
-      icon: "@assets/craze/logo.png",
+      icon: "/craze/logo.png",
       link: "https://craze-test.web.app/",
       repoLink: "https://github.com/Ltizzi/Craze",
       media: [
         {
-          url: "@assets/craze/craze.mp4",
+          url: "/craze/craze.mp4",
           video: true,
         },
         {
-          url: "@assets/craze/craze1.png",
+          url: "/craze/craze1.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/craze/craze2.png",
+          url: "/craze/craze2.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/craze/craze3.png",
+          url: "/craze/craze3.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/craze/craze4.png",
+          url: "/craze/craze4.png",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "@assets/craze/craze5.png",
+          url: "/craze/craze5.png",
           video: false,
           hovering: false,
           duration: "",
@@ -455,7 +451,7 @@
   }
 
   function getUrlAddress(url) {
-    return new URL(url.replace("@assets", "/src/assets"), import.meta.url).href;
+    return new URL(url.replace("", "/src/assets"), import.meta.url).href;
   }
 
   function setPlaybackRate(index, selectedProj) {
@@ -569,15 +565,15 @@
 
 <style>
   .smpte {
-    background-image: url("@assets/smpte.gif");
+    background-image: url("/smpte.gif");
   }
 
   .whitenoise {
-    background-image: url("@assets/whitenoise.gif");
+    background-image: url("/whitenoise.gif");
   }
 
   .bg-control {
-    background-image: url("@assets/bg-control.jpg");
+    background-image: url("/bg-control.jpg");
     background-repeat: round;
     background-size: contain;
     background-color: rgba(24, 24, 24, 0.596);
