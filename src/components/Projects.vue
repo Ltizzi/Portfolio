@@ -93,15 +93,14 @@
           clases de la ternaria del div
           mask-bg-radial
            mark-bg-linear
+           crt
           -->
             <div
               v-for="(media, index) in projects[selectedProject].media"
               :key="index"
               :class="[
                 'bg-black rounded-lg overflow-hidden shadow-lg aspect-video',
-                media.video
-                  ? 'col-span-2 row-span-2 crt'
-                  : `${media.classes + ' crt '}`,
+                media.video ? 'col-span-2 row-span-2' : `${media.classes + ''}`,
               ]"
             >
               <img
@@ -109,7 +108,7 @@
                 v-if="!media.video"
                 alt=""
                 :class="[
-                  'w-full h-full object-cover',
+                  'w-full h-full object-cover opacity-85',
                   media.hovering
                     ? 'motion-opacity-in-100'
                     : media.classes.length > 0
@@ -123,12 +122,13 @@
                 @mouseleave="hoverImg(index, false)"
               />
 
+              <!-- crt -->
               <video
                 v-else
                 :src="media.url"
                 autoplay
                 muted
-                class="h-full object-cover mask-bg-radial crt"
+                class="h-full object-cover mask-bg-radial opacity-85"
                 ref="video"
                 poster="/whitenoise.gif"
                 @loadedmetadata="setPlaybackRate(index, selectedProject)"
