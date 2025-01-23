@@ -5,6 +5,7 @@
     <BackgroundCarousel
       class="absolute top-0"
       @carousel_init="init()"
+      :isVisible="props.isVisible"
       v-if="props.isVisible"
     />
     <div

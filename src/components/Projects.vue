@@ -4,7 +4,7 @@
   >
     <!-- Barra de Navegación -->
     <div class="lg:h-screen lg:min-h-screen">
-      <div class="navbar shadow-lg h-fit pb-12 lg:pb-0">
+      <div class="navbar shadow-lg h-fit lg:h-[7%] pb-12 lg:pb-4">
         <div
           class="flex gap-3 lg:flex-nowrap flex-wrap lg:gap-4 mx-auto justify-center"
         >
@@ -12,7 +12,7 @@
             v-for="(project, index) in projects"
             :key="index"
             @click="selectProject(index)"
-            class="btn border-x-indigo-400 bg-opacity-80 btn-outline btn-sm text-base-content flex flex-col items-center py-1 gap-2 align-middle justify-evenly rounded-lg hover:bg-indigo-400 transition-all duration-100 ease-in-out z-50 w-auto px-10"
+            class="btn border-x-indigo-800 bg-opacity-80 btn-outline btn-sm text-base-content flex flex-col items-center py-1 gap-2 align-middle justify-evenly rounded-lg hover:bg-indigo-400 transition-all duration-100 ease-in-out z-50 w-auto px-10"
             :class="[
               selectedProject === index
                 ? 'bg-indigo-700 border-indigo-700 neon-shadow-lil'
@@ -34,10 +34,13 @@
       </div>
 
       <div
-        class="flex-1 h-auto min-h-screen lg:h-fit bg-control font-orbitron container-shadow-lil rounded-lg"
+        class="flex-1 h-auto lg:h-[92%] bg-control font-orbitron container-shadow-lil rounded-lg"
         v-if="props.isVisible"
       >
-        <div class="h-svh lg:grid lg:grid-cols-4 gap-4 p-6 mb-40 lg:mb-0">
+        <!-- h-svh -->
+        <div
+          class="h-svh lg:h-full lg:grid lg:grid-cols-4 gap-4 p-6 mb-40 lg:mb-0"
+        >
           <div
             :class="[
               'col-span-1 h-4/6 lg:h-auto bg-opacity-85 bg-indigo-950 p-4 rounded-xl  shadow-md flex flex-col lg:justify-between   text-sky-300 ',
@@ -539,7 +542,7 @@
         projects.value[index].renderedDescription += char;
         await delay(0);
       }
-    }, 500);
+    }, 100);
 
     // for (let i = 0; i < projects.value[index].description.length; i++) {
     //   console.log(projects.value[index].description[i]);

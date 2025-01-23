@@ -221,7 +221,7 @@
 }
 
 .container-shadow-lil {
-  box-shadow: 0 0 250px 30px #b350fe, 0 0 25px 7px #ff32ffe2,
+  box-shadow: 0 0 350px 10px #b350fe, 0 0 25px 7px #ff32ffe2,
     0 0 270px 30px #32ff4adc, 0 0 35px 15px #33dffaee;
 }
 
