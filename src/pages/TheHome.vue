@@ -53,8 +53,8 @@
     console.log(elements.value);
     observer = new IntersectionObserver(updateVisibility, {
       root: null,
-      threshold: 0.01,
-      rootMargin: "50px",
+      threshold: 0.1,
+      rootMargin: "10px",
     });
     if (elements.value) {
       const children = elements.value.querySelectorAll("[id]");
