@@ -35,11 +35,12 @@
 
       <div
         class="flex-1 h-auto min-h-screen lg:h-fit bg-control font-orbitron container-shadow-lil rounded-lg"
+        v-if="props.isVisible"
       >
         <div class="h-svh lg:grid lg:grid-cols-4 gap-4 p-6 mb-40 lg:mb-0">
           <div
             :class="[
-              'col-span-1 h-4/6 lg:h-auto bg-opacity-85 bg-indigo-950 p-4 rounded-xl  shadow-md flex flex-col lg:justify-between   text-sky-300  ',
+              'col-span-1 h-4/6 lg:h-auto bg-opacity-85 bg-indigo-950 p-4 rounded-xl  shadow-md flex flex-col lg:justify-between   text-sky-300 ',
               showMedia
                 ? 'translate-x-0  transition-all duration-500'
                 : 'opacity-0 bg-opacity-0 text-opacity-0 -ml-20 -translate-x-full overflow-clip transition-all duration-500',
@@ -82,14 +83,19 @@
                 : 'motion-scale-out-0 motion-opacity-out-0 motion-duration-500 ',
             ]"
           >
+            <!-- 
+          clases de la ternaria del div
+          mask-bg-radial
+           mark-bg-linear
+          -->
             <div
               v-for="(media, index) in projects[selectedProject].media"
               :key="index"
               :class="[
                 'bg-black rounded-lg overflow-hidden shadow-lg aspect-video',
                 media.video
-                  ? 'col-span-2 row-span-2 crt mask-bg-radial '
-                  : `${media.classes + ' crt mark-bg-linear'}`,
+                  ? 'col-span-2 row-span-2 crt'
+                  : `${media.classes + ' crt '}`,
               ]"
             >
               <img
@@ -130,6 +136,8 @@
 <script setup>
   import { ref, useTemplateRef, onMounted, watch, onBeforeMount } from "vue";
 
+  const props = defineProps(["isVisible"]);
+
   const videosTemplate = useTemplateRef("video");
 
   const projects = ref([
@@ -138,47 +146,47 @@
       renderedDescription: "",
       description:
         "&emsp;&emsp;Web para el canal infantil argentino estatal Paka-Paka sobre ESI (Educación Sexual Integral). <br><br>&emsp;&emsp;Con el arte y el diseño provisto, la web fue realizada con puro Javascript, HTML y CSS y PixieJs para las animaciones.<br><br>&emsp;&emsp;",
-      icon: "/pakapaka/home_logo.png", // Icono para la barra
+      icon: "/pakapaka/home_logo.webp", // Icono para la barra
       link: "https://esi.pakapaka.gob.ar/",
       repoLink: "https://github.com/anavaira/pakapaka_esi",
       media: [
         { url: "/pakapaka/pakapaka.mp4", video: true },
         {
-          url: "/pakapaka/1.png",
+          url: "/pakapaka/1.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/pakapaka/2.png",
+          url: "/pakapaka/2.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/pakapaka/3.png",
+          url: "/pakapaka/3.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/pakapaka/4.png",
+          url: "/pakapaka/4.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/pakapaka/5.png",
+          url: "/pakapaka/5.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
-        // { url: "/pakapaka/6.png", video: false },
+        // { url: "/pakapaka/6.webp", video: false },
       ],
       hovering: false,
     },
@@ -187,7 +195,7 @@
       renderedDescription: "",
       description:
         "&emsp;&emsp;Página personal para ofrecer servicios de personal de salud mental. Es una página principalmente estática pero con un formulario de contacto para enviar mensajes al mail.<br><br>&emsp;&emsp;Hecha en Vue con Tailwind y Node/ExpressJS para el envío de mensajes a un e-mail.",
-      icon: "/vcm/vcmlogo.png",
+      icon: "/vcm/vcmlogo.webp",
       link: "https://licvanesacarlottomiranda.com.ar/",
       repoLink: "",
       media: [
@@ -199,35 +207,35 @@
           classes: "",
         },
         {
-          url: "/vcm/vcm1.png",
+          url: "/vcm/vcm1.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/vcm/vcm2.png",
+          url: "/vcm/vcm2.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/vcm/vcm3.png",
+          url: "/vcm/vcm3.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/vcm/vcm4.png",
+          url: "/vcm/vcm4.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/vcm/vcm5.png",
+          url: "/vcm/vcm5.webp",
           video: false,
           hovering: false,
           duration: "",
@@ -240,47 +248,47 @@
       renderedDescription: "",
       description:
         "&emsp;&emsp;Dev tool para manejo de proyectos, tareas, sprint y usuarios. Pensado principalmente como herramineta para SCRUM.<br><br>&emsp;&emsp;Realizada en Vue, Tailwind, Java/Spring(API) y PostgreSQL.<br><br>&emsp;&emsp; ",
-      icon: "/DevCards/card.png",
+      icon: "/DevCards/card.webp",
       link: "#",
       repoLink: "https://github.com/Ltizzi/dev-cards",
       media: [
         {
-          url: "/DevCards/devcards1.png",
+          url: "/DevCards/devcards1.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/DevCards/devcards2.png",
+          url: "/DevCards/devcards2.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/DevCards/devcards3.png",
+          url: "/DevCards/devcards3.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/DevCards/devcards4.png",
+          url: "/DevCards/devcards4.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/DevCards/devcards5.png",
+          url: "/DevCards/devcards5.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/DevCards/devcards6.png",
+          url: "/DevCards/devcards6.webp",
           video: false,
           hovering: false,
           duration: "",
@@ -288,21 +296,21 @@
         },
 
         {
-          url: "/DevCards/devcards7.png",
+          url: "/DevCards/devcards7.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/DevCards/devcards8.png",
+          url: "/DevCards/devcards8.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/DevCards/devcards9.png",
+          url: "/DevCards/devcards9.webp",
           video: false,
           hovering: false,
           duration: "",
@@ -320,63 +328,63 @@
       repoLink: "https://github.com/Ltizzi/E-Commerce",
       media: [
         {
-          url: "/Eshop/eshop1.png",
+          url: "/Eshop/eshop1.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/Eshop/eshop2.png",
+          url: "/Eshop/eshop2.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/Eshop/eshop3.png",
+          url: "/Eshop/eshop3.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/Eshop/eshop4.png",
+          url: "/Eshop/eshop4.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/Eshop/eshop5.png",
+          url: "/Eshop/eshop5.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/Eshop/eshop6.png",
+          url: "/Eshop/eshop6.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/Eshop/eshop7.png",
+          url: "/Eshop/eshop7.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/Eshop/eshop8.png",
+          url: "/Eshop/eshop8.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/Eshop/eshop9.png",
+          url: "/Eshop/eshop9.webp",
           video: false,
           hovering: false,
           duration: "",
@@ -389,7 +397,7 @@
       renderedDescription: "",
       description:
         "&emsp;&emsp;Craze es una red social de memes en la que los usuarios sólo pueden interactuar a través de memes, incluso en las respuestas. Con generador de memes incorporado y tags(base o personalizados) a modo de hashtags de twitter.<br><br>&emsp;&emsp;Realizada en Vue con Tailwind, Node/ExpressJS con MongoDB.",
-      icon: "/craze/logo.png",
+      icon: "/craze/logo.webp",
       link: "https://craze-test.web.app/",
       repoLink: "https://github.com/Ltizzi/Craze",
       media: [
@@ -398,35 +406,35 @@
           video: true,
         },
         {
-          url: "/craze/craze1.png",
+          url: "/craze/craze1.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/craze/craze2.png",
+          url: "/craze/craze2.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/craze/craze3.png",
+          url: "/craze/craze3.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/craze/craze4.png",
+          url: "/craze/craze4.webp",
           video: false,
           hovering: false,
           duration: "",
           classes: "",
         },
         {
-          url: "/craze/craze5.png",
+          url: "/craze/craze5.webp",
           video: false,
           hovering: false,
           duration: "",
@@ -486,10 +494,10 @@
 
   function recalcClassAndDurations() {
     const medias = projects.value[selectedProject.value].media;
-    console.log(medias);
+    //console.log(medias);
     for (const media of medias) {
       if (!media.video) {
-        console.log(media);
+        // console.log(media);
         media.duration = getDuration();
         media.classes = getClass();
       }

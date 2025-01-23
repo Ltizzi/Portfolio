@@ -2,18 +2,19 @@
   <div class="h-screen w-screen overflow-hidden bg-indigo-950 sticky">
     <img
       src="@assets/circuit-board.svg"
-      class="h-full w-full repeat-svg"
+      :class="['h-full w-full', props.isVisible ? 'repeat-svg' : '']"
       alt=""
     />
 
     <div
       class="absolute inset-0 lg:top-20 top-2 justify-center items-center lg:-ml-40 ml-14 lg:flex"
+      v-if="props.isVisible"
     >
       <div
         class="bg-gradient-to-r from-base-300 to-success/30 bg-opacity-100 w-[82%] h-48 lg:w-[60%] lg:h-[70%] rounded-lg shadow-xl border-4 border-gray-500 flex justify-center items-center mask-blur-radial crt relative"
       >
         <img
-          src="@assets/server_racks.jpeg"
+          src="/server_racks.webp"
           class="top-0 object-cover w-full h-full z-0 opacity-90 motion-duration-[0.6s]/opacity motion-opacity-loop-60/mirror motion-duration-[3s] motion-translate-x-loop-[0.2%] motion-translate-y-loop-[0.2%] motion-ease-in-out-quad motion-ease-spring-bouncier/opacity motion-delay-300/blur motion-blur-loop-md absolute"
           alt=""
         />
@@ -29,9 +30,10 @@
       class="absolute lg:top-28 top-52 lg:right-8 right-20 w-96 lg:w-[19%] h-[75%] rounded-lg shadow-lg border-4 border-gray-500 flex justify-center items-center bg-gradient-to-r from-base-300 to-success/30 bg-opacity-100 crt"
     >
       <img
-        src="@assets/server_racks.jpeg"
+        src="/server_racks.webp"
         class="top-0 object-cover w-full h-full z-0 opacity-95 motion-duration-[0.6s]/opacity motion-opacity-loop-90/mirror motion-duration-[3s] motion-translate-x-loop-[0.2%] motion-translate-y-loop-[0.2%] motion-ease-in-out-quad motion-ease-spring-bouncier/opacity motion-delay-300/blur motion-blur-loop-md absolute"
         alt=""
+        v-if="props.isVisible"
       />
 
       <div
@@ -72,6 +74,8 @@
 
 <script setup>
   import { ref, onMounted, useTemplateRef, onUnmounted } from "vue";
+
+  const props = defineProps(["isVisible"]);
 
   const tech_item = useTemplateRef("techItem");
   const secondList = ref(false);
@@ -173,7 +177,7 @@
     width: 100vw;
     height: 100vh;
     animation: glow 4s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
-    -webkit-mask-image: url("@/assets/circuit-board.svg");
+    -webkit-mask-image: url("/assets/circuit-board.svg");
     -webkit-mask-repeat: repeat;
     -webkit-mask-size: 200px 200px; /* Tamaño de repetición del SVG */
     mask-image: url("@/assets/circuit-board.svg");

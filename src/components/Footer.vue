@@ -1,6 +1,7 @@
 <template lang="">
   <footer
     class="footer footer-center bg-gradient-to-b from-neutral to-base-300 text-base-content rounded p-10 mask-bg-radial"
+    v-show="props.isVisible"
   >
     <nav class="grid grid-flow-col gap-4">
       <a class="link link-hover">About me</a>
@@ -58,5 +59,7 @@
     </aside>
   </footer>
 </template>
-<script setup></script>
+<script setup>
+  const props = defineProps(["isVisible"]);
+</script>
 <style lang=""></style>

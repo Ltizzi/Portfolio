@@ -2,7 +2,11 @@
   <div
     class="h-screen w-screen overflow-hidden relative flex justify-center items-center"
   >
-    <BackgroundCarousel class="absolute top-0" @carousel_init="init()" />
+    <BackgroundCarousel
+      class="absolute top-0"
+      @carousel_init="init()"
+      v-if="props.isVisible"
+    />
     <div
       class="mask-bg-linear w-full flex flex-col justify-center items-center 2xl:items-end"
       v-if="state.start"
@@ -13,6 +17,7 @@
           `bg-gradient-to-br from-pink-300/10 from-15% via-pink-300/40 via-50% to-85% to-pink-300/10 
           motion-bg-loop-indigo-950`,
         ]"
+        v-if="props.isVisible"
       >
         <div
           :class="[
@@ -65,6 +70,8 @@
 <script setup>
   import BackgroundCarousel from "./BackgroundCarousel.vue";
   import { onMounted, reactive } from "vue";
+
+  const props = defineProps(["isVisible"]);
 
   const state = reactive({
     start: false,

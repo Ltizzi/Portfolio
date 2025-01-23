@@ -4,6 +4,7 @@
   >
     <div
       class="src mask-bg-radial absolute w-full h-full flex items-center justify-center"
+      v-if="props.isVisible"
     >
       <div class="absolute inset-0">
         <div
@@ -34,7 +35,7 @@
       >
         <div class="relative w-60 h-60 md:w-80 md:h-80">
           <img
-            src="@assets/profile.jfif   "
+            src="/profile.webp   "
             alt="Tu Foto"
             class="w-full h-full object-cover rounded-full neon-shadow shadow-lg hover:scale-105 transition transform duration-300 opacity-85"
           />
@@ -102,9 +103,11 @@
 <script setup>
   import { ref } from "vue";
 
+  const props = defineProps(["isVisible"]);
+
   const images = ref([
     {
-      src: new URL("@assets/workstation.jpeg", import.meta.url).href,
+      src: new URL("/workstation.webp", import.meta.url).href,
       top: "-5%",
       left: "40%",
       size: "300px",
@@ -113,7 +116,7 @@
       hovering: false,
     },
     {
-      src: new URL("@assets/workstation2.jpeg", import.meta.url).href,
+      src: new URL("/workstation2.webp", import.meta.url).href,
       top: "25%",
       left: "100%",
       size: "300px",
@@ -122,7 +125,7 @@
       hovering: false,
     },
     {
-      src: new URL("@assets/workstation3.webp", import.meta.url).href,
+      src: new URL("/workstation3.webp", import.meta.url).href,
       top: "55%",
       left: "65%",
       size: "400px",
@@ -131,7 +134,7 @@
       hovering: false,
     },
     {
-      src: new URL("@assets/workstation_retro.webp", import.meta.url).href,
+      src: new URL("/workstation_retro.webp", import.meta.url).href,
       top: "30%",
       left: "135%",
       size: "420px",
@@ -140,7 +143,7 @@
       hovering: false,
     },
     {
-      src: new URL("@assets/workstation_neon.webp", import.meta.url).href,
+      src: new URL("/workstation_neon.webp", import.meta.url).href,
       top: "45%",
       left: "175%",
       size: "380px",
@@ -149,7 +152,7 @@
       hovering: false,
     },
     {
-      src: new URL("@assets/hackerlair.jpeg", import.meta.url).href,
+      src: new URL("/hackerlair.webp", import.meta.url).href,
       top: "20%",
       left: "215%",
       size: "320px",
