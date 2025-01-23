@@ -3,10 +3,10 @@
     class="relative min-h-screen r bg-gradient-to-b from-base-300 to-95% to-violet-950 overflow-hidden"
   >
     <div
-      class="src mask-bg-radial absolute w-full h-full flex items-center justify-center"
+      class="mask-bg-radial absolute w-full h-full flex items-center justify-center"
       v-if="props.isVisible"
     >
-      <div class="absolute inset-0">
+      <div class="absolute inset-0" v-if="!isMobile">
         <div
           v-for="(image, index) in images"
           :class="[
@@ -33,11 +33,11 @@
       <div
         class="max-w-6xl bg-opacity-85 bg-indigo-950 text-green-400 rounded-xl shadow-2xl p-10 flex flex-col md:flex-row items-center gap-10 border border-green-500 relative z-0 container-shadow"
       >
-        <div class="relative w-60 h-60 md:w-80 md:h-80">
+        <div class="relative w-40 h-40 lg:w-80 lg:h-80">
           <img
             src="/profile.webp   "
             alt="Tu Foto"
-            class="w-full h-full object-cover rounded-full neon-shadow shadow-lg hover:scale-105 transition transform duration-300 opacity-85"
+            class="w-full h-full object-cover rounded-full neon-shadow lg:shadow-lg hover:scale-105 transition transform duration-300 opacity-85"
           />
           <div
             class="absolute inset-0 rounded-full border border-dashed border-violet-400 animate-pulse"
@@ -45,23 +45,23 @@
         </div>
 
         <div class="flex-1 text-center md:text-left font-roboto">
-          <h1 class="text-5xl md:text-6xl font-bold mb-6 neon-title">
+          <h1 class="text-3xl md:text-6xl font-bold mb-6 neon-title">
             Welcome!
           </h1>
-          <p class="text-lg md:text-xl leading-relaxed text-violet-200">
+          <p class="text-base md:text-xl leading-relaxed text-violet-200">
             Lorem ipsum odor amet, consectetuer adipiscing elit. Orci iaculis
             quis tempor neque sodales, est scelerisque. Natoque placerat dolor
             sed consequat elit. Nibh finibus elementum ac imperdiet mattis
             lacinia maecenas. Gravida aliquet hendrerit sit metus ridiculus!
             Ridiculus purus arcu varius, nisi egestas litora.
           </p>
-          <p class="mt-4 text-md md:text-lg text-violet-300 leading-relaxed">
+          <p class="mt-4 text-sm md:text-lg text-violet-300 leading-relaxed">
             Dignissim urna est ultrices habitasse tortor, sollicitudin
             consectetur. Eget vulputate hac convallis varius, venenatis nullam.
             Felis est at potenti adipiscing in ex platea. Aenean eget tempus
             ligula ridiculus, suspendisse sollicitudin.
           </p>
-          <p class="mt-4 text-sm md:text-base opacity-70 text-violet-400">
+          <p class="mt-4 text-xs md:text-base opacity-70 text-violet-400">
             Tincidunt et rutrum dignissim ante elementum quam, litora duis
             porttitor? Commodo curabitur ad lectus id molestie eget eget. Elit
             nulla pellentesque lobortis suscipit laoreet taciti dictumst.
@@ -101,9 +101,11 @@
 </template>
 
 <script setup>
-  import { ref } from "vue";
+  import { onBeforeMount, ref } from "vue";
 
   const props = defineProps(["isVisible"]);
+
+  const isMobile = ref(false);
 
   const images = ref([
     {
@@ -165,6 +167,10 @@
   function handleHover(index, condition) {
     images.value[index].hovering = condition;
   }
+
+  onBeforeMount(() => {
+    isMobile.value = window.innerWidth <= 768;
+  });
 </script>
 
 <style scoped>

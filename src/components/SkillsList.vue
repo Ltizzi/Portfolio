@@ -1,5 +1,7 @@
 <template>
-  <div class="h-screen w-screen overflow-hidden bg-indigo-950 sticky">
+  <div
+    class="lg:h-screen h-auto lg:pb-0 pb-24 w-screen overflow-hidden bg-indigo-950 sticky"
+  >
     <img
       src="@assets/circuit-board.svg"
       :class="['h-full w-full', props.isVisible ? 'repeat-svg' : '']"
@@ -7,7 +9,7 @@
     />
 
     <div
-      class="absolute inset-0 lg:top-20 top-2 justify-center items-center lg:-ml-40 ml-14 lg:flex"
+      class="absolute inset-0 lg:top-20 top-16 justify-center items-center lg:-ml-40 ml-14 lg:flex"
       v-if="props.isVisible"
     >
       <div
@@ -27,7 +29,7 @@
     </div>
 
     <div
-      class="absolute lg:top-28 top-52 lg:right-8 right-20 w-96 lg:w-[19%] h-[75%] rounded-lg shadow-lg border-4 border-gray-500 flex justify-center items-center bg-gradient-to-r from-base-300 to-success/30 bg-opacity-100 crt"
+      class="absolute lg:top-28 top-72 lg:right-8 right-12 w-72 h-[50%] lg:w-[19%] lg:h-[75%] rounded-lg shadow-lg border-4 border-gray-500 flex justify-center items-center bg-gradient-to-r from-base-300 to-success/30 bg-opacity-100 crt"
     >
       <img
         src="/server_racks.webp"
@@ -43,7 +45,7 @@
           class="w-full top-0 left-0 mx-auto mask-blur fixed h-1/3 z-40"
         ></div>
         <ul
-          class="flex flex-col gap-7 text-4xl text-start h-full animated-scroll"
+          class="flex flex-col gap-7 text-xl lg:text-4xl text-start h-full animated-scroll"
           ref="scrollList"
         >
           <!-- visible_items.includes(index) 

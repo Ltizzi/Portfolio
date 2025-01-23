@@ -22,6 +22,13 @@
   line-height: 0.9;
 }
 
+@media (max-width: 768px) {
+  .landing-text {
+    font-size: 4rem;
+    line-height: 1.1;
+  }
+}
+
 .mask-blur {
   scrollbar-color: var(
       --token-6665bf47-c092-461e-b1a2-a1332f6b6ec5,
@@ -222,63 +229,63 @@
   0% {
     opacity: 0.27861;
   }
-  5% {
+  /* 5% {
     opacity: 0.34769;
   }
   10% {
     opacity: 0.23604;
-  }
+  } */
   15% {
     opacity: 0.90626;
   }
-  20% {
+  /* 20% {
     opacity: 0.18128;
   }
   25% {
     opacity: 0.83891;
-  }
+  } */
   30% {
     opacity: 0.65583;
   }
-  35% {
+  /* 35% {
     opacity: 0.67807;
   }
   40% {
     opacity: 0.26559;
-  }
+  } */
   45% {
     opacity: 0.84693;
   }
-  50% {
+  /* 50% {
     opacity: 0.96019;
   }
   55% {
     opacity: 0.08594;
-  }
+  } */
   60% {
     opacity: 0.20313;
   }
-  65% {
+  /* 65% {
     opacity: 0.71988;
   }
   70% {
     opacity: 0.53455;
-  }
+  } */
   75% {
     opacity: 0.37288;
   }
-  80% {
+  /* 80% {
     opacity: 0.71428;
   }
   85% {
     opacity: 0.70419;
-  }
+  } */
   90% {
     opacity: 0.7003;
   }
-  95% {
+  /* 95% {
     opacity: 0.36108;
-  }
+  } */
   100% {
     opacity: 0.24387;
   }

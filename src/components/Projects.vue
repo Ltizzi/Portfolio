@@ -52,32 +52,35 @@
               </h2>
               <!-- -->
               <p
-                class="flex-1 text-sm lg:text-lg lg:mt-8 text-start leading-6 lg:leading-8 tracking-widest mx-8"
+                class="flex-1 text-xs lg:text-lg lg:mt-8 text-start leading-6 lg:leading-8 tracking-widest mx-8"
                 v-html="projects[selectedProject].renderedDescription"
               ></p>
             </div>
 
-            <div class="flex flex-col lg:gap-5">
+            <div class="flex lg:flex-col lg:gap-5 justify-around mx-2.5 gap-2">
               <a
                 :href="projects[selectedProject].link"
                 target="_blank"
-                class="btn btn-outline btn-accent text-white font-orbitron lg:text-xl mt-4 rounded-xl"
+                class="btn btn-outline btn-accent text-xs text-white font-orbitron lg:text-xl mt-4 rounded-xl lg:w-full w-1/2"
               >
                 Ver Proyecto
               </a>
               <a
                 :href="projects[selectedProject].repoLink"
                 target="_blank"
-                class="btn btn-outline btn-accent font-orbitron lg:text-xl mt-4 rounded-xl"
+                class="btn btn-outline btn-accent font-orbitron lg:text-xl mt-4 rounded-xl lg:w-full w-1/2"
               >
-                <font-awesome-icon :icon="['fab', 'github']" class="size-7" />
+                <font-awesome-icon
+                  :icon="['fab', 'github']"
+                  class="lg:size-7 size-5"
+                />
               </a>
             </div>
           </div>
 
           <div
             :class="[
-              'col-span-3 grid grid-cols-3 gap-4 row-auto ',
+              'col-span-3 grid grid-cols-3 gap-4 row-auto lg:mt-0 mt-10 ',
               showMedia
                 ? 'motion-scale-in-0 motion-opacity-in-0 motion-duration-500 '
                 : 'motion-scale-out-0 motion-opacity-out-0 motion-duration-500 ',
@@ -106,7 +109,9 @@
                   'w-full h-full object-cover',
                   media.hovering
                     ? 'motion-opacity-in-100'
-                    : 'motion-opacity-loop-0',
+                    : media.classes.length > 0
+                    ? 'motion-opacity-loop-0'
+                    : '',
                 ]"
                 :style="{
                   animationDuration: media.duration,
@@ -119,7 +124,6 @@
                 v-else
                 :src="media.url"
                 autoplay
-                loop
                 muted
                 class="h-full object-cover mask-bg-radial crt"
                 ref="video"
@@ -452,10 +456,10 @@
 
   function selectProject(index) {
     showMedia.value = false;
+    selectedProject.value = index;
     setTimeout(() => {
-      selectedProject.value = index;
       showMedia.value = true;
-    }, 500);
+    }, 200);
   }
 
   function getUrlAddress(url) {
@@ -485,7 +489,7 @@
 
   function getClass() {
     const chances = Math.random();
-    return chances < 0.51 ? "smpte" : "whitenoise";
+    return chances < 0.4 ? (chances < 0.51 ? "smpte" : "whitenoise") : "";
   }
 
   function delay(ms) {
@@ -498,8 +502,9 @@
     for (const media of medias) {
       if (!media.video) {
         // console.log(media);
-        media.duration = getDuration();
         media.classes = getClass();
+        if (media.classes.length > 0) media.duration = getDuration();
+        else media.duration = "0s";
       }
     }
     projects.value[selectedProject.value].media = medias;

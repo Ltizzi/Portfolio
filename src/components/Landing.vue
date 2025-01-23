@@ -8,7 +8,7 @@
       v-if="props.isVisible"
     />
     <div
-      class="mask-bg-linear w-full flex flex-col justify-center items-center 2xl:items-end"
+      class="mask-bg-linear w-full flex flex-col justify-center items-center 2xl:items-end transform-cpu"
       v-if="state.start"
     >
       <div
