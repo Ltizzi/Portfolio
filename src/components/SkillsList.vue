@@ -121,8 +121,12 @@
     const list = scrollList.value;
     listHeight.value = list.scrollHeight;
 
-    list.style.animationDuration = `${listHeight.value / 100}s`;
     //startScrolling();
+    let isMobile = window.innerWidth <= 768;
+    list.style.animationDuration = !isMobile
+      ? `${listHeight.value / 100}s`
+      : "20s";
+    let percent = isMobile ? "-20% 0px -30% 0px" : "-20% 0px -50% 0px";
     observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -146,7 +150,7 @@
       {
         root: null,
         threshold: 0.005,
-        rootMargin: "-20% 0px -50% 0px",
+        rootMargin: percent,
       }
     );
     tech_item.value.forEach((tech) => observer.observe(tech));
