@@ -12,7 +12,7 @@
             v-for="(project, index) in projects"
             :key="index"
             @click="selectProject(index)"
-            class="btn border-x-indigo-800 bg-opacity-80 btn-outline btn-xs lg:btn-sm text-base-content flex flex-col items-center py-1 gap-2 align-middle justify-evenly rounded-lg hover:bg-indigo-400 transition-all duration-100 ease-in-out z-50 w-auto px-10"
+            class="btn border-x-indigo-800 bg-opacity-80 btn-outline btn-xs lg:btn-sm xl:px-10 text-base-content flex flex-col items-center py-1 gap-2 align-middle justify-evenly rounded-lg hover:bg-indigo-400 transition-all duration-100 ease-in-out z-50 w-auto px-10"
             :class="[
               selectedProject === index
                 ? 'bg-indigo-700 border-indigo-700 neon-shadow-lil'

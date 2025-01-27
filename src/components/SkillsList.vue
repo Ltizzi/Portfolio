@@ -1,6 +1,6 @@
 <template>
   <div
-    class="lg:h-screen h-auto lg:pb-0 pb-24 w-screen overflow-hidden bg-indigo-950 sticky"
+    class="xl:h-screen h-auto xl:pb-0 pb-24 w-screen overflow-hidden bg-indigo-950 sticky"
   >
     <img
       src="@assets/circuit-board.svg"
@@ -9,11 +9,11 @@
     />
 
     <div
-      class="absolute inset-0 lg:top-20 top-16 justify-center items-center lg:-ml-40 ml-14 lg:flex"
+      class="absolute inset-0 xl:top-20 top-16 justify-center items-center xl:-ml-40 ml-14 xl:flex"
       v-if="props.isVisible"
     >
       <div
-        class="bg-gradient-to-r from-base-300 to-success/30 bg-opacity-100 w-[82%] h-48 lg:w-[60%] lg:h-[70%] rounded-lg shadow-xl border-4 border-gray-500 flex justify-center items-center mask-blur-radial crt relative"
+        class="bg-gradient-to-r from-base-300 to-success/30 bg-opacity-100 w-[82%] lg:w-[72%] lg:left-24 h-48 xl:w-[60%] xl:left-0 xl:h-[70%] rounded-lg shadow-xl border-4 border-gray-500 flex justify-center items-center mask-blur-radial crt relative"
       >
         <img
           src="/server_racks.webp"
@@ -21,7 +21,7 @@
           alt=""
         />
         <h1
-          class="text-5xl text-center lg:text-7xl 2xl:text-7xl font-extrabold tracking-widest absolute lg:top-64 lg:left-96 lg:-ml-10 leading-relax text-opacity-5 font-zendots text-success bg-blue-100 bg-opacity-35 rounded-md px-1.5 py-0.5"
+          class="text-5xl text-center xl:text-7xl font-extrabold tracking-widest absolute xl:top-64 xl:left-96 xl:-ml-10 leading-relax text-opacity-5 font-zendots text-success bg-blue-100 bg-opacity-35 rounded-md px-1.5 py-0.5"
         >
           Tech Skills
         </h1>
@@ -29,7 +29,8 @@
     </div>
 
     <div
-      class="absolute lg:top-28 top-72 lg:right-8 right-12 w-72 h-[50%] lg:w-[19%] lg:h-[75%] rounded-lg shadow-lg border-4 border-gray-500 flex justify-center items-center bg-gradient-to-r from-base-300 to-success/30 bg-opacity-100 crt"
+      class="absolute xl:top-28 top-72 xl:right-8 right-12 lg:right-40 w-72 lg:w-[70%] h-[50%] xl:w-[19%] xl:h-[75%] rounded-lg shadow-lg border-4 border-gray-500 flex justify-center items-center bg-gradient-to-r from-base-300 to-success/30 bg-opacity-100 crt"
+      ref="sideScreen"
     >
       <img
         src="/server_racks.webp"
@@ -39,13 +40,13 @@
       />
 
       <div
-        class="relative scroll-container overflow-hidden leading-relax text-opacity-85 font-extralight font-zendots tracking-tight w-full h-full text-center px-0 2xl:px-6 text-2xl lg:text-3xl flex py-16 flex-col gap-10 opacity-100 z-40"
+        class="relative scroll-container overflow-hidden leading-relax text-opacity-85 font-extralight font-zendots tracking-tight w-full lg:px-64 h-full text-center px-0 xl:px-6 text-2xl xl:text-3xl flex py-16 flex-col gap-10 opacity-100 z-40"
       >
         <div
           class="w-full top-0 left-0 mx-auto mask-blur fixed h-1/3 z-40"
         ></div>
         <ul
-          class="flex flex-col gap-7 text-xl lg:text-4xl text-start h-full animated-scroll"
+          class="flex flex-col gap-7 text-xl xl:text-4xl text-start h-full animated-scroll"
           ref="scrollList"
         >
           <!-- visible_items.includes(index) 
@@ -80,6 +81,7 @@
   const props = defineProps(["isVisible"]);
 
   const tech_item = useTemplateRef("techItem");
+  const side_screen = useTemplateRef("sideScreen");
   const secondList = ref(false);
 
   let observer;
@@ -148,7 +150,7 @@
         });
       },
       {
-        root: null,
+        root: side_screen.value,
         threshold: 0.005,
         rootMargin: percent,
       }
