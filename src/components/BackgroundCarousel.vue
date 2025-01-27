@@ -118,15 +118,15 @@
     { route: "/carousel4.webp" },
   ]);
 
-  function handleVideoEnd(index) {
+  async function handleVideoEnd(index) {
     changing.value = true;
 
     setTimeout(() => {
-      currentIndex.value = index === 4 || index > 4 ? 0 : index + 1;
       if (index === 4) {
         video1.value.playbackRate = 1.5;
         video1.value.play();
       }
+      currentIndex.value = index === 4 || index > 4 ? 0 : index + 1;
       // if (index === 0) {
       //   video2.value.playbackRate = 4;
       //   video2.value.play();
@@ -137,22 +137,24 @@
       // }
 
       changing.value = false;
-    }, 250);
+    }, 1000);
   }
 
   watch(
     () => currentIndex.value,
     async (newValue, oldValue) => {
+      if (currentIndex.value == 4) {
+        setTimeout(async () => {
+          if (currentIndex.value > 4) currentIndex.value = 4;
+          handleVideoEnd(4);
+          return;
+        }, 3000);
+      }
       if (newValue > 0 && props.isVisible) {
         changing.value = true;
         setTimeout(() => {
           currentIndex.value += 1;
           changing.value = false;
-          if (currentIndex.value == 4) {
-            setTimeout(() => {
-              handleVideoEnd(4);
-            }, 3000);
-          }
         }, 3000);
       }
     }

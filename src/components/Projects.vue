@@ -4,22 +4,22 @@
   >
     <!-- Barra de Navegación -->
     <div class="lg:h-screen lg:min-h-screen">
-      <div class="navbar shadow-lg h-fit lg:h-[7%] pb-12 lg:pb-4">
+      <div class="navbar shadow-lg h-fit lg:h-[7%] pb-4 lg:pb-4">
         <div
-          class="flex gap-3 lg:flex-nowrap flex-wrap lg:gap-4 mx-auto justify-center"
+          class="flex gap-1 lg:flex-nowrap flex-wrap lg:gap-4 mx-auto justify-center"
         >
           <button
             v-for="(project, index) in projects"
             :key="index"
             @click="selectProject(index)"
-            class="btn border-x-indigo-800 bg-opacity-80 btn-outline btn-sm text-base-content flex flex-col items-center py-1 gap-2 align-middle justify-evenly rounded-lg hover:bg-indigo-400 transition-all duration-100 ease-in-out z-50 w-auto px-10"
+            class="btn border-x-indigo-800 bg-opacity-80 btn-outline btn-xs lg:btn-sm text-base-content flex flex-col items-center py-1 gap-2 align-middle justify-evenly rounded-lg hover:bg-indigo-400 transition-all duration-100 ease-in-out z-50 w-auto px-10"
             :class="[
               selectedProject === index
                 ? 'bg-indigo-700 border-indigo-700 neon-shadow-lil'
                 : '',
             ]"
           >
-            <img :src="project.icon" alt="" class="size-6 -ml-4" />
+            <img :src="project.icon" alt="" class="size-4 lg:size-6 -ml-4" />
             <span
               :class="[
                 'text-xs font-orbitron  motion-duration-500 motion-ease-in-cubic motion-translate-x-loop-[0.5px] hover:motion-translate-y-in-0  hover:text-yellow-50 transition-all duration-150',
@@ -540,9 +540,9 @@
         }
 
         projects.value[index].renderedDescription += char;
-        await delay(0);
+        await delay(1);
       }
-    }, 100);
+    }, 5);
 
     // for (let i = 0; i < projects.value[index].description.length; i++) {
     //   console.log(projects.value[index].description[i]);

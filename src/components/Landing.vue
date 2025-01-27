@@ -32,7 +32,7 @@
         >
           <h1
             :class="[
-              'landing-text 2xl:text-end font-bold font-roboto leading-3 mx-auto -tracking-wider motion-ease-in-out-quad  ',
+              'landing-text lg:text-end font-bold font-roboto leading-3 mx-auto -tracking-wider motion-ease-in-out-quad   ',
               state.showText1
                 ? 'motion-duration-200  motion-translate-x-in-[150%] motion-preset-fade'
                 : 'opacity-0',
@@ -49,7 +49,7 @@
           </h1>
           <h1
             :class="[
-              'landing-text 2xl:text-end font-bold font-roboto -tracking-wider w-full  motion-ease-in-out-quad  ',
+              'landing-text  lg:text-end font-bold font-roboto -tracking-wider   motion-ease-in-out-quad  ',
               state.showText2
                 ? 'motion-duration-200  motion-translate-y-in-[150%]  motion-preset-fade'
                 : 'opacity-0',
