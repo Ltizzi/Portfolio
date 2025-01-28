@@ -21,17 +21,17 @@
         ]"
         v-if="props.isVisible"
       >
-        <!-- motion-preset-shake motion-scale-loop-95-->
+        <!--   state.animateText && !state.hoverText1 && !state.hoverText2
+              ? 'motion-preset-shake motion-scale-loop-95 motion-blur-loop-sm  '
+              : '',
+            !state.hoverText1 && !state.hoverText2 ? ' ' : '', -->
         <div
           :class="[
             'flex flex-col gap-10 justify-center items-center h-full  text-landing opacity-95 motion-duration-500 motion-ease-spring-snappy motion-duration-150/scale motion-duration-150/blur ',
-            state.animateText && !state.hoverText1 && !state.hoverText2
-              ? 'motion-blur-loop-sm  '
-              : '',
-            !state.hoverText1 && !state.hoverText2 ? ' ' : '',
           ]"
           v-if="state.firstAnimationEnded"
         >
+          <!-- motion-scale-loop-[99.5%]  motion-text-loop-accent motion-duration-/text -->
           <h1
             :class="[
               'landing-text lg:text-end font-bold font-roboto leading-3 mx-auto -tracking-wider motion-ease-in-out-quad   ',
@@ -39,7 +39,7 @@
                 ? 'motion-duration-200  motion-translate-x-in-[150%] motion-preset-fade'
                 : 'opacity-0',
               !state.hoverText1
-                ? 'motion-duration-1000  motion-scale-loop-[99.5%] motion-blur-loop-sm motion-duration-2000/blur -motion-translate-x-loop-[1.2%] motion-duration-2000/translate motion-translate-y-loop-[1.5%] motion-text-loop-accent motion-duration-/text motion-translate-x-out-0 motion-translate-out-in-0'
+                ? 'motion-duration-1000   motion-blur-loop-sm motion-duration-2000/blur -motion-translate-x-loop-[1.2%] motion-duration-2000/translate motion-translate-y-loop-[1.5%]motion-translate-x-out-0 motion-translate-out-in-0'
                 : 'neon-title',
             ]"
             @mouseenter="handleHover(1, true)"
@@ -49,6 +49,7 @@
             I'm Leonardo <br />
             Terlizzi
           </h1>
+          <!-- motion-scale-loop-[100.5%]   motion-text-loop-accent motion-duration-/text-->
           <h1
             :class="[
               'landing-text  lg:text-end font-bold font-roboto -tracking-wider   motion-ease-in-out-quad  ',
@@ -56,7 +57,7 @@
                 ? 'motion-duration-200  motion-translate-y-in-[150%]  motion-preset-fade'
                 : 'opacity-0',
               !state.hoverText2
-                ? 'motion-duration-1000 motion-scale-loop-[100.5%] motion-blur-loop-sm motion-duration-1500/blur -motion-translate-x-loop-[1.2%] motion-duration-2000/translate motion-translate-y-loop-[1.5%] motion-text-loop-accent motion-duration-/text motion-translate-x-out-0 motion-translate-out-in-0'
+                ? 'motion-duration-1000 motion-blur-loop-sm motion-duration-1500/blur -motion-translate-x-loop-[1.2%] motion-duration-2000/translate motion-translate-y-loop-[1.5%]  motion-translate-x-out-0 motion-translate-out-in-0'
                 : 'neon-title',
             ]"
             @mouseenter="handleHover(2, true)"

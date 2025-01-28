@@ -104,6 +104,7 @@
 
   const currentIndex = ref(0);
   const changing = ref(false);
+  const restarting = ref(false);
 
   const video1 = ref();
   // const video2 = ref();
@@ -120,13 +121,13 @@
 
   async function handleVideoEnd(index) {
     changing.value = true;
-
     setTimeout(() => {
-      if (index === 4) {
+      currentIndex.value = index >= 4 ? 0 : index + 1;
+
+      if (index >= 4) {
         video1.value.playbackRate = 1.5;
         video1.value.play();
       }
-      currentIndex.value = index === 4 || index > 4 ? 0 : index + 1;
       // if (index === 0) {
       //   video2.value.playbackRate = 4;
       //   video2.value.play();
@@ -135,27 +136,31 @@
       //   video3.value.playbackRate = 4;
       //   video3.value.play();
       // }
-
+      restarting.value = false;
       changing.value = false;
-    }, 1000);
+    }, 310);
   }
 
   watch(
     () => currentIndex.value,
     async (newValue, oldValue) => {
-      if (currentIndex.value == 4) {
-        setTimeout(async () => {
-          if (currentIndex.value > 4) currentIndex.value = 4;
-          handleVideoEnd(4);
-          return;
-        }, 3000);
-      }
-      if (newValue > 0 && props.isVisible) {
-        changing.value = true;
-        setTimeout(() => {
-          currentIndex.value += 1;
-          changing.value = false;
-        }, 3000);
+      if (newValue != oldValue) {
+        if (currentIndex.value >= 4 && !restarting.value) {
+          setTimeout(async () => {
+            // changing.value = false;
+            restarting.value = true;
+            handleVideoEnd(4);
+            return;
+          }, 2700);
+        }
+
+        if (newValue > 0 && props.isVisible && !restarting.value) {
+          changing.value = true;
+          setTimeout(() => {
+            currentIndex.value += 1;
+            changing.value = false;
+          }, 3000);
+        }
       }
     }
   );
