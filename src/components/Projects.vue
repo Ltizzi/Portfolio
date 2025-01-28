@@ -108,7 +108,7 @@
                 v-if="!media.video"
                 alt=""
                 :class="[
-                  'w-full h-full object-cover opacity-85',
+                  'w-full h-full object-cover opacity-85 hover:cursor-pointer',
                   media.hovering
                     ? 'motion-opacity-in-100'
                     : media.classes.length > 0
@@ -120,6 +120,7 @@
                 }"
                 @mouseenter="hoverImg(index, true)"
                 @mouseleave="hoverImg(index, false)"
+                @click="showModal(false, media.url)"
               />
 
               <!-- crt -->
@@ -128,20 +129,42 @@
                 :src="media.url"
                 autoplay
                 muted
-                class="h-full object-cover mask-bg-radial opacity-85"
+                class="h-full object-cover mask-bg-radial opacity-85 hover:cursor-pointer"
                 ref="video"
                 poster="/whitenoise.gif"
                 @loadedmetadata="setPlaybackRate(index, selectedProject)"
+                @click="showModal(true, media.url)"
               ></video>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <MediaModal
+      v-if="state.modalShow"
+      :modalShow="state.modalShow"
+      :route="state.route"
+      :isVideo="state.isVideo"
+      @close="closeModal()"
+    />
   </div>
 </template>
 <script setup>
-  import { ref, useTemplateRef, onMounted, watch, onBeforeMount } from "vue";
+  import {
+    ref,
+    useTemplateRef,
+    onMounted,
+    watch,
+    onBeforeMount,
+    reactive,
+  } from "vue";
+  import MediaModal from "./MediaModal.vue";
+
+  const state = reactive({
+    modalShow: false,
+    route: "",
+    isVideo: false,
+  });
 
   const props = defineProps(["isVisible"]);
 
@@ -551,6 +574,19 @@
     //       projects.value[index].description[i];
     //   }, i * 30);
     // }
+  }
+
+  function showModal(isVideo, route) {
+    state.modalShow = true;
+    state.isVideo = isVideo;
+    state.route = route;
+    console.log(state);
+  }
+
+  function closeModal() {
+    state.modalShow = false;
+    state.isVideo = false;
+    state.route = "";
   }
 
   watch(
