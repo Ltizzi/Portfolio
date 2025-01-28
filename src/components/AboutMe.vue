@@ -1,6 +1,7 @@
 <template>
   <div
     class="relative min-h-screen r bg-gradient-to-b from-base-300 to-95% to-violet-950 overflow-hidden"
+    id="about"
   >
     <div
       class="mask-bg-radial absolute w-full h-full flex items-center justify-center"

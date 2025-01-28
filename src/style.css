@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .text-landing {
   /* color: oklch(0.91 0.09 82); */
   color: oklch(0.95 0.05 20.04);

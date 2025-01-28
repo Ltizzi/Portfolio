@@ -1,6 +1,7 @@
 <template>
   <div
     class="xl:h-screen h-auto xl:pb-0 pb-24 w-screen overflow-hidden bg-indigo-950 sticky"
+    id="skills"
   >
     <img
       src="@assets/circuit-board.svg"

@@ -1,6 +1,7 @@
 <template lang="">
   <div
     class="h-screen w-screen overflow-hidden relative flex justify-center items-center"
+    id="landing"
   >
     <BackgroundCarousel
       class="absolute top-0"
