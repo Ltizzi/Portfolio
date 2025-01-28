@@ -1,9 +1,10 @@
 <template lang="">
   <div
     class="h-auto flex flex-col bg-gradient-to-r from-indigo-900 from-10% mask-bg-radial via-90% via-indigo-950 to-100%% to-black"
+    id="projects"
   >
     <!-- Barra de Navegación -->
-    <div class="lg:h-screen lg:min-h-screen" id="projects">
+    <div class="lg:h-screen lg:min-h-screen">
       <div class="navbar shadow-lg h-fit lg:h-[7%] pb-4 lg:pb-4">
         <div
           class="flex gap-1 lg:flex-nowrap flex-wrap lg:gap-4 mx-auto justify-center"

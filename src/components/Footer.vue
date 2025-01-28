@@ -28,7 +28,11 @@
             class="size-8 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-500 hover:text-yellow-100"
         /></a>
 
-        <a href="mailto:terlizzileonardo@gmail.com" target="_blank">
+        <a
+          href="mailto:ltizzi83@gmail.com
+"
+          target="_blank"
+        >
           <font-awesome-icon
             :icon="['fas', 'square-envelope']"
             class="size-8 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-500 hover:text-yellow-100"
