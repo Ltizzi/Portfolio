@@ -21,11 +21,12 @@
         ]"
         v-if="props.isVisible"
       >
+        <!-- motion-preset-shake -->
         <div
           :class="[
             'flex flex-col gap-10 justify-center items-center h-full  text-landing opacity-95 motion-duration-500 motion-ease-spring-snappy motion-duration-150/scale motion-duration-150/blur ',
             state.animateText && !state.hoverText1 && !state.hoverText2
-              ? 'motion-preset-shake  motion-blur-loop-sm  motion-scale-loop-95'
+              ? 'motion-blur-loop-sm  motion-scale-loop-95'
               : '',
             !state.hoverText1 && !state.hoverText2 ? ' ' : '',
           ]"
