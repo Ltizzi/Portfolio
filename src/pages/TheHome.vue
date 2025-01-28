@@ -53,7 +53,7 @@
     console.log(elements.value);
     observer = new IntersectionObserver(updateVisibility, {
       root: null,
-      threshold: 0.05,
+      threshold: 0.15,
       rootMargin: "1px",
     });
     if (elements.value) {
