@@ -65,9 +65,12 @@
               <a
                 :href="projects[selectedProject].link"
                 target="_blank"
-                class="btn btn-outline btn-accent text-xs text-white font-orbitron lg:text-xl mt-4 rounded-xl lg:w-full w-1/2"
+                :class="[
+                  'btn btn-outline btn-accent text-xs text-white font-orbitron lg:text-xl mt-4 rounded-xl lg:w-full w-1/2',
+                  !projects[selectedProject].link ? 'btn-disabled' : '',
+                ]"
               >
-                Ver Proyecto
+                Open Project
               </a>
               <a
                 :href="projects[selectedProject].repoLink"
@@ -176,7 +179,8 @@
       title: "Yo quiero saber, ¿Y vos?",
       renderedDescription: "",
       description:
-        "&emsp;&emsp;Web para el canal infantil argentino estatal Paka-Paka sobre ESI (Educación Sexual Integral). <br><br>&emsp;&emsp;Con el arte y el diseño provisto, la web fue realizada con puro Javascript, HTML y CSS y PixieJs para las animaciones.<br><br>&emsp;&emsp;",
+        // "&emsp;&emsp;Web para el canal infantil argentino estatal Paka-Paka sobre ESI (Educación Sexual Integral).<br><br>&emsp;&emsp;Con el arte y el diseño provisto, la web fue desarrollada con JavaScript, HTML y CSS, utilizando PixiJS para animaciones interactivas. Es una página 100% estática, diseñada para niños de 3 a 9 años, con contenidos educativos avalados por el Estado argentino.",
+        "&emsp;&emsp;Website for the Argentine state-owned children's channel Paka-Paka about Comprehensive Sexual Education (ESI).<br><br>&emsp;&emsp;Using provided art and design, the site was built with JavaScript, HTML, and CSS, with PixiJS for interactive animations. It is a 100% static page, designed for children aged 3 to 9, featuring educational content endorsed by the Argentine government.",
       icon: "/pakapaka/home_logo.webp", // Icono para la barra
       link: "https://esi.pakapaka.gob.ar/",
       repoLink: "https://github.com/anavaira/pakapaka_esi",
@@ -225,7 +229,8 @@
       title: "VCM",
       renderedDescription: "",
       description:
-        "&emsp;&emsp;Página personal para ofrecer servicios de personal de salud mental. Es una página principalmente estática pero con un formulario de contacto para enviar mensajes al mail.<br><br>&emsp;&emsp;Hecha en Vue con Tailwind y Node/ExpressJS para el envío de mensajes a un e-mail.",
+        // "&emsp;&emsp;Página personal para ofrecer servicios de salud mental. Es una página principalmente estática, pero incluye un formulario de contacto que envía mensajes directamente al correo electrónico.<br><br>&emsp;&emsp;Desarrollada en Vue con Tailwind para el frontend y Node/ExpressJS para el backend, permitiendo el envío de mensajes a una casilla de correo específica.",
+        "&emsp;&emsp;Personal website for mental health services. It is primarily a static page but includes a contact form that sends messages directly to an email inbox.<br><br>  &emsp;&emsp;Built with Vue and Tailwind for the frontend, and Node/ExpressJS for the backend, enabling message delivery to a specific email address.",
       icon: "/vcm/vcmlogo.webp",
       link: "https://licvanesacarlottomiranda.com.ar/",
       repoLink: "",
@@ -278,9 +283,10 @@
       title: "DevCards",
       renderedDescription: "",
       description:
-        "&emsp;&emsp;Dev tool para manejo de proyectos, tareas, sprint y usuarios. Pensado principalmente como herramineta para SCRUM.<br><br>&emsp;&emsp;Realizada en Vue, Tailwind, Java/Spring(API) y PostgreSQL.<br><br>&emsp;&emsp; ",
+        //  "&emsp;&emsp;Herramienta para desarrolladores enfocada en la gestión de proyectos, tareas, sprints y usuarios. Diseñada principalmente para equipos que utilizan metodologías SCRUM.<br><br>&emsp;&emsp;Desarrollada en Vue con Tailwind para el frontend, Java/Spring para la API y PostgreSQL para la base de datos. Incluye autenticación de usuarios con JWT, OAuth2 (Google), y paneles de administración con roles diferenciados (usuarios, moderadores, administradores).",
+        "&emsp;&emsp;Developer tool focused on project, task, sprint, and user management. Designed primarily for teams using SCRUM methodologies.<br><br>&emsp;&emsp;Built with Vue and Tailwind for the frontend, Java/Spring for the API, and PostgreSQL for the database. Features user authentication with JWT, OAuth2 (Google), and admin panels with differentiated roles (users, moderators, administrators).",
       icon: "/DevCards/card.webp",
-      link: "#",
+      link: "",
       repoLink: "https://github.com/Ltizzi/dev-cards",
       media: [
         {
@@ -353,9 +359,10 @@
       title: "E-commerce",
       renderedDescription: "",
       description:
-        "&emsp;&emsp;Template de E-commerce con autenticación (Google Oauth2), administración de stocks (entradas, salidas, ventas, etc), perfil de usuarios, reviews de usuarios, wishlists, catálogo, buscador de productos, edición de productos, sistema de ofertas por tiempo, etc.<br><br>&emsp;&emsp;Hecho en Angular con Tailwind, Node/ExpressJS (con Typescript) y una base de datos PostgreSQL ",
+        // "&emsp;&emsp;Template de E-commerce con autenticación (Google OAuth2), administración de stocks (entradas, salidas, ventas), perfiles de usuarios, reseñas, wishlists, catálogo, buscador de productos, edición de productos y sistema de ofertas por tiempo limitado.<br><br>&emsp;&emsp;Desarrollado en Angular con Tailwind para el frontend, Node/ExpressJS (TypeScript) para el backend y PostgreSQL para la base de datos.",
+        "&emsp;&emsp;E-commerce template featuring authentication (Google OAuth2), stock management (inventory, sales), user profiles, reviews, wishlists, product catalog, product search, product editing, and time-limited offers.<br><br>  &emsp;&emsp;Built with Angular and Tailwind for the frontend, Node/ExpressJS (TypeScript) for the backend, and PostgreSQL for the database.",
       icon: "/Eshop/ecommerce.ico",
-      link: "#",
+      link: "",
       repoLink: "https://github.com/Ltizzi/E-Commerce",
       media: [
         {
@@ -427,7 +434,8 @@
       title: "Craze",
       renderedDescription: "",
       description:
-        "&emsp;&emsp;Craze es una red social de memes en la que los usuarios sólo pueden interactuar a través de memes, incluso en las respuestas. Con generador de memes incorporado y tags(base o personalizados) a modo de hashtags de twitter.<br><br>&emsp;&emsp;Realizada en Vue con Tailwind, Node/ExpressJS con MongoDB.",
+        // "&emsp;&emsp;Craze es una red social de memes donde los usuarios interactúan exclusivamente a través de memes, incluso en las respuestas. Incluye un generador de memes integrado y etiquetas (base o personalizadas) similares a los hashtags de Twitter.<br><br>&emsp;&emsp;Desarrollada en Vue con Tailwind para el frontend, Node/ExpressJS para el backend y MongoDB para la base de datos. Cuenta con autenticación de usuarios mediante cookies, OAuth2 (Google), y paneles de administración y moderación de contenido con roles diferenciados.",
+        "&emsp;&emsp;Craze is a meme-based social network where users interact exclusively through memes, even in replies. It includes a built-in meme generator and tags (default or custom) similar to Twitter hashtags.<br><br>&emsp;&emsp;Built with Vue and Tailwind for the frontend, Node/ExpressJS for the backend, and MongoDB for the database. Features user authentication via cookies, OAuth2 (Google), and admin/moderation panels with differentiated roles.",
       icon: "/craze/logo.webp",
       link: "https://craze-test.web.app/",
       repoLink: "https://github.com/Ltizzi/Craze",

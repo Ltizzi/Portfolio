@@ -50,22 +50,41 @@
             Welcome!
           </h1>
           <p class="text-base md:text-xl leading-relaxed text-violet-200">
-            Lorem ipsum odor amet, consectetuer adipiscing elit. Orci iaculis
-            quis tempor neque sodales, est scelerisque. Natoque placerat dolor
-            sed consequat elit. Nibh finibus elementum ac imperdiet mattis
-            lacinia maecenas. Gravida aliquet hendrerit sit metus ridiculus!
-            Ridiculus purus arcu varius, nisi egestas litora.
+            <!-- Soy un desarrollador web freelance con una gran pasión por la tecnología. Aprendí a programar de manera autodidacta durante la pandemia de COVID-19, un momento que aproveché para adquirir nuevas habilidades y reinventarme profesionalmente. Antes de dedicarme al desarrollo web, tuve experiencias laborales diversas: desde atención al público hasta ser profesor de guitarra y sonidista en eventos y bandas en vivo. Estos roles me enseñaron a adaptarme a diferentes desafíos y a trabajar bajo presión, habilidades que ahora aplico en mi trabajo como desarrollador. -->
+
+            I am a freelance web developer with a deep passion for technology. I
+            taught myself how to code during the COVID-19 pandemic, a time I
+            used to acquire new skills and reinvent myself professionally.
+            Before diving into web development, I had diverse work experiences:
+            from customer service to working as a guitar teacher and sound
+            engineer for live events and bands. These roles taught me how to
+            adapt to different challenges and work under pressure, skills I now
+            apply in my work as a developer.
           </p>
           <p class="mt-4 text-sm md:text-lg text-violet-300 leading-relaxed">
-            Dignissim urna est ultrices habitasse tortor, sollicitudin
-            consectetur. Eget vulputate hac convallis varius, venenatis nullam.
-            Felis est at potenti adipiscing in ex platea. Aenean eget tempus
-            ligula ridiculus, suspendisse sollicitudin.
+            <!-- Mi enfoque principal está en el uso de tecnologías como JavaScript, TypeScript, Vue, Angular, Node.js y Express.js. Tengo experiencia en la creación de páginas estáticas (como portfolios profesionales y e-commerce con funcionalidades básicas), así como en el desarrollo de APIs para la gestión de stocks, ventas, y sistemas de registro, logueo y administración de usuarios. Además, he trabajado con bases de datos como MySQL, PostgreSQL y MongoDB. -->
+            My primary focus is on technologies like
+            <b> JavaScript, TypeScript, Vue, Angular, Node.js, and Express.js</b
+            >. I have experience building static websites (such as professional
+            portfolios and e-commerce sites with basic functionalities), as well
+            as developing APIs for stock management, sales, and user
+            registration, login, and administration systems. Additionally, I
+            have worked with databases like
+            <b> MySQL, PostgreSQL, and MongoDB</b>.
           </p>
           <p class="mt-4 text-xs md:text-base opacity-70 text-violet-400">
-            Tincidunt et rutrum dignissim ante elementum quam, litora duis
-            porttitor? Commodo curabitur ad lectus id molestie eget eget. Elit
-            nulla pellentesque lobortis suscipit laoreet taciti dictumst.
+            <!-- 
+            Más allá de la programación, soy un apasionado de la música: toco la
+            guitarra, el piano y canto, aunque últimamente dedico menos tiempo a
+            estas actividades. También disfruto mucho de la lectura,
+            especialmente de géneros como la fantasía y la ciencia ficción,
+            aunque también me interesan libros de no ficción sobre historia,
+            comunicación y tecnología. -->
+            Beyond programming, I am passionate about music: I play the guitar,
+            piano, and sing, although I’ve had less time for these activities
+            lately. I also enjoy reading, especially fantasy and science
+            fiction, but I’m equally interested in non-fiction books about
+            history, communication, and technology.
           </p>
           <div
             class="flex flex-row size-7 text-yellow-50 gap-5 mx-auto w-full justify-center mt-5"
