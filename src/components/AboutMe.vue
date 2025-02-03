@@ -132,15 +132,15 @@
   const isMobile = ref(false);
 
   const images = ref([
-    {
-      src: new URL("/workstation.webp", import.meta.url).href,
-      top: "-5%",
-      left: "40%",
-      size: "300px",
-      rounded: false,
-      opacity: 0.4,
-      hovering: false,
-    },
+    // {
+    //   src: new URL("/workstation.webp", import.meta.url).href,
+    //   top: "-5%",
+    //   left: "40%",
+    //   size: "300px",
+    //   rounded: false,
+    //   opacity: 0.4,
+    //   hovering: false,
+    // },
     {
       src: new URL("/workstation2.webp", import.meta.url).href,
       top: "25%",
@@ -168,15 +168,15 @@
       opacity: 0.4,
       hovering: false,
     },
-    {
-      src: new URL("/workstation_neon.webp", import.meta.url).href,
-      top: "45%",
-      left: "175%",
-      size: "380px",
-      rounded: true,
-      opacity: 0.4,
-      hovering: false,
-    },
+    // {
+    //   src: new URL("/workstation_neon.webp", import.meta.url).href,
+    //   top: "45%",
+    //   left: "175%",
+    //   size: "380px",
+    //   rounded: true,
+    //   opacity: 0.4,
+    //   hovering: false,
+    // },
     {
       src: new URL("/hackerlair.webp", import.meta.url).href,
       top: "20%",
